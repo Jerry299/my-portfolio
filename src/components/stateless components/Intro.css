@@ -1,78 +1,411 @@
-#intro {
-  background-image: url("../../images//intro-bg.jpg");
-  background-color: #151515;
-  background-attachment: fixed;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 
-  position: relative;
-  text-align: center;
-}
-.intro-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #111111;
-  opacity: 0.85;
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto+Condensed&display=swap");
+
+.hire {
+  margin-top: 5rem;
+  font-size: 2rem;
 }
 
-.intro-content {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  -webkit-transform: translateY(-2.1rem);
-  -ms-transform: translateY(-2.1rem);
-  transform: translateY(-2.1rem);
+/* Responsiveness for intro js */
+
+/* media query for handheld devises */
+@media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
+  #intro {
+    background-image: url("../../images//intro-bg.jpg");
+    background-color: #151515;
+    background-attachment: fixed;
+    width: 100vw;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    display: flex;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .intro-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #111111;
+    opacity: 0.85;
+  }
+
+  .intro-content {
+    /* display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    -webkit-transform: translateY(-2.1rem);
+    -ms-transform: translateY(-2.1rem);
+    transform: translateY(-2.1rem);
+    width: 50% !important; */
+  }
+  .intro-content h1 {
+    color: #ffffff;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 80px;
+    line-height: 1.071;
+    max-width: 900px;
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+  }
+  .intro-content h5 {
+    color: #cc005f;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.565;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  }
+  .intro-content .intro-position {
+    font-family: "lora-regular", serif;
+    font-size: 1.7rem;
+    line-height: 2.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: #ffffff;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  }
+  .intro-content .intro-position span {
+    display: inline-block;
+  }
+  .intro-content .intro-position span::after {
+    content: "|";
+    text-align: center;
+    display: inline-block;
+    padding: 0 8px 0 14px;
+    color: rgba(255, 255, 255, 0.3);
+  }
+  .intro-content .intro-position span:first-child::before {
+    content: "|";
+    text-align: center;
+    display: inline-block;
+    padding: 0 14px 0 8px;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .intro-content .button:hover,
+  .intro-content .button:focus {
+    border-color: #cc005f;
+  }
+  .intro-content .button::after {
+    display: inline-block;
+    content: "\f107";
+    font-family: fontAwesome;
+    font-size: 1.6rem;
+    line-height: inherit;
+    text-align: center;
+    position: relative;
+    left: 1.2rem;
+  }
+
+  .intro-social {
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 7.2rem;
+    font-size: 3.3rem;
+    margin: 0;
+    padding: 0;
+  }
 }
-.intro-content h1 {
-  color: #ffffff;
-  font-family: "poppins-medium", sans-serif;
-  font-size: 8.4rem;
-  line-height: 1.071;
-  max-width: 900px;
-  margin-top: 0;
-  margin-bottom: 0.6rem;
-  margin-left: auto;
-  margin-right: auto;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+/* This Media Query is for Tablets and semi large screend between 768 and 1024px  */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  #intro {
+    background-image: url("../../images//intro-bg.jpg");
+    background-color: #151515;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    display: flex;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .intro-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #111111;
+    opacity: 0.85;
+  }
+
+  .intro-content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    -webkit-transform: translateY(-2.1rem);
+    -ms-transform: translateY(-2.1rem);
+    transform: translateY(-2.1rem);
+  }
+  .intro-content h1 {
+    color: #ffffff;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 80px;
+    line-height: 1.071;
+    max-width: 900px;
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+  }
+  .intro-content h5 {
+    color: #cc005f;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.565;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  }
+  .intro-content .intro-position {
+    font-family: "lora-regular", serif;
+    font-size: 1.7rem;
+    line-height: 2.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: #ffffff;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  }
+  .intro-content .intro-position span {
+    display: inline-block;
+  }
+  .intro-content .intro-position span::after {
+    content: "|";
+    text-align: center;
+    display: inline-block;
+    padding: 0 8px 0 14px;
+    color: rgba(255, 255, 255, 0.3);
+  }
+  .intro-content .intro-position span:first-child::before {
+    content: "|";
+    text-align: center;
+    display: inline-block;
+    padding: 0 14px 0 8px;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .intro-content .button:hover,
+  .intro-content .button:focus {
+    border-color: #cc005f;
+  }
+  .intro-content .button::after {
+    display: inline-block;
+    content: "\f107";
+    font-family: fontAwesome;
+    font-size: 1.6rem;
+    line-height: inherit;
+    text-align: center;
+    position: relative;
+    left: 1.2rem;
+  }
+
+  .intro-social {
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 7.2rem;
+    font-size: 3.3rem;
+    margin: 0;
+    padding: 0;
+  }
 }
-.intro-content h5 {
-  color: #cc005f;
-  font-family: "poppins-bold", sans-serif;
-  font-size: 2.3rem;
-  line-height: 1.565;
-  margin-bottom: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.3rem;
-  text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+
+/* this media query is for laptops , no retina specified */
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
+  #intro {
+    background-image: url("../../images//intro-bg.jpg");
+    background-color: #151515;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    display: flex;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .intro-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #111111;
+    opacity: 0.85;
+  }
+
+  .intro-content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    -webkit-transform: translateY(-2.1rem);
+    -ms-transform: translateY(-2.1rem);
+    transform: translateY(-2.1rem);
+  }
+  .intro-content h1 {
+    color: #ffffff;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 80px;
+    line-height: 1.071;
+    max-width: 900px;
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+  }
+  .intro-content h5 {
+    color: #cc005f;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.565;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  }
+  .intro-content .intro-position {
+    font-family: "lora-regular", serif;
+    font-size: 1.7rem;
+    line-height: 2.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: #ffffff;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  }
+  .intro-content .intro-position span {
+    display: inline-block;
+  }
+  .intro-content .intro-position span::after {
+    content: "|";
+    text-align: center;
+    display: inline-block;
+    padding: 0 8px 0 14px;
+    color: rgba(255, 255, 255, 0.3);
+  }
+  .intro-content .intro-position span:first-child::before {
+    content: "|";
+    text-align: center;
+    display: inline-block;
+    padding: 0 14px 0 8px;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .intro-content .button:hover,
+  .intro-content .button:focus {
+    border-color: #cc005f;
+  }
+  .intro-content .button::after {
+    display: inline-block;
+    content: "\f107";
+    font-family: fontAwesome;
+    font-size: 1.6rem;
+    line-height: inherit;
+    text-align: center;
+    position: relative;
+    left: 1.2rem;
+  }
+
+  .intro-social {
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 7.2rem;
+    font-size: 3.3rem;
+    margin: 0;
+    padding: 0;
+  }
 }
-.intro-content .intro-position {
-  font-family: "lora-regular", serif;
-  font-size: 1.7rem;
-  line-height: 2.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  color: #ffffff;
-  text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+/* intro css */
+
+/* */
+
+/* @media only screen and (max-width: 1024px) {
+  .intro-content h1 {
+    font-size: 7.6rem;
+  }
+  .intro-social {
+    font-size: 3rem;
+  }
+  .intro-social li {
+    margin: 0 15px;
+  }
 }
-.intro-content .intro-position span {
-  display: inline-block;
+@media only screen and (max-width: 768px) {
+  #intro {
+    min-height: 660px;
+  }
+  .intro-content h1 {
+    font-size: 5.2rem;
+  }
+  .intro-content h5 {
+    font-size: 1.8rem;
+  }
+  .intro-content .intro-position {
+    font-size: 1.3rem;
+  }
+  .intro-social {
+    font-size: 2.5rem;
+  }
+  .intro-social li {
+    margin: 0 10px;
+  }
 }
-.intro-content .intro-position span::after {
-  content: "|";
-  text-align: center;
-  display: inline-block;
-  padding: 0 8px 0 14px;
-  color: rgba(255, 255, 255, 0.3);
-}
-.intro-content .intro-position span:first-child::before {
-  content: "|";
-  text-align: center;
-  display: inline-block;
-  padding: 0 14px 0 8px;
-  color: rgba(255, 255, 255, 0.3);
-}
+@media only screen and (max-width: 600px) {
+  #intro {
+    min-height: 600px;
+  }
+  .intro-content h1 {
+    font-size: 4.6rem;
+    margin-bottom: 0.6rem;
+  }
+  .intro-content h5 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.2rem;
+  }
+  .intro-content .intro-position {
+    font-size: 1.2rem;
+  }
+  .intro-content .intro-position span {
+    padding: 0 0.6rem;
+  }
+  .intro-content .intro-position span::before,
+  .intro-content .intro-position span::after {
+    display: none !important;
+  }
+  .intro-social {
+    font-size: 2.4rem;
+  }
+} */
