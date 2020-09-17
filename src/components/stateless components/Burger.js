@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Burger.css";
 
 const Burger = () => {
   return (
@@ -9,7 +10,7 @@ const Burger = () => {
         <div className="menu-icon-bg"></div>
         <div className="container">
           <div className="wrapper">
-            <div className="menu-list">
+            <div className="menu-links">
               <nav>
                 <ul>
                   <li>
@@ -27,7 +28,7 @@ const Burger = () => {
                 </ul>
               </nav>
               <div className="personality">
-                <h3 className="my-name">joseph chinemerem jeremiah</h3>
+                <h3 className="my-nam">joseph chinemerem jeremiah</h3>
                 <p className="my-person">
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.

@@ -1,69 +1,42 @@
-/* set columns widths */
-.one-col {
-  width: 8.33333%;
-}
-.two-cols {
-  width: 16.66667%;
-}
-.three-cols {
-  width: 16.66667%;
-}
-.four-cols {
-  width: 33.33333%;
-}
-.five-cols {
-  width: 41.66667%;
-}
-.six-cols {
-  width: 50%;
-}
-.seven-cols {
-  width: 58.33333%;
-}
-.eight-cols {
-  width: 66.66667%;
-}
-.nine-cols {
-  width: 75%;
-}
-.ten-cols {
-  width: 83.33333%;
-}
-.eleven-cols {
-  width: 91.66667%;
-}
-.twelve-cols {
+/* .container {
   width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-/* grid */
-.row {
-  width: 94%;
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
-.row:before,
-.row:after {
-  content: "";
-  display: table;
-}
-
-.row:after {
-  clear: both;
-}
-
-.row .row {
-  width: auto;
-  max-width: none;
-  margin-left: -20px;
-  margin-right: -20px;
-}
-
-/* media queries */
-
-/* @media only screen and (max-width: 600px) {
-  #intro {
-    min-height: 600px;
-  }
+.container-fluid {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 } */
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+/* css for tablet responsiveness */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+/* css for latptops and large screens */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
+  .container {
+    max-width: 1140px;
+  }
+
+  .app-container {
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 100vh;
+    height: 120%;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+      url("./images/intro-bg.jpg");
+  }
+}

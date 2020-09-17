@@ -11,20 +11,19 @@ import "./App.css";
 
 function App() {
   return (
-    <Router>
-      <div className="app">
+    // <div className="bg-container"></div>
+    <Router className="container">
+      <div className="app-container">
         <Header />
-        <div className="app-container">
-          <div className="wrapper">
-            <div className="home">
-              <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/about" exact component={About} />
-                <Route path="/skills" exact component={Skills} />
-                <Route path="/myworks" exact component={MyWorks} />
-                <Route path="/contact" exact component={ContactMe} />
-              </Switch>
-            </div>
+        <div className="wrapper">
+          <div className="app-home">
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/about" exact component={About} />
+              <Route path="/skills" exact component={Skills} />
+              <Route path="/myworks" exact component={MyWorks} />
+              <Route path="/contact" exact component={ContactMe} />
+            </Switch>
           </div>
         </div>
       </div>
