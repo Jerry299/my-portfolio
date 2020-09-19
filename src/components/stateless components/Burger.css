@@ -11,7 +11,7 @@
 /* css for latptops and large screens */
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
   .burger-menu {
-    display: none;
+    display: block;
     z-index: 9;
     top: 0;
     bottom: 0;
@@ -29,12 +29,12 @@
     position: fixed;
     height: 100%;
     width: 100%;
-    background-color: #191919;
+    background-color: #e20001;
     z-index: -1;
   }
   .burger-menu .menu-layer {
     position: relative;
-    background-color: #e20001;
+    background-color: #191919;
     height: 100%;
     overflow: hidden;
   }

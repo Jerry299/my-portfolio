@@ -14,32 +14,24 @@ const Burger = () => {
               <nav>
                 <ul>
                   <li>
+                    <span className="position">01.</span>
                     <Link to="/about">About Me</Link>
                   </li>
                   <li>
+                    <span className="position">02.</span>
                     <Link to="/skills">Skill Set</Link>
                   </li>
                   <li>
+                    <span className="position">03.</span>
                     <Link to="/mywork">My Works</Link>
                   </li>
                   <li>
+                    <span className="position">04.</span>
                     <Link to="/contact">Contact Me</Link>
                   </li>
                 </ul>
               </nav>
-              <div className="personality">
-                <h3 className="my-nam">joseph chinemerem jeremiah</h3>
-                <p className="my-person">
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum."
-                </p>
-              </div>
+
               <div className="socials">
                 Social Handles:
                 <span>Facebook</span>
