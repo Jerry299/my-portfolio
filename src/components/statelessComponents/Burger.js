@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Burger.css";
-import logo from "../../images/logo.png";
+
 import "../../App.css";
 
 const Burger = () => {
@@ -12,28 +12,7 @@ const Burger = () => {
         <div className="menu-icon-bg"></div>
         <div className="container">
           <div className="wrapper">
-            {/* <header>
-              <div className="header-container ">
-                <div className="wrapper ">
-                  <div className="inner-header">
-                    <div className="logo">
-                      <Link to="/">
-                        <img src={logo} alt="" />
-                      </Link>
-                    </div>
-                    <div className="menu">
-                      <div>
-                        <p className="">
-                          <span className="bg"></span>
-                          <span className="base"></span>
-                          <span className="text">CLOSE</span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </header> */}
+            {/*  */}
             <div className="menu-links">
               <nav>
                 <ul>
