@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
-import About from "./components/stateless components/About";
-import MyWorks from "./components/stateless components/MyWorks";
-import Skills from "./components/stateless components/Skills";
+import About from "./components/statelessComponents/About";
+import MyWorks from "./components/statelessComponents/MyWorks";
+import Skills from "./components/statelessComponents/Skills";
 import ContactMe from "./components/statefulComponents/ContactMe";
-import Header from "./components/stateless components/Header";
+import Header from "./components/statelessComponents/Header";
 
 import "./App.css";
 

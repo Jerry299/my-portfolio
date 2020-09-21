@@ -57,8 +57,9 @@ font-family: 'Titillium Web', sans-serif; */
 /* css for latptops and large screens */
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
   .home-wrapper {
-    color: #ffff;
+    color: #000000;
     padding: 0 8rem 0 8rem;
+    margin-top: 4rem;
   }
   .home-skills {
     text-transform: capitalize;
@@ -84,10 +85,20 @@ font-family: 'Titillium Web', sans-serif; */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700; */
-    color: #fff;
+    color: #000000;
   }
 
   .home-container {
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 100vh;
+    height: 120%;
+
+    /* background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom; */
+    text-align: center;
+    background: #ffffff;
   }
   .click {
     color: #fff;

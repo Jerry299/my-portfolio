@@ -12,15 +12,7 @@ const Header = () => {
         <div className="wrapper ">
           <div className="inner-header">
             <div className="logo">
-              <Link
-                to="/"
-                // style={{
-                //   textDecoration: "none",
-                //   fontFamily: " Poppins,san-serif",
-                //   color: "#ece8e1",
-                //   fontSize: "1.2rem",
-                // }}
-              >
+              <Link to="/">
                 <img src={logo} alt="" />
               </Link>
             </div>
