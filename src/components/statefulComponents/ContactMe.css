@@ -6,4 +6,41 @@
 }
 /* css for latptops and large screens */
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
+  .contact-container {
+    background-color: #fff;
+  }
+  .contact-wrapper {
+    position: relative;
+  }
+  .contact-svg {
+    height: 50vh;
+    width: 50vw;
+  }
+  .contact-msg {
+    position: relative;
+    top: -250px;
+    right: 0px;
+    left: 820px;
+    bottom: 0;
+    width: 20%;
+  }
+  .contact-msg p {
+    text-transform: capitalize;
+    font-family: "Titillium Web", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  .get-in-touch span {
+    position: relative;
+    right: 87.3px;
+    font-size: 5rem;
+    font-weight: 900;
+    font-family: "Josefin Sans", sans-serif;
+  }
+  .get-in-touch h1 p {
+    font-size: 4.2rem;
+    font-weight: 700;
+    font-family: "Josefin Sans", sans-serif;
+    text-transform: lowercase;
+  }
 }
