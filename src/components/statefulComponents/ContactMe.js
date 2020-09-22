@@ -23,7 +23,29 @@ const ContactMe = () => {
         </div>
       </div>
       <div className="contact-form">
-        <input></input>
+        <div className="form-wrapper">
+          <div className="form-group">
+            <input type="text" name="name" required autoComplete="off" />
+            <label className="label-name"></label>
+            <span className="content-name">Name</span>
+          </div>
+          <div className="form-group">
+            <input type="email" name="email" required autoComplete="off" />
+            <label className="label-name"></label>
+            <span className="content-name">Email</span>
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              name="contact-message"
+              required
+              autoComplete="off"
+            />
+            <label className="label-name"></label>
+            <span className="content-name">Message</span>
+          </div>
+          <div className="submit">Send it</div>
+        </div>
       </div>
     </div>
   );
