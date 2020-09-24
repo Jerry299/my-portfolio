@@ -22,17 +22,21 @@ const ContactMe = () => {
           </div>
         </div>
       </div>
-      <div className="contact-form">
+      <form className="contact-form">
         <div className="form-wrapper">
           <div className="form-group">
             <input type="text" name="name" required autoComplete="off" />
-            <label className="label-name"></label>
-            <span className="content-name">Name</span>
+            <label className="label-name">
+              <span className="content-name">Name</span>
+            </label>
           </div>
           <div className="form-group">
             <input type="email" name="email" required autoComplete="off" />
-            <label className="label-name"></label>
-            <span className="content-name">Email</span>
+            <label className="label-name">
+              {" "}
+              <span className="content-name">Email</span>
+            </label>
+            <small></small>
           </div>
           <div className="form-group">
             <input
@@ -41,12 +45,16 @@ const ContactMe = () => {
               required
               autoComplete="off"
             />
-            <label className="label-name"></label>
-            <span className="content-name">Message</span>
+            <label className="label-name">
+              <span className="content-name">Message</span>
+            </label>
           </div>
-          <div className="submit">Send it</div>
+          <div type="submit" className="submit">
+            Send it
+            <div className="line"></div>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
