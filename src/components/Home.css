@@ -94,12 +94,8 @@ font-family: 'Josefin Sans', sans-serif; */
   .home-container {
     background-attachment: fixed;
     width: 100%;
-    min-height: 100vh;
-    height: 120%;
-
-    /* background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center bottom; */
+    /* min-height: 100vh; */
+    height: 100vh;
     text-align: center;
     background: #ffffff;
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import contactSVG from "../../images/contactSVG.svg";
 import "./ContactMe.css";
+import Footer from "../statelessComponents/Footer";
 
 const ContactMe = () => {
   return (
@@ -55,6 +56,7 @@ const ContactMe = () => {
           </div>
         </div>
       </form>
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,30 @@
+.footer-container {
+  background-color: #1a1a2e;
+  margin-top: 4rem;
+  padding: 0 4rem;
+}
+
+/* media queries */
+@media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
+}
+
+/* css for tablet responsiveness */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+/* css for latptops and large screens */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
+  .footer-container {
+    color: #fff;
+  }
+  .footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 81%;
+  }
+  #contact-wrapper {
+    padding-top: 1.3rem;
+  }
+  #contact-wrapper h4 {
+    color: #b2b2b2;
+  }
+}
