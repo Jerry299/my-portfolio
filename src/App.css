@@ -24,19 +24,7 @@
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
   .container {
     max-width: 1140px;
-  }
-
-  .app-container {
-    /* background-attachment: fixed;
-    width: 100%;
-    min-height: 100vh;
-    height: 120%;
-
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    text-align: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-      url("./images/intro-bg.jpg"); */
+    cursor: none;
+    overflow: hidden;
   }
 }

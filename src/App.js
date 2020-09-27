@@ -1,20 +1,22 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import Home from "./components/Home";
 import About from "./components/statelessComponents/About";
 import MyWorks from "./components/statelessComponents/MyWorks";
 import Skills from "./components/statelessComponents/Skills";
 import ContactMe from "./components/statefulComponents/ContactMe";
 import Header from "./components/statelessComponents/Header";
+import Cursor from "./components/statelessComponents/Cursor";
 
 import "./App.css";
 
 function App() {
   return (
-    // <div className="bg-container"></div>
     <Router className="container">
       <div className="app-container">
         <Header />
+        <Cursor />
         <div className="wrapper">
           <div className="app-home">
             <Switch>
