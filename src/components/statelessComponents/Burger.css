@@ -2,10 +2,16 @@
 
 /* css for phone responsiveness */
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
+  .burger-menu {
+    display: none;
+  }
 }
 
 /* css for tablet responsiveness */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .burger-menu {
+    display: none;
+  }
 }
 
 /* css for latptops and large screens */
@@ -18,7 +24,7 @@
     right: 0;
     left: 0;
     position: fixed;
-    height: 100vh;
+    height: 100%;
     width: 100%;
   }
   .burger-menu .bg-secondary-color {
@@ -29,15 +35,17 @@
     position: fixed;
     height: 100%;
     width: 100%;
-    background-color: #e20001;
+    background-color: #050505;
     z-index: -1;
   }
+
   .burger-menu .menu-layer {
     position: relative;
-    background-color: #050505;
+    background-color: #e20001;
     height: 100%;
     overflow: hidden;
   }
+
   .burger-menu .menu-layer .menu-icon-bg {
     top: 0;
     bottom: 0;
@@ -48,52 +56,58 @@
     width: 100%;
     opacity: 0;
   }
+
   .burger-menu .menu-layer .wrapper {
     position: relative;
+    padding: 0 48px;
   }
+
   .burger-menu .menu-layer .wrapper .menu-links {
-    /* justify-content: space-between;
-    align-items: center; */
     position: relative;
-    top: 70px;
-  }
-  .menu-links nav {
+    top: 10px;
+    bottom: 10px;
+    right: 0;
     display: flex;
-    align-items: flex-start;
-    width: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
   }
-  .menu-links nav ul {
+
+  .burger-menu .menu-layer .wrapper .menu-links nav {
+    display: block;
+  }
+
+  .burger-menu .menu-layer .wrapper .menu-links nav ul {
     padding: 0;
     margin: 0;
   }
-  .menu-layer .wrapper .menu-links nav ul li {
+
+  .burger-menu .menu-layer .wrapper .menu-links nav ul li {
     list-style-type: none;
-    font-size: 2rem;
+    font-size: 5rem;
     font-weight: 700;
     cursor: pointer;
-    height: 70px;
+    height: 145px;
     overflow: hidden;
     position: relative;
-    width: 700px;
+    width: 500px;
     text-decoration: none;
-    text-align: start;
-    margin: 0 0 1.6rem 0;
+    text-align: center;
   }
-  .menu-links nav ul {
-    /* align-self: flex-start; */
-    margin-left: 240px;
-  }
-  .menu-links nav ul li a {
+
+  .burger-menu .menu-layer .wrapper .menu-links nav ul li a {
     color: #fff;
-    font-size: 3rem;
-    transition: all 1s ease-out;
-    -webkit-transition: all 1s ease-out;
-    -moz-transition: all 1s ease-out;
-    font-family: "Titillium Web", sans-serif;
-  }
-  .menu-links nav ul li a:hover {
+    position: relative;
+    font-family: "Roboto Condensed", sans-serif;
     text-decoration: none;
-    color: rgb(70, 218, 70);
-    padding: 1.2rem;
+  }
+  .burger-menu .menu-layer .wrapper .menu-links nav ul li a:hover {
+    color: black;
+  }
+  .position {
+    font-size: 1.1rem;
+    position: relative;
+    top: 64.5px;
+    width: 5%;
   }
 }

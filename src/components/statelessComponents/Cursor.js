@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./Cursor.css";
 import classNames from "classnames";
 
+const isMobile = () => {
+  const ua = navigator.userAgent;
+  return /Android|Mobi/i.test(ua);
+};
+
 const Cursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [hidden, setHidden] = useState(false);
@@ -42,6 +47,7 @@ const Cursor = () => {
     "cursor--hidden": hidden,
     "cursor--hovering": hovering,
   });
+  if (typeof navigator !== "undefined" && isMobile()) return null;
 
   return (
     <div
@@ -50,7 +56,9 @@ const Cursor = () => {
         left: `${position.x}px`,
         top: `${position.y}px`,
       }}
-    ></div>
+    >
+      <div className="cursor-label">Hi,There</div>
+    </div>
   );
 };
 

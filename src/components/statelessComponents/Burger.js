@@ -17,31 +17,22 @@ const Burger = () => {
               <nav>
                 <ul>
                   <li>
-                    <sup className="position">01.</sup>
-                    <Link to="/about">About Me</Link>
+                    <Link to="/about">
+                      <div className="position">01.</div>About Me.
+                    </Link>
                   </li>
                   <li>
-                    <sup className="position">02.</sup>
-                    <Link to="/skills">Skill Set</Link>
+                    <Link to="/mywork">
+                      <div className="position">02.</div>My Works.
+                    </Link>
                   </li>
                   <li>
-                    <sup className="position">03.</sup>
-                    <Link to="/mywork">My Works</Link>
-                  </li>
-                  <li>
-                    <sup className="position">04.</sup>
-                    <Link to="/contact">Contact Me</Link>
+                    <Link to="/contact">
+                      <div className="position">03.</div>Contact Me.
+                    </Link>
                   </li>
                 </ul>
               </nav>
-
-              <div className="socials">
-                {/* Social Handles:
-                <p>Facebook</p>
-                <p>Twitter</p>
-                <p>LinkedIn</p>
-                <p>Github</p> */}
-              </div>
             </div>
           </div>
         </div>

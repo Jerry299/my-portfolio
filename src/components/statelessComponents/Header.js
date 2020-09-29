@@ -16,6 +16,13 @@ const Header = () => {
                 <img src={logo} alt="" />
               </Link>
             </div>
+            <div className="toggle">
+              <div className="mobile-toggler">
+                <div className="line line-1"></div>
+                <div className="line line-2"></div>
+                <div className="line line-3"></div>
+              </div>
+            </div>
             <div className="menu">
               <div>
                 <p className="">

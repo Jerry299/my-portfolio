@@ -19,8 +19,6 @@ const Home = () => {
             Technology Enthusiast.
           </p>
         </div>
-
-        <div className="social-accounts"></div>
       </div>
       <div className="click">
         <p>
