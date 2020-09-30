@@ -123,12 +123,13 @@
 /* css for phone responsiveness */
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
   .header-container {
-    height: 6rem;
-    width: 110%;
+    height: 4.5rem;
+    width: 100%;
     margin: 0;
     padding: 0;
   }
-  .logo {
+  .logo,
+  .toggle {
     margin-top: 1.3rem;
   }
   /* for buttton */
@@ -157,7 +158,7 @@
 
 /* css for tablet responsiveness */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .menu div {
+  /* .menu div {
     width: 100%;
     max-width: 240px;
     height: 54px;
@@ -255,6 +256,40 @@
   }
   .menu div:hover span.bg {
     width: 110%;
+  } */
+
+  .header-container {
+    height: 6.5rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, "san-serif";
+  }
+
+  .inner-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    align-items: center;
+    padding: 0 40px;
+  }
+  .menu {
+    display: none;
+  }
+
+  .toggle .mobile-toggler .line {
+    height: 3px;
+    width: 29px;
+    background-color: #191919;
+    margin: 0 0 9px;
+  }
+  .toggle .mobile-toggler .line-2 {
+    width: 12px;
+  }
+  .logo,
+  .toggle {
+    margin-top: 1.3rem;
   }
 }
 /* css for latptops and large screens */

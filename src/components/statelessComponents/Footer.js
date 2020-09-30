@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,9 +14,6 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 
 const Footer = () => {
-  useEffect(() => {
-    document.title = "Contact Joseph Chinemerem j";
-  });
   const date = () => {
     return new Date().getFullYear();
   };

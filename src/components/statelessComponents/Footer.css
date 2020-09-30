@@ -6,10 +6,137 @@
 
 /* media queries */
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
+  .footer-container {
+    color: #fff;
+    background-color: #132743;
+    font-family: "Poppins", sans-serif;
+  }
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #contact-wrapper {
+    padding-top: 1.9rem;
+    text-align: center;
+  }
+  #contact-wrapper h4 {
+    color: #b2b2b2;
+  }
+  #contact-wrapper span {
+    font-size: 20px;
+  }
+  #contact-wrapper span:nth-child(1) {
+    margin-left: 0.9rem;
+  }
+  #contact-wrapper p {
+    letter-spacing: 0.1rem;
+  }
+  .social-icons h4 {
+    font-size: 2rem;
+  }
+  .social-icons .icons {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 1rem 0;
+  }
+  a.social {
+    margin: 0 1rem;
+    display: inline-block;
+  }
+
+  a.github {
+    color: #fff;
+  }
+  .phone-icon,
+  .envelope-open,
+  .mapper {
+    color: #fff;
+  }
+  .contact-address {
+    margin-top: 1.4rem;
+    text-align: center;
+  }
+  .contact-address p span .mapper {
+    display: none;
+  }
+  .copyrights {
+    margin-top: 3rem;
+    padding-bottom: 1rem;
+    display: grid;
+    place-items: center;
+    font-family: "Nanum Gothic", sans-serif;
+  }
 }
 
 /* css for tablet responsiveness */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .footer-container {
+    color: #fff;
+    background-color: #132743;
+    font-family: "Poppins", sans-serif;
+  }
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #contact-wrapper {
+    padding-top: 1.9rem;
+    text-align: center;
+  }
+  #contact-wrapper h4 {
+    color: #b2b2b2;
+  }
+  #contact-wrapper span {
+    font-size: 20px;
+  }
+  #contact-wrapper span:nth-child(1) {
+    margin-left: 0.9rem;
+  }
+  #contact-wrapper p {
+    letter-spacing: 0.1rem;
+  }
+  .social-icons h4 {
+    font-size: 2rem;
+  }
+  .social-icons .icons {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 1rem 0;
+  }
+  a.social {
+    margin: 0 1rem;
+    display: inline-block;
+  }
+
+  a.github {
+    color: #fff;
+  }
+  .phone-icon,
+  .envelope-open,
+  .mapper {
+    color: #fff;
+  }
+  .contact-address {
+    margin-top: 1.4rem;
+    text-align: center;
+    width: 70%;
+  }
+  .contact-address p span .mapper {
+    display: none;
+  }
+  .copyrights {
+    margin-top: 3rem;
+    padding-bottom: 1rem;
+    display: grid;
+    place-items: center;
+    font-family: "Nanum Gothic", sans-serif;
+  }
 }
 /* css for latptops and large screens */
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {

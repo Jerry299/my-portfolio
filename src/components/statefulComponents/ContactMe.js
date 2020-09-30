@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import contactSVG from "../../images/contactSVG.svg";
 import "./ContactMe.css";
 import Footer from "../statelessComponents/Footer";
 
 const ContactMe = () => {
+  useEffect(() => {
+    document.title = "Contact Jerry";
+  });
   return (
     <div className="contact-container">
       <div className="contact-wrapper">
@@ -11,7 +14,7 @@ const ContactMe = () => {
           <img src={contactSVG} alt="Contact-svg" />
         </div>
         <div className="contact-msg">
-          <p>
+          <p id="msg">
             like what you see? have a project that you'd like to talk
             about,looking for a dev to hire? or want to ask a personal question?
           </p>
