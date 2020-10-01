@@ -4,7 +4,7 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <div className="home-container">
+    <section className="home-container">
       <div className="home-wrapper">
         <h1 className="home-hi">
           {" "}
@@ -25,7 +25,7 @@ const Home = () => {
           <em>click on menu to get started.</em>
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 

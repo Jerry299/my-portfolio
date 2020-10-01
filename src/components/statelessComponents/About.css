@@ -1,1 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap");
 
+@media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
+}
+
+/* css for tablet responsiveness */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+/* css for latptops and large screens */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
+  .about-container {
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+  }
+  .about-header {
+    display: grid;
+    place-items: center;
+    padding: 2rem 0;
+    font-family: "Sansita Swashed", cursive;
+  }
+  .about-body {
+    display: flex;
+    width: 80%;
+    padding-left: 2rem;
+    background-color: #ead7f3;
+    background-image: linear-gradient(135deg, #ead7f3, #588edf);
+    color: #fff;
+    height: 100%;
+    margin-top: 100vh;
+    border-top: 0;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    padding-bottom: 10%;
+  }
+}
