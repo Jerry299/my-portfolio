@@ -29,30 +29,41 @@ const About = () => {
           </div>
           <div className="about-details">
             <div className="about-details-content">
-              <h4>
-                Joseph Chinemerem Jeremiah is a Javascript Full-Stack Web
-                Developer,currently located in Nigeria and is always interested
-                in a challenge.
-              </h4>
-              <div>
-                Joseph C Jeremiah is a Passionate Tech Enthusiast, who is
-                willing to learn and build solutions. His Background In
-                Engineering inform his mindful but competitive approach.
-                Jeremiah is Fueled by his passion for understanding web
+              <p>
+                <ul>
+                  <li>Description: Full Stack Javascript Developer.</li>
+                  <li>Location: Nigeria.</li>
+                  <li>Available: Yes,Always Interested In A Challenge.</li>
+                </ul>
+              </p>
+              <div className="about-details-speech">
+                <span>Joseph Chinemerem Jeremiah</span> is a Passionate Tech
+                Enthusiast, who is willing to learn and build solutions.His
+                Background In Engineering inform his mindful but competitive
+                approach.Jeremiah is Fueled by his passion for understanding web
                 technologies and considers himself a "Life long learner" eager
                 to build on existing web technologies knowledge and stay in tune
                 with the latest web technologies through continued coursework(On
-                udemy,frontend masters,pluralsight lectures and workshops ) and
+                udemy,frontend masters,pluralsight lectures and workshops) and
                 professional development.
               </div>
             </div>
           </div>
         </div>
         <div className="about-resume">
-          <h3>Hire Me</h3>
+          <div className="about-resume-button" align="center">
+            <a
+              className="resume-btn-link"
+              href="www.w"
+              target="_blank"
+              rel="nofollow noopener"
+            >
+              Check Out My C.V
+            </a>
+          </div>
         </div>
         <div className="about-skills">
-          <h3>What I Can Do</h3>
+          <p>Skills Set</p>
           <div className="about-skills__list">
             <ul>
               <li>
@@ -83,7 +94,8 @@ const About = () => {
                 Git
                 <FontAwesomeIcon icon={faGit} size="2x" />
               </li>
-              <li>MongoDb & Postgres</li>
+              <li>MongoDb & Postgres Databases</li>
+              <li>Testing WIth Jest</li>
             </ul>
           </div>
         </div>
