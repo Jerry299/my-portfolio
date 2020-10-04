@@ -3,10 +3,78 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
+  .about-container {
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    background-color: white;
+  }
+  .about-header {
+    display: grid;
+    place-items: center;
+    padding: 2rem 0;
+    font-family: "Sansita Swashed", cursive;
+    margin-top: 2rem;
+    color: #0f3057;
+  }
+  .about-body {
+    display: flex;
+    width: 100%;
+    background-color: #ead7f3;
+    background-image: linear-gradient(135deg, #0f2027, #24677e, #65a7c4);
+    color: #fff;
+    height: 100%;
+    border-top: 0;
+    justify-content: space-around;
+    flex-direction: column-reverse;
+    padding: 2rem 2rem;
+  }
+  .about-details .about-details-content div ul li {
+    font-size: 1.1rem;
+    font-weight: 100;
+    font-family: "Space Mono", monospace;
+    line-height: 1.8rem;
+  }
+  .about-details .about-details-content {
+    margin-bottom: 1.2rem;
+  }
 }
 
 /* css for tablet responsiveness */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .about-container {
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    background-color: white;
+  }
+  .about-header {
+    display: grid;
+    place-items: center;
+    padding: 2rem 0;
+    font-family: "Sansita Swashed", cursive;
+    margin-top: 2rem;
+    color: #0f3057;
+  }
+  .about-body {
+    display: flex;
+    width: 100%;
+    background-color: #ead7f3;
+    background-image: linear-gradient(135deg, #0f2027, #24677e, #65a7c4);
+    color: #fff;
+    height: 100%;
+    border-top: 0;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    padding: 2rem 2rem;
+  }
+  .about-details .about-details-content div ul li {
+    font-size: 1.1rem;
+    font-weight: 100;
+    font-family: "Space Mono", monospace;
+    line-height: 1.8rem;
+  }
+  .about-details .about-details-content {
+    margin-right: 1.2rem;
+  }
 }
 /* css for latptops and large screens */
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
@@ -34,12 +102,12 @@
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
     justify-content: space-around;
-    padding: 2rem 1rem 1rem 2rem;
+    padding: 1rem 1rem 1rem 1px;
   }
   .about-details {
     width: 40%;
   }
-  .about-details .about-details-content p ul li {
+  .about-details .about-details-content div ul li {
     font-size: 1.1rem;
     font-weight: 100;
     font-family: "Space Mono", monospace;

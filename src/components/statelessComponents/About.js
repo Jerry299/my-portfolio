@@ -29,13 +29,13 @@ const About = () => {
           </div>
           <div className="about-details">
             <div className="about-details-content">
-              <p>
+              <div>
                 <ul>
                   <li>Description: Full Stack Javascript Developer.</li>
                   <li>Location: Nigeria.</li>
                   <li>Available: Yes,Always Interested In A Challenge.</li>
                 </ul>
-              </p>
+              </div>
               <div className="about-details-speech">
                 <span>Joseph Chinemerem Jeremiah</span> is a Passionate Tech
                 Enthusiast, who is willing to learn and build solutions.His
@@ -68,31 +68,63 @@ const About = () => {
             <ul>
               <li>
                 HTML
-                <FontAwesomeIcon icon={faHtml5} size="2x" />
+                <FontAwesomeIcon
+                  icon={faHtml5}
+                  size="2x"
+                  style={{ color: "#e34626", marginLeft: ".5rem" }}
+                />
               </li>
               <li>
                 CSS
-                <FontAwesomeIcon icon={faCss3} size="2x" />
+                <FontAwesomeIcon
+                  icon={faCss3}
+                  size="2x"
+                  style={{ color: "#264de4", marginLeft: ".5rem" }}
+                />
               </li>
               <li>
                 Javascript
-                <FontAwesomeIcon icon={faJs} size="2x" />
+                <FontAwesomeIcon
+                  icon={faJs}
+                  size="2x"
+                  style={{
+                    color: "#f0db4f",
+                    marginLeft: ".5rem",
+                    background: "#000",
+                  }}
+                />
               </li>
               <li>
                 React Js
-                <FontAwesomeIcon icon={faReact} size="2x" />
+                <FontAwesomeIcon
+                  icon={faReact}
+                  size="2x"
+                  style={{ color: "#61DBFB", marginLeft: ".5rem" }}
+                />
               </li>
               <li>
                 Node Js
-                <FontAwesomeIcon icon={faNodeJs} size="2x" />
+                <FontAwesomeIcon
+                  icon={faNodeJs}
+                  size="2x"
+                  style={{ color: "#68A063", marginLeft: ".5rem" }}
+                />
               </li>
               <li>
                 BootStrap
-                <FontAwesomeIcon icon={faBootstrap} size="2x" />
+                <FontAwesomeIcon
+                  icon={faBootstrap}
+                  size="2x"
+                  style={{ color: "#602C50", marginLeft: ".5rem" }}
+                />
               </li>
               <li>
-                Git
-                <FontAwesomeIcon icon={faGit} size="2x" />
+                Git & Github
+                <FontAwesomeIcon
+                  icon={faGit}
+                  size="2x"
+                  style={{ color: "#F1502F", marginLeft: ".5rem" }}
+                />
               </li>
               <li>MongoDb & Postgres Databases</li>
               <li>Testing WIth Jest</li>

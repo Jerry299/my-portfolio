@@ -1,14 +1,19 @@
 .footer-container {
-  background-color: #1a1a2e;
-  margin-top: 4rem;
+  background-color: #150485;
+
   padding: 0 4rem;
+}
+a.twitter,
+a.facebook,
+a.linkedin {
+  color: #fff;
 }
 
 /* media queries */
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
   .footer-container {
     color: #fff;
-    background-color: #132743;
+    background-color: #150485;
     font-family: "Poppins", sans-serif;
   }
   .footer-wrapper {
