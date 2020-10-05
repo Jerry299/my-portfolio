@@ -33,19 +33,22 @@ const About = () => {
                 <ul>
                   <li>Description: Full Stack Javascript Developer.</li>
                   <li>Location: Nigeria.</li>
-                  <li>Available: Yes,Always Interested In A Challenge.</li>
+                  <li>Available: Yes,Interested In A New Challenge.</li>
                 </ul>
               </div>
               <div className="about-details-speech">
                 <span>Joseph Chinemerem Jeremiah</span> is a Passionate Tech
                 Enthusiast, who is willing to learn and build solutions.His
                 Background In Engineering inform his mindful but competitive
-                approach.Jeremiah is Fueled by his passion for understanding web
-                technologies and considers himself a "Life long learner" eager
-                to build on existing web technologies knowledge and stay in tune
-                with the latest web technologies through continued coursework(On
+                approach.Jeremiah is Fueled by his passion,high energy levels
+                and boundless enthusiasm for understanding technologies and
+                considers himself a "Life long learner" eager to build on
+                existing web technologies knowledge and stay in tune with the
+                latest web technologies through continued coursework(On
                 udemy,frontend masters,pluralsight lectures and workshops) and
-                professional development.
+                professional development.skills can be taught, but personality
+                is inherent, i prefer to keep learning, continue challenging
+                myself and do interesting things that matters.
               </div>
             </div>
           </div>
@@ -127,6 +130,7 @@ const About = () => {
                 />
               </li>
               <li>MongoDb & Postgres Databases</li>
+              <li>Express Js</li>
               <li>Testing WIth Jest</li>
             </ul>
           </div>

@@ -28,6 +28,10 @@
     flex-direction: column-reverse;
     padding: 2rem 2rem;
   }
+  .about-body .about-photo img {
+    max-width: 100%;
+    height: auto;
+  }
   .about-details .about-details-content div ul li {
     font-size: 1.1rem;
     font-weight: 100;
@@ -35,7 +39,51 @@
     line-height: 1.8rem;
   }
   .about-details .about-details-content {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .about-details .about-details-content .about-details-speech {
+    color: #e7e7de;
+    text-align: center;
+    margin-top: 2rem;
+    text-transform: capitalize;
+    line-height: 1.7rem;
+    font-family: "Asap", sans-serif;
+  }
+  .about-details .about-details-content .about-details-speech span {
+    font-weight: 600;
+  }
+  .about-resume .about-resume-button a {
+    margin: 2rem 0;
+    border: 2px solid;
+    border-radius: 20px;
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+  .about-resume .about-resume-button a:hover {
+    color: #fff;
+    background-color: #00416d;
+  }
+  .about-skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    background-color: #e7e7de;
+  }
+  .about-skills p {
+    font-size: 2.8rem;
+    color: #0278ae;
+  }
+  .about-skills__list ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }
 
@@ -61,11 +109,13 @@
     background-image: linear-gradient(135deg, #0f2027, #24677e, #65a7c4);
     color: #fff;
     height: 100%;
-    border-top: 0;
     justify-content: space-around;
     flex-direction: row-reverse;
-    padding: 2rem 2rem;
   }
+  /* .about-body .about-photo img {
+    max-width: 100%;
+    height: auto;
+  } */
   .about-details .about-details-content div ul li {
     font-size: 1.1rem;
     font-weight: 100;
@@ -74,6 +124,17 @@
   }
   .about-details .about-details-content {
     margin-right: 1.2rem;
+  }
+  .about-details .about-details-content .about-details-speech {
+    color: #e7e7de;
+    text-align: justify;
+    margin-top: 2rem;
+    text-transform: capitalize;
+    line-height: 1.7rem;
+    font-family: "Asap", sans-serif;
+  }
+  .about-details .about-details-content .about-details-speech span {
+    font-weight: 600;
   }
 }
 /* css for latptops and large screens */
