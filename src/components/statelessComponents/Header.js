@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import Burger from "./Burger";
@@ -6,6 +6,38 @@ import "../../App.css";
 // import logo from "../../images/logo.png";
 
 const Header = () => {
+  const [state,setState] = useState({
+    initial: false,
+    clicked: null,
+    menuName : "MENU"
+  })
+
+  const handleMenu = () => {
+    if(state.initial === false){
+      setState({
+        initial: null,
+        clicked: true,
+        menuName: "CLOSE"
+      }) 
+      console.log(1)
+    }
+    
+    else if(state.clicked === true){
+        setState({
+          clicked : !state.clicked,
+          menuName: "MENU"
+        })
+        console.log(2)
+      }
+       else if(state.clicked === false){
+        setState({
+          clicked : !state.clicked,
+          menuName: "CLOSE"
+        })
+        console.log(3)
+      }
+  }
+
   return (
     <header>
       <div className="header-container ">
@@ -35,12 +67,12 @@ const Header = () => {
                 <div className="line line-3"></div>
               </div>
             </div>
-            <div className="menu">
+            <div className="menu" onClick={handleMenu}>
               <div>
                 <p className="">
                   <span className="bg"></span>
                   <span className="base"></span>
-                  <span className="text">MENU</span>
+                  <span className="text">{state.menuName}</span>
                 </p>
               </div>
             </div>

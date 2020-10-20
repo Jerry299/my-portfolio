@@ -3,7 +3,15 @@
 /* css for phone responsiveness */
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
   .burger-menu {
-    display: none;
+    display: block;
+    z-index: 9;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -11,6 +19,14 @@
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .burger-menu {
     display: none;
+    z-index: 9;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -41,7 +57,7 @@
 
   .burger-menu .menu-layer {
     position: relative;
-    background-color: #e20001;
+    background-color: #d2d3c9;
     height: 100%;
     overflow: hidden;
   }
@@ -96,7 +112,7 @@
   }
 
   .burger-menu .menu-layer .wrapper .menu-links nav ul li a {
-    color: #fff;
+    color: rgb(3, 3, 3);
     position: relative;
     font-family: "Roboto Condensed", sans-serif;
     text-decoration: none;
