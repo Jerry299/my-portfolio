@@ -1,40 +1,55 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link ,withRouter} from "react-router-dom";
 import Burger from "./Burger";
 import "../../App.css";
 // import logo from "../../images/logo.png";
 
-const Header = () => {
+const Header = ({history}) => {
+  //state for menu
   const [state,setState] = useState({
     initial: false,
     clicked: null,
     menuName : "MENU"
   })
+  //state for disabled button
+  const [disabled,setDisabled] = useState(false)
+
+//useeffect for page changes
+useEffect(() => {
+  history.listen(() => {
+    setState({clicked: false,menuName: "MENU"})
+  })
+})
+  const disableMenu = () => {
+  setDisabled(!disabled);
+  setTimeout(() => {
+    setDisabled(false)
+  },2000)
+  }
 
   const handleMenu = () => {
+    disableMenu()
     if(state.initial === false){
       setState({
         initial: null,
         clicked: true,
         menuName: "CLOSE"
       }) 
-      console.log(1)
+     
     }
     
     else if(state.clicked === true){
         setState({
           clicked : !state.clicked,
           menuName: "MENU"
-        })
-        console.log(2)
+        })      
       }
        else if(state.clicked === false){
         setState({
           clicked : !state.clicked,
           menuName: "CLOSE"
-        })
-        console.log(3)
+        })      
       }
   }
 
@@ -67,7 +82,7 @@ const Header = () => {
                 <div className="line line-3"></div>
               </div>
             </div>
-            <div className="menu" onClick={handleMenu}>
+            {/* <div className="menu" aria-disabled={disabled} onClick={handleMenu}>
               <div>
                 <p className="">
                   <span className="bg"></span>
@@ -75,13 +90,14 @@ const Header = () => {
                   <span className="text">{state.menuName}</span>
                 </p>
               </div>
-            </div>
+            </div> */}
+            <button className="btnH"  aria-disabled={disabled} onClick={handleMenu}>{state.menuName}</button>
           </div>
         </div>
       </div>
-      <Burger />
+      <Burger state={state} />
     </header>
   );
 };
 
-export default Header;
+export default withRouter(Header);
