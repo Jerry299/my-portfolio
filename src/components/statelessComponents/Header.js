@@ -10,13 +10,15 @@ const Header = ({history}) => {
   const [state,setState] = useState({
     initial: false,
     clicked: null,
-    menuName : "MENU"
+    menuName : "MENU",
+    headerOpen : true
   })
   //state for disabled button
   const [disabled,setDisabled] = useState(false)
 
 //useeffect for page changes
 useEffect(() => {
+  document.title ="Joseph Chinemerem Jerry"
   history.listen(() => {
     setState({clicked: false,menuName: "MENU"})
   })
@@ -25,7 +27,7 @@ useEffect(() => {
   setDisabled(!disabled);
   setTimeout(() => {
     setDisabled(false)
-  },2000)
+  },1200)
   }
 
   const handleMenu = () => {
@@ -34,7 +36,8 @@ useEffect(() => {
       setState({
         initial: null,
         clicked: true,
-        menuName: "CLOSE"
+        menuName: "CLOSE",
+        headerOpen: false
       }) 
      
     }
@@ -42,23 +45,25 @@ useEffect(() => {
     else if(state.clicked === true){
         setState({
           clicked : !state.clicked,
-          menuName: "MENU"
+          menuName: "MENU",
+          headerOpen: true
         })      
       }
        else if(state.clicked === false){
         setState({
           clicked : !state.clicked,
-          menuName: "CLOSE"
+          menuName: "CLOSE",
+          headerOpen: true
         })      
       }
   }
 
   return (
     <header>
-      <div className="header-container ">
+         {state.headerOpen === true && <div className="header-container ">
         <div className="wrapper ">
           <div className="inner-header">
-            <div className="logo">
+          <div className="logo">
               <Link to="/">
                 {/* <img src={logo} alt="" /> */}
                 <svg
@@ -75,14 +80,34 @@ useEffect(() => {
                 </svg>
               </Link>
             </div>
+            
             <div className="toggle">
               <div className="mobile-toggler">
                 <div className="line line-1"></div>
                 <div className="line line-2"></div>
                 <div className="line line-3"></div>
               </div>
+              <button className="btnH"  aria-disabled={disabled} onClick={handleMenu}>{state.menuName}</button>
             </div>
-            {/* <div className="menu" aria-disabled={disabled} onClick={handleMenu}>
+            
+          </div>
+        </div>
+      </div>}
+      <Burger state={state} />
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* <div className="menu" aria-disabled={disabled} onClick={handleMenu}>
               <div>
                 <p className="">
                   <span className="bg"></span>
@@ -91,11 +116,7 @@ useEffect(() => {
                 </p>
               </div>
             </div> */}
-            <button className="btnH"  aria-disabled={disabled} onClick={handleMenu}>{state.menuName}</button>
-          </div>
-        </div>
-      </div>
-      <Burger state={state} />
+            
     </header>
   );
 };

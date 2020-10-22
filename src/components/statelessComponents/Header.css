@@ -19,7 +19,15 @@
 }
 .btnH {
   border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
   outline: none;
+}
+.btnH:active {
+  outline: none;
+  border: none;
 }
 /* generic css for header */
 .menu div {
