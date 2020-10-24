@@ -1,33 +1,11 @@
 import React from "react";
 import "./Intro2.css";
 import "../../App.css";
-import Particles from "react-particles-js";
+
 
 const Intro = () => {
   return (
     <div id="intro">
-      <div className="intro-overlay">
-        <Particles
-          params={{
-            particles: {
-              shape: {
-                type: "circle",
-                stroke: {
-                  width: 7,
-                  color: "#fff",
-                },
-              },
-              number: {
-                value: 80,
-                density: {
-                  enable: true,
-                  value_area: 800,
-                },
-              },
-            },
-          }}
-        />
-      </div>
       <div className="intro-content">
         <div className="row">
           <div className="cols">

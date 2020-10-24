@@ -3,12 +3,14 @@ import contactSVG from "../../images/contactSVG.svg";
 import "./ContactMe.css";
 import Footer from "../statelessComponents/Footer";
 
+
 const ContactMe = () => {
   useEffect(() => {
     document.title = "Contact Jerry";
   });
   return (
     <div className="contact-container">
+      
       <div className="contact-wrapper">
         <div className="contact-svg">
           <img src={contactSVG} alt="Contact-svg" />

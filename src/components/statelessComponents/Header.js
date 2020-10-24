@@ -3,7 +3,7 @@ import "./Header.css";
 import { Link ,withRouter} from "react-router-dom";
 import Burger from "./Burger";
 import "../../App.css";
-// import logo from "../../images/logo.png";
+
 
 const Header = ({history}) => {
   //state for menu
@@ -36,7 +36,6 @@ useEffect(() => {
       setState({
         initial: null,
         clicked: true,
-        menuName: "CLOSE",
         headerOpen: false
       }) 
      
@@ -52,7 +51,6 @@ useEffect(() => {
        else if(state.clicked === false){
         setState({
           clicked : !state.clicked,
-          menuName: "CLOSE",
           headerOpen: true
         })      
       }
@@ -60,7 +58,7 @@ useEffect(() => {
 
   return (
     <header>
-         {state.headerOpen === true && <div className="header-container ">
+         <div className="header-container ">
         <div className="wrapper ">
           <div className="inner-header">
           <div className="logo">
@@ -87,36 +85,13 @@ useEffect(() => {
                 <div className="line line-2"></div>
                 <div className="line line-3"></div>
               </div>
-              <button className="btnH"  aria-disabled={disabled} onClick={handleMenu}>{state.menuName}</button>
+              <div className="btnH"  aria-disabled={disabled} onClick={handleMenu}>{state.menuName}</div>
             </div>
             
           </div>
         </div>
-      </div>}
-      <Burger state={state} />
-
-
-
-
-
-
-
-
-
-
-
-
-
-      {/* <div className="menu" aria-disabled={disabled} onClick={handleMenu}>
-              <div>
-                <p className="">
-                  <span className="bg"></span>
-                  <span className="base"></span>
-                  <span className="text">{state.menuName}</span>
-                </p>
-              </div>
-            </div> */}
-            
+      </div>
+      <Burger state={state} handleMenu={handleMenu}/>
     </header>
   );
 };

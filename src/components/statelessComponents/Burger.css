@@ -51,14 +51,15 @@
     width: 100%;
   }
   .burger-menu .bg-secondary-color {
+    position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    position: fixed;
     /* height: 100%; */
     width: 100%;
     background-color: #050505;
+    /* background-color: #f05454; */
     z-index: -1;
   }
 
@@ -66,7 +67,6 @@
     position: relative;
     background-color: #d2d3c9;
     height: 100%;
-    overflow: hidden;
   }
 
   .burger-menu .menu-layer .menu-icon-bg {
@@ -88,12 +88,13 @@
   .burger-menu .menu-layer .wrapper .menu-links {
     position: relative;
     top: 10px;
-    bottom: 10px;
+    bottom: 0;
     right: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
+    padding-top: 100px;
   }
 
   .burger-menu .menu-layer .wrapper .menu-links nav {
@@ -111,7 +112,6 @@
     font-weight: 700;
     cursor: pointer;
     height: 145px;
-    overflow: hidden;
     position: relative;
     width: 500px;
     text-decoration: none;
@@ -119,18 +119,41 @@
   }
 
   .burger-menu .menu-layer .wrapper .menu-links nav ul li a {
-    color: rgb(3, 3, 3);
+    color: #222831;
     position: relative;
     font-family: "Roboto Condensed", sans-serif;
     text-decoration: none;
   }
   .burger-menu .menu-layer .wrapper .menu-links nav ul li a:hover {
-    color: black;
+    color: #4f8a8b;
   }
   .position {
     font-size: 1.1rem;
     position: relative;
     top: 64.5px;
     width: 5%;
+  }
+  .close-menu-toggler {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 10;
+    padding-top: 6rem;
+  }
+  .close-menu-toggler .menu-line-1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .close-menu-toggler .menu-line-3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  .close-menu-toggler .menu-line-2 {
+    opacity: 0;
+  }
+  .menu-line {
+    height: 3px;
+    width: 18px;
+    background-color: #191919;
+    margin: 0 0 5px;
   }
 }

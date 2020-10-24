@@ -1,8 +1,21 @@
-import React from "react";
-
+import React,{useState,useEffect,useRef} from "react";
+import gsap from 'gsap'
 import "./Home.css";
 
 const Home = () => {
+//variabes for DOM Apis
+let mySkills = useRef(null)
+//array for what i do
+let words = ["Javascript Full Stack Developer","Passionate Learner","Technology Enthusiast"]
+useEffect(() => {
+ gsap.to(mySkills,{
+   opacity:0,
+   ease: "power2.inOut",
+   repeat: -1
+ })
+})
+
+
   return (
     <section className="home-container">
       <div className="home-wrapper">
@@ -11,12 +24,11 @@ const Home = () => {
           Hello <span id="home-world">World,</span>
         </h1>
         <h2 className="home-name">
-          I am <span className="my-name">Joseph Chinemerem Jeremiah</span>,
+          <span className="i-am">I am</span> <span className="my-name">Joseph Chinemerem Jeremiah</span>.
         </h2>
         <div className="home-sentence">
           <p className="home-skills">
-            A Javascript Full Stack Developer,A Passionate Learner and A
-            Technology Enthusiast.
+            A <span className="skill" ref={el => mySkills = el} >_</span>.
           </p>
         </div>
       </div>

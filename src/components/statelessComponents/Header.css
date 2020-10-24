@@ -24,13 +24,15 @@
   font-size: 16px;
   cursor: pointer;
   outline: none;
+  font-family: Roboto, "san-serif";
+  font-weight: 700;
 }
 .btnH:active {
   outline: none;
   border: none;
 }
 /* generic css for header */
-.menu div {
+/* .menu div {
   width: 100%;
   max-width: 240px;
   height: 54px;
@@ -128,7 +130,7 @@
 }
 .menu div:hover span.bg {
   width: 110%;
-}
+} */
 /* media queries */
 
 /* css for phone responsiveness */

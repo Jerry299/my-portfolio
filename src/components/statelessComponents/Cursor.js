@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Cursor.css";
 import classNames from "classnames";
+import Header from '../statelessComponents/Header'
 
 const isMobile = () => {
   const ua = navigator.userAgent;

@@ -5,7 +5,7 @@ import gsap from 'gsap'
 import "../../App.css";
 
 
-const Burger = ({state}) => {
+const Burger = ({state,handleMenu}) => {
 //variables for selecting DOM nodes
   let menu = useRef(null)
   let revealMenu = useRef(null)
@@ -22,15 +22,17 @@ useEffect(() => {
   if(state.clicked === false){
     //close menu
     gsap.to([revealMenu,revealMenuBackground],{
-      duration: 0.8,
+      duration:1,
       height: 0,
       ease: "power3.inOut",
+      opacity: 0.1,
       stagger: {
-        amount: 0.07
+        amount: 0.09
       }
     });
     gsap.to(menu,{
-      duration: 1,
+      duration: 0.8,
+      ease: "power3.inOut",
       css: {display: "none"}
     });
   }
@@ -47,24 +49,37 @@ useEffect(() => {
       opacity: 1
     })
     staggerReveal(revealMenuBackground,revealMenu)
+    staggerText(line1,line2,line3)
   };
 },[state])
-//gsap animation emds
+//gsap animation ends
 
-//gsap helper function 
+//gsap helper functions
 const staggerReveal = (node1,node2) => {
   gsap.from([node1,node2],{
     duration: 0.8,
     height: 0,
-    transformOrigin: "right top",
+    transformOrigin: "left top",
     skewY: 2,
     ease: "power3.inOut",
     stagger: {
       amount: 0.1
     }
   })
-  // console.log("staggerReveal")
 };
+
+const staggerText = (node1,node2,node3) => {
+  gsap.from([node1,node2,node3],{
+    duration: .8,
+    delay: 0.2,
+    y: 100,
+    opacity:0,
+    ease: "power3.inOut",
+    stagger: {
+      amount: 0.5,
+    } 
+  })
+}
 
 
   return (
@@ -76,22 +91,27 @@ const staggerReveal = (node1,node2) => {
           <div className="wrapper">
             {/*  */}
             <div className="menu-links">
+              <div className="close-menu-toggler" onClick={handleMenu}>
+                <div className="menu-line menu-line-1"></div>
+                <div className="menu-line menu-line-2"></div>
+                <div className="menu-line menu-line-3"></div>
+              </div>
               <nav>
                 <ul>
-                  <li>
-                    <Link ref={el => (line1 =el)} to="/about">
+                  <li ref={el => (line1 =el)}>
+                    <Link  to="/about">
                       <div className="position">01.</div>About Me.
                     </Link>
                   </li>
                   
-                  <li>
-                    <Link ref={el => (line2 =el)} to="/myworks">
+                  <li ref={el => (line2 =el)}>
+                    <Link  to="/myworks">
                       <div className="position">02.</div>My Works.
                     </Link>
                   </li>
 
-                  <li>
-                    <Link ref={el => (line3 =el)} to="/contact">
+                  <li ref={el => (line3 =el)}>
+                    <Link  to="/contact">
                       <div className="position">03.</div>Contact Me.
                     </Link>
                   </li>
