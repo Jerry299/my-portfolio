@@ -1,18 +1,19 @@
-import React,{useState,useEffect,useRef} from "react";
-import gsap from 'gsap'
+import React,{useEffect,useRef} from "react";
 import "./Home.css";
+import {homeAnimationsForMySkills,underlineTextAndFadeUp,wordsAnimation} from './animations/HomeAnimations'
 
 const Home = () => {
 //variabes for DOM Apis
 let mySkills = useRef(null)
+let box = useRef(null)
+let letterA = useRef(null)
+let text = useRef(null)
 //array for what i do
-let words = ["Javascript Full Stack Developer","Passionate Learner","Technology Enthusiast"]
+//let words = ["Javascript Full Stack Developer","Passionate Learner","Technology Enthusiast"]
 useEffect(() => {
- gsap.to(mySkills,{
-   opacity:0,
-   ease: "power2.inOut",
-   repeat: -1
- })
+ homeAnimationsForMySkills(mySkills)
+ underlineTextAndFadeUp(box,letterA)
+ wordsAnimation(text)
 })
 
 
@@ -24,11 +25,15 @@ useEffect(() => {
           Hello <span id="home-world">World,</span>
         </h1>
         <h2 className="home-name">
-          <span className="i-am">I am</span> <span className="my-name">Joseph Chinemerem Jeremiah</span>.
+          <div className="i-am">I am</div> <span className="my-name">Joseph Chinemerem Jeremiah</span>.
         </h2>
         <div className="home-sentence">
           <p className="home-skills">
-            A <span className="skill" ref={el => mySkills = el} >_</span>.
+            <span className="box" ref={el => box = el} ></span>
+           <span className="letterA" ref={el => letterA = el} >I'm A  </span> 
+           {" "}
+           <span className="text" ref={el => text = el}></span> 
+           <span className="skill" ref={el => mySkills = el} >_</span>.
           </p>
         </div>
       </div>
