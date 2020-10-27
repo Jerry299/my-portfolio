@@ -18,47 +18,31 @@ export const animationForHomeHiandHomeName = (el1,el2,el3,el4,el5) => {
         duration: 2.3,
         y:-300,
         repeat: 0,
-        ease: "elastic.out(1, 0.3)",
-        stagger: {
-            amount: 0.8,
-        }
+        ease: "elastic.out(1, 0.3)"
     })
     homeTl.from(el2,{
         duration: 1.9,
         x:-500,
         opacity: 0,
         ease: "elastic.out(2, 0.3)",
-        stagger:{
-            amount: 0.5,
-        }
     })
     homeTl.from(el3,{
         duration:1,
         y:200,
         opacity:0,
         ease: "bounce.out",
-        stagger:{
-            amount: 0.5,
-        }
     })
      homeTl.from(el4,{
         duration:1,
         y:-200,
         opacity:0,
         ease: "elastic.out(1.75, 0.3)",
-        stagger:{
-            amount: 0.5,
-        }
     })
      homeTl.from(el5,{
         duration:1,
         x:200,
         opacity:0,
         ease: "elastic.out(1.75, 0.3)",
-        
-        stagger:{
-            amount: 0.5,
-        }
     })
 }
 

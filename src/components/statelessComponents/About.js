@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useRef,useEffect} from "react";
 import "./About.css";
 import Footer from "./Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,8 +14,13 @@ import {
 import {} from "@fortawesome/free-regular-svg-icons";
 
 const About = () => {
+  let totalPage = useRef(null)
+
+  useEffect(() => {
+    console.log(totalPage.current)
+  })
   return (
-    <section className="about-container">
+    <section className="about-container" ref={el => totalPage = el} >
       <div className="about-wrapper">
         <div className="about-header">
           <h1>WHO AM I?</h1>
