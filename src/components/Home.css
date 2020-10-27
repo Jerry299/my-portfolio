@@ -121,6 +121,21 @@ font-family: 'Poppins', sans-serif; */
     -webkit-text-fill-color: transparent;
     font-weight: 700;
     /* color: #000000; */
+    display: inline-block;
+  }
+  .my-name2 {
+    background: -webkit-linear-gradient(rgb(18, 18, 36), rgb(238, 108, 108));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    display: inline-block;
+  }
+  .my-name3 {
+    background: -webkit-linear-gradient(rgb(238, 108, 108), rgb(18, 18, 36));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    display: inline-block;
   }
   /* .i-am {
     height: 1vw;

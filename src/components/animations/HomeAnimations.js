@@ -7,29 +7,81 @@ let words = ["Full Stack Javascript Developer","Passionate Learner","Technology 
 
 let masterTl = gsap.timeline({repeat: -1}).pause();
 
-
+let homeTl = gsap.timeline();
 let boxTl = gsap.timeline()
+
+
+
+export const animationForHomeHiandHomeName = (el1,el2,el3,el4,el5) => {
+    
+    homeTl.from(el1,{
+        duration: 2.3,
+        y:-300,
+        repeat: 0,
+        ease: "elastic.out(1, 0.3)",
+        stagger: {
+            amount: 0.8,
+        }
+    })
+    homeTl.from(el2,{
+        duration: 1.9,
+        x:-500,
+        opacity: 0,
+        ease: "elastic.out(2, 0.3)",
+        stagger:{
+            amount: 0.5,
+        }
+    })
+    homeTl.from(el3,{
+        duration:1,
+        y:200,
+        opacity:0,
+        ease: "bounce.out",
+        stagger:{
+            amount: 0.5,
+        }
+    })
+     homeTl.from(el4,{
+        duration:1,
+        y:-200,
+        opacity:0,
+        ease: "elastic.out(1.75, 0.3)",
+        stagger:{
+            amount: 0.5,
+        }
+    })
+     homeTl.from(el5,{
+        duration:1,
+        x:200,
+        opacity:0,
+        ease: "elastic.out(1.75, 0.3)",
+        
+        stagger:{
+            amount: 0.5,
+        }
+    })
+}
 
 export const underlineTextAndFadeUp = (el,el2) => {
     boxTl.to(el,{
-        duration: 0.5,
-        width: "75px",
+        duration: 4,
+        width: "77px",
         ease: "power4.inOut"
     })
     .from(el2,{
-        duration: 1,
+        duration: 4.5,
         y : 50,
         opacity:0,
         ease: "power3.out",
         onComplete: () => masterTl.play()
     })
     .to(el,{
-        duration: 1,
+        duration: 4,
         height: "34px",
         ease: "elastic.out"
     })
     .to(el,{
-        duration: 2,
+        duration: 4.5,
         autoAlpha:0.5,
         yoyo: true,
         repeat: -1,
@@ -52,15 +104,10 @@ export const wordsAnimation = (textElement) => {
             duration: 1.9,
             text: word,
         })
+       
         masterTl.add(tl)
     })
 } 
 
 
-export const animationForHomeHiandHomeName = (el1,el2) => {
-    let homeTl = gsap.timeline();
-    homeTl.to(el1,{
-        duration: 0.5,
-        
-    })
-}
+
