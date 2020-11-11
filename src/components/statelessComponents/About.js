@@ -128,13 +128,9 @@ const About = () => {
               </li>
               <li>
                 Git & Github
-                <FontAwesomeIcon
-                  icon={faGit}
-                  size="2x"
-                  style={{ color: "#F1502F", marginLeft: ".5rem" }}
-                />
+              
               </li>
-              <li>MongoDb & Postgres Databases</li>
+              <li>MongoDb/Postgres </li>
               <li>Express Js</li>
               <li>Testing WIth Jest</li>
             </ul>
