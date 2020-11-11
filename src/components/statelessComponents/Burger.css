@@ -1,159 +1,285 @@
 * {
-  -ms-overflow-style: none;
+	-ms-overflow-style: none;
 }
 ::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 
 /* media queries */
 
 /* css for phone responsiveness */
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
-  .burger-menu {
-    display: block;
-    z-index: 9;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-  }
+	.burger-menu {
+		display: none;
+		z-index: 9;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		position: fixed;
+		height: 100%;
+		width: 100%;
+	}
+	.burger-menu .bg-secondary-color {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		/* height: 100%; */
+		width: 100%;
+		background-color: #050505;
+		/* background-color: #f05454; */
+		z-index: -1;
+	}
+
+	.burger-menu .menu-layer {
+		position: relative;
+		background-color: #d2d3c9;
+		height: 100%;
+	}
+
+	.burger-menu .menu-layer .menu-icon-bg {
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+	}
+
+	.burger-menu .menu-layer .wrapper {
+		position: relative;
+		padding: 0 28px;
+	}
+
+	.burger-menu .menu-layer .wrapper .menu-links {
+		position: relative;
+		top: 10px;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-top: 100px;
+	}
+
+	.burger-menu .menu-layer .wrapper .menu-links nav {
+		display: block;
+	}
+
+	.burger-menu .menu-layer .wrapper .menu-links nav ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	.burger-menu .menu-layer .wrapper .menu-links nav ul li {
+		list-style-type: none;
+		font-size: 3rem;
+		font-weight: 700;
+		cursor: pointer;
+		height: 145px;
+		position: relative;
+		width: 500px;
+		text-decoration: none;
+		text-align: center;
+	}
+
+	.burger-menu .menu-layer .wrapper .menu-links nav ul li a {
+		color: #060930;
+		position: relative;
+		font-family: "Roboto Condensed", sans-serif;
+		text-decoration: none;
+	}
+	.burger-menu .menu-layer .wrapper .menu-links nav ul li a:hover {
+		color: #4f8a8b;
+	}
+	.position {
+		font-size: 1.1rem;
+	}
+	.close-menu-toggler {
+		position: absolute;
+		top: 0;
+		right: 0;
+		cursor: pointer;
+		z-index: 10;
+		padding-top: 6rem;
+	}
+	.close-menu-toggler .menu-line-1 {
+		animation: swing 2s ease-in-out 0.2s;
+	}
+	.close-menu-toggler .menu-line-3 {
+		animation: swing2 2s ease-in-out 0.2s;
+	}
+
+	@keyframes swing {
+		0% {
+			transform: rotate(0deg) translate(0px, 0px);
+		}
+		100% {
+			transform: rotate(-45deg) translate(-5px, 6px);
+		}
+	}
+	@keyframes swing2 {
+		0% {
+			transform: rotate(0deg) translate(0px, 0px);
+		}
+		100% {
+			transform: rotate(45deg) translate(-5px, -6px);
+		}
+	}
+	.close-menu-toggler .menu-line-1 {
+		transform: rotate(-45deg) translate(-5px, 6px);
+	}
+	.close-menu-toggler .menu-line-3 {
+		transform: rotate(45deg) translate(-5px, -6px);
+	}
+	.close-menu-toggler .menu-line-2 {
+		opacity: 0;
+	}
+	.menu-line {
+		height: 5px;
+		width: 28px;
+		background-color: #af2d2d;
+		margin: 2px 1px 2px;
+	}
 }
 
 /* css for tablet responsiveness */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .burger-menu {
-    display: none;
-    z-index: 9;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-  }
+	.burger-menu {
+		display: none;
+		z-index: 9;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		position: fixed;
+		height: 100%;
+		width: 100%;
+	}
 }
 
 /* css for latptops and large screens */
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
-  .burger-menu {
-    display: none;
-    z-index: 9;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-  }
-  .burger-menu .bg-secondary-color {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    /* height: 100%; */
-    width: 100%;
-    background-color: #050505;
-    /* background-color: #f05454; */
-    z-index: -1;
-  }
+	.burger-menu {
+		display: none;
+		z-index: 9;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		position: fixed;
+		height: 100%;
+		width: 100%;
+	}
+	.burger-menu .bg-secondary-color {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		/* height: 100%; */
+		width: 100%;
+		background-color: #050505;
+		/* background-color: #f05454; */
+		z-index: -1;
+	}
 
-  .burger-menu .menu-layer {
-    position: relative;
-    background-color: #d2d3c9;
-    height: 100%;
-  }
+	.burger-menu .menu-layer {
+		position: relative;
+		background-color: #d2d3c9;
+		height: 100%;
+	}
 
-  .burger-menu .menu-layer .menu-icon-bg {
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-  }
+	.burger-menu .menu-layer .menu-icon-bg {
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+	}
 
-  .burger-menu .menu-layer .wrapper {
-    position: relative;
-    padding: 0 48px;
-  }
+	.burger-menu .menu-layer .wrapper {
+		position: relative;
+		padding: 0 48px;
+	}
 
-  .burger-menu .menu-layer .wrapper .menu-links {
-    position: relative;
-    top: 10px;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 100px;
-  }
+	.burger-menu .menu-layer .wrapper .menu-links {
+		position: relative;
+		top: 10px;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-top: 100px;
+	}
 
-  .burger-menu .menu-layer .wrapper .menu-links nav {
-    display: block;
-  }
+	.burger-menu .menu-layer .wrapper .menu-links nav {
+		display: block;
+	}
 
-  .burger-menu .menu-layer .wrapper .menu-links nav ul {
-    padding: 0;
-    margin: 0;
-  }
+	.burger-menu .menu-layer .wrapper .menu-links nav ul {
+		padding: 0;
+		margin: 0;
+	}
 
-  .burger-menu .menu-layer .wrapper .menu-links nav ul li {
-    list-style-type: none;
-    font-size: 5rem;
-    font-weight: 700;
-    cursor: pointer;
-    height: 145px;
-    position: relative;
-    width: 500px;
-    text-decoration: none;
-    text-align: center;
-  }
+	.burger-menu .menu-layer .wrapper .menu-links nav ul li {
+		list-style-type: none;
+		font-size: 5rem;
+		font-weight: 700;
+		cursor: pointer;
+		height: 145px;
+		position: relative;
+		width: 500px;
+		text-decoration: none;
+		text-align: center;
+	}
 
-  .burger-menu .menu-layer .wrapper .menu-links nav ul li a {
-    color: #222831;
-    position: relative;
-    font-family: "Roboto Condensed", sans-serif;
-    text-decoration: none;
-  }
-  .burger-menu .menu-layer .wrapper .menu-links nav ul li a:hover {
-    color: #4f8a8b;
-  }
-  .position {
-    font-size: 1.1rem;
-    position: relative;
-    top: 64.5px;
-    width: 5%;
-  }
-  .close-menu-toggler {
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-    z-index: 10;
-    padding-top: 6rem;
-  }
-  .close-menu-toggler .menu-line-1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-  .close-menu-toggler .menu-line-3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
-  .close-menu-toggler .menu-line-2 {
-    opacity: 0;
-  }
-  .menu-line {
-    height: 3px;
-    width: 18px;
-    background-color: #191919;
-    margin: 0 0 5px;
-  }
+	.burger-menu .menu-layer .wrapper .menu-links nav ul li a {
+		color: #222831;
+		position: relative;
+		font-family: "Roboto Condensed", sans-serif;
+		text-decoration: none;
+	}
+	.burger-menu .menu-layer .wrapper .menu-links nav ul li a:hover {
+		color: #4f8a8b;
+	}
+	.position {
+		font-size: 1.1rem;
+		position: relative;
+		top: 64.5px;
+		width: 5%;
+	}
+	.close-menu-toggler {
+		position: absolute;
+		top: 0;
+		right: 0;
+		cursor: pointer;
+		z-index: 10;
+		padding-top: 6rem;
+	}
+	.close-menu-toggler .menu-line-1 {
+		transform: rotate(-45deg) translate(-5px, 6px);
+	}
+	.close-menu-toggler .menu-line-3 {
+		transform: rotate(45deg) translate(-5px, -6px);
+	}
+	.close-menu-toggler .menu-line-2 {
+		opacity: 0;
+	}
+	.menu-line {
+		height: 3px;
+		width: 18px;
+		background-color: #191919;
+		margin: 0 0 5px;
+	}
 }

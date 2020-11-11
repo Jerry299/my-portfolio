@@ -3,7 +3,7 @@ import {gsap} from 'gsap'
 import { TextPlugin } from "gsap/TextPlugin";
 
 gsap.registerPlugin(TextPlugin);
-let words = ["Full Stack Javascript Developer","Passionate Learner","Technology Enthusiast"];
+let words = ["Full Stack Javascript Developer...","Passionate Learner...","Technology Enthusiast..."];
 
 let masterTl = gsap.timeline({repeat: -1}).pause();
 

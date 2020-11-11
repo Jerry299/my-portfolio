@@ -1,20 +1,11 @@
-/* .container {
-  width: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-left: auto;
-  margin-right: auto;
+.app-container {
+	background-color: #fff;
 }
-.container-fluid {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
-  .container {
-    max-width: 540px;
-  }
+	.container {
+		max-width: 540px;
+	}
 }
 
 /* css for tablet responsiveness */
@@ -22,8 +13,8 @@
 }
 /* css for latptops and large screens */
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
-  .container {
-    max-width: 1140px;
-    cursor: none;
-  }
+	.container {
+		max-width: 1140px;
+		cursor: none;
+	}
 }

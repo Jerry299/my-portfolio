@@ -32,7 +32,7 @@ useEffect(() => {
         </h1>
         <h2 className="home-name">
           <div className="i-am" ref={el => homeWorld = el}>I am</div> 
-    <span className="my-name" ref={el => myName = el} >Joseph </span>{" "}
+          <span className="my-name" ref={el => myName = el} >Joseph </span>{" "}
           <span className="my-name2" ref={el => myName1 = el}>Chinemerem</span>{" "}
           <span className="my-name3" ref={el => myName2 = el}>Jeremiah.</span>
         </h2>

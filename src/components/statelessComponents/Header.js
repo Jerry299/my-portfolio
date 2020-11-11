@@ -62,7 +62,7 @@ useEffect(() => {
         <div className="wrapper ">
           <div className="inner-header">
           <div className="logo">
-              <Link to="/">
+              <Link to="/" className="logoInner">
                 {/* <img src={logo} alt="" /> */}
                 <svg
                   width="71"
@@ -80,11 +80,11 @@ useEffect(() => {
             </div>
             
             <div className="toggle">
-              <div className="mobile-toggler">
+              {/* <div className="mobile-toggler">
                 <div className="line line-1"></div>
                 <div className="line line-2"></div>
                 <div className="line line-3"></div>
-              </div>
+              </div> */}
               <div className="btnH"  aria-disabled={disabled} onClick={handleMenu}>{state.menuName}</div>
             </div>
             
