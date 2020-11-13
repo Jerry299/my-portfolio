@@ -1,31 +1,29 @@
 import React from 'react';
 import "./MyWorks.scss";
 
-const Work = () => {
+const Work = (props) => {
     return (
         
         <div className="project">
             <div className="project-details">
-              <p id="project-name">Blendz</p>
-              <div className="project-intro">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a 
-              galley of type and scrambled it t </div>
+              <p id="project-name">{props.name}</p>
+              <div className="project-intro"> {props.projectIntro} </div>
             </div>
 
             <div className="card">
-              <div className="card-front"></div>
+              <div className="card-front" style={{backgroundImage:`url(${props.bgImage})`}} ></div>
               <div className="card-back">
-                <h2>
-                  Blendz
+                {/* <h2>
+                  {props.backHeader}
                   <br />
-                  <span>Coffee Store</span>
-                </h2>
+                  <span> {props.backHeaderSpan} </span>
+                </h2> */}
                 <div className="projects-links">
                   <div className="butn_cont">
-                    <a href="" target="_blank" rel="noreferrer noopener">Link To Github</a>
+                    <a href={`${props.githubLink}`} target="_blank" rel="noreferrer noopener">Link To Github</a>
                   </div>
                   <div className="butn_cont">
-                    <a href="" target="_blank" rel="noreferrer noopener">Link To Github</a>
+                    <a href={`${props.appLink}`} target="_blank" rel="noreferrer noopener">Link To App</a>
                   </div>
                 </div>
               </div>

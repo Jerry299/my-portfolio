@@ -2,8 +2,10 @@ import React from "react";
 import "./MyWorks.scss";
 import Footer from './Footer';
 import Work from './Work'
+import {WorkData} from './WorksData'
 
 const MyWorks = () => {
+  console.log(WorkData)
   return (
     <section className="works-container">
       <div className="works-wrapper">
@@ -11,7 +13,16 @@ const MyWorks = () => {
 
         <div className="projects-container">
           <div className="projects-wrapper">
-          <Work/>
+            <div>
+              {WorkData.map((work) => {
+                return <Work key={work.id}
+                name={work.projectName} projectIntro={work.introData}
+                backHeader={work.backHeader} backHeaderSpan={work.backHeaderSpan}
+                githubLink={work.linkToGithub} appLink={work.linkToLiveApp}
+                bgImage={work.backGroundImage}
+                />
+              })}
+            </div>
           </div>
         </div>
       </div>
