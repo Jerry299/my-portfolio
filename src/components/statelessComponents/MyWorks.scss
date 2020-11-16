@@ -5,4 +5,70 @@
 }
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
+	.works-wrapper {
+		.project-header {
+			margin-top: 5rem;
+			text-align: center;
+		}
+	}
+	.work-container {
+		width: 100%;
+		padding: 3rem;
+		.work-wrapper {
+			box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+				0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+				0 12.5px 10px rgba(0, 0, 0, 0.06),
+				0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+				0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+				0 100px 80px rgba(0, 0, 0, 0.12);
+			padding: 4rem;
+		}
+		.work-wrapper:nth-child(odd) {
+			display: flex;
+			justify-content: space-around;
+			margin: 6rem;
+			width: 80%;
+			padding-left: 5rem;
+		}
+		.work-wrapper:nth-child(even) {
+			display: flex;
+			justify-content: space-around;
+			flex-direction: row-reverse;
+			margin: 6rem;
+			width: 80%;
+			padding-left: 5rem;
+		}
+
+		.work-wrapper .card-info {
+			width: 40%;
+			div {
+				position: relative;
+			}
+		}
+		.work-wrapper .cards {
+			width: 50%;
+			height: 100%;
+			border-radius: 5px;
+			background-color: #34626c;
+			&:hover {
+				// height: 450px;
+			}
+
+			.header-image {
+				background-color: green;
+				height: 250px;
+			}
+			.body_post {
+				.body_post_info {
+					padding: 1.3rem;
+					.body_post_links {
+						display: none;
+					}
+				}
+			}
+			&:hover .body_post .body_post_info .body_post_links {
+				display: block;
+			}
+		}
+	}
 }
