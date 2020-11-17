@@ -2,7 +2,7 @@ import React from "react";
 import "./MyWorks.scss";
 import Footer from './Footer';
 import Work from './Work'
-import {WorkData} from './WorksData'
+import {workData} from './WorksData'
 
 const MyWorks = () => {
 
@@ -14,13 +14,12 @@ const MyWorks = () => {
         <div className="projects-container">
           <div className="projects-wrapper">
             <div>
-              {/* {WorkData.map((work) => {
-                return <Work key={work.id}
-                name={work.projectName} projectIntro={work.introData}
-                backHeader={work.backHeader} backHeaderSpan={work.backHeaderSpan}
-                githubLink={work.linkToGithub} appLink={work.linkToLiveApp}
-                bgImage={work.backGroundImage}
-                />
+              {/* {workData.map((i,work) => {
+                return (
+                  <Work key={work.id} name={work.projectName} intro={work.briefIntro} 
+                  imageUrl={work.imageLink} githubUrl={work.githubLink} appLink={work.liveAppLink}
+                  />
+                )
               })} */}
               <Work/>
             </div>
