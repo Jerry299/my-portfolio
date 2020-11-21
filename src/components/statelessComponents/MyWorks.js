@@ -5,6 +5,7 @@ import Work from './Work'
 import {workData} from './WorksData'
 
 const MyWorks = () => {
+  
 
   return (
     <section className="works-container">
@@ -14,14 +15,16 @@ const MyWorks = () => {
         <div className="projects-container">
           <div className="projects-wrapper">
             <div>
-              {/* {workData.map((i,work) => {
+             {workData.map((work) => {
+               
                 return (
-                  <Work key={work.id} name={work.projectName} intro={work.briefIntro} 
+                  <Work key={work.id} id={work.id} name={work.projectName} intro={work.briefIntro} 
                   imageUrl={work.imageLink} githubUrl={work.githubLink} appLink={work.liveAppLink}
+                  tag={work.tags}
                   />
                 )
-              })} */}
-              <Work/>
+              })} 
+              {/* <Work/> */}
             </div>
           </div>
         </div>
