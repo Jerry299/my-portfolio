@@ -1,16 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import contactSVG from "../../images/contactSVG.svg";
 import "./ContactMe.css";
 import Footer from "../statelessComponents/Footer";
-
+import svgAnimation from "../animations/ContactmeAnimations";
 
 const ContactMe = () => {
+  //variables for Dom API
+  let testSvg = useRef(null);
+
   useEffect(() => {
     document.title = "Contact Jerry";
   });
+
+  const handleSvgClick = () => {
+    svgAnimation(testSvg);
+  };
+
   return (
     <div className="contact-container">
-      
       <div className="contact-wrapper">
         <div className="contact-svg">
           <img src={contactSVG} alt="Contact-svg" />
@@ -61,6 +68,7 @@ const ContactMe = () => {
           </div>
         </div>
       </form>
+
       <Footer />
     </div>
   );
