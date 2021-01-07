@@ -255,6 +255,11 @@
     font-family: "Josefin Sans", sans-serif;
     text-transform: lowercase;
   }
+  .form-container {
+    background-color: red;
+
+    height: 1200px;
+  }
   .contact-form {
     height: 40vh;
     display: flex;
@@ -264,6 +269,7 @@
     font-family: "Roboto Condensed", sans-serif;
     width: 80vw;
     margin-bottom: 4rem;
+    background-color: #b2deec;
   }
   .form-wrapper {
     width: 40%;

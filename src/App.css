@@ -1,21 +1,22 @@
 .app-container {
-	background-color: #fff;
+  background-color: #fff;
+  scroll-behavior: smooth;
 }
 a,
 a:active,
 a:hover,
 a:link,
 a:visited {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 a:hover {
-	transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
-	.container {
-		max-width: 540px;
-	}
+  .container {
+    max-width: 540px;
+  }
 }
 
 /* css for tablet responsiveness */
@@ -25,8 +26,8 @@ a:hover {
 }
 /* css for latptops and large screens */
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
-	.container {
-		max-width: 1140px;
-		cursor: none;
-	}
+  .container {
+    max-width: 1140px;
+    cursor: none;
+  }
 }

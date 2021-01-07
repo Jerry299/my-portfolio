@@ -2,20 +2,25 @@ import React, { useEffect, useRef } from "react";
 import contactSVG from "../../images/contactSVG.svg";
 import "./ContactMe.css";
 import Footer from "../statelessComponents/Footer";
-import svgAnimation from "../animations/ContactmeAnimations";
+import { useIntersection } from "react-use";
+import { fadeIn, fadeOut } from "../animations/ContactmeAnimations";
 
 const ContactMe = () => {
   //variables for Dom API
-  let testSvg = useRef(null);
+  let formRef = useRef(null);
 
   useEffect(() => {
     document.title = "Contact Jerry";
   });
+  const intersection = useIntersection(formRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2,
+  });
 
-  const handleSvgClick = () => {
-    svgAnimation(testSvg);
-  };
-
+  intersection && intersection.intersectionRatio < 0.2
+    ? fadeOut(".contact-form")
+    : fadeIn(".contact-form");
   return (
     <div className="contact-container">
       <div className="contact-wrapper">
@@ -35,39 +40,41 @@ const ContactMe = () => {
           </div>
         </div>
       </div>
-      <form className="contact-form">
-        <div className="form-wrapper">
-          <div className="form-group">
-            <input type="text" name="name" required autoComplete="off" />
-            <label className="label-name">
-              <span className="content-name">Name</span>
-            </label>
+      <div className="form-container">
+        <form className="contact-form" ref={formRef}>
+          <div className="form-wrapper">
+            <div className="form-group">
+              <input type="text" name="name" required autoComplete="off" />
+              <label className="label-name">
+                <span className="content-name">Name</span>
+              </label>
+            </div>
+            <div className="form-group">
+              <input type="email" name="email" required autoComplete="off" />
+              <label className="label-name">
+                {" "}
+                <span className="content-name">Email</span>
+              </label>
+              <small></small>
+            </div>
+            <div className="form-group">
+              <input
+                type="text"
+                name="contact-message"
+                required
+                autoComplete="off"
+              />
+              <label className="label-name">
+                <span className="content-name">Message</span>
+              </label>
+            </div>
+            <div type="submit" className="submit">
+              Send it
+              <div className="line"></div>
+            </div>
           </div>
-          <div className="form-group">
-            <input type="email" name="email" required autoComplete="off" />
-            <label className="label-name">
-              {" "}
-              <span className="content-name">Email</span>
-            </label>
-            <small></small>
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              name="contact-message"
-              required
-              autoComplete="off"
-            />
-            <label className="label-name">
-              <span className="content-name">Message</span>
-            </label>
-          </div>
-          <div type="submit" className="submit">
-            Send it
-            <div className="line"></div>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
 
       <Footer />
     </div>
