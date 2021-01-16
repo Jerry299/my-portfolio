@@ -3,36 +3,40 @@ import contactSVG from "../../images/contactSVG.svg";
 import "./ContactMe.css";
 import Footer from "../statelessComponents/Footer";
 import { useIntersection } from "react-use";
-import { fadeIn, fadeOut } from "../animations/ContactmeAnimations";
+import { fadeIn, fadeOut, svgAnimate } from "../animations/ContactmeAnimations";
 
 const ContactMe = () => {
   //variables for Dom API
   let formRef = useRef(null);
+  let svgRef = useRef(null);
+  let contactMessage = useRef(null);
+  let getInTouch = useRef(null);
 
   useEffect(() => {
     document.title = "Contact Jerry";
-  });
+    svgAnimate(svgRef, contactMessage, getInTouch);
+  }, []);
   const intersection = useIntersection(formRef, {
     root: null,
     rootMargin: "0px",
-    threshold: 0.2,
+    threshold: 0.8,
   });
 
-  intersection && intersection.intersectionRatio < 0.2
+  intersection && intersection.intersectionRatio < 0.8
     ? fadeOut(".contact-form")
     : fadeIn(".contact-form");
   return (
     <div className="contact-container">
       <div className="contact-wrapper">
-        <div className="contact-svg">
+        <div className="contact-svg" ref={(el) => (svgRef = el)}>
           <img src={contactSVG} alt="Contact-svg" />
         </div>
-        <div className="contact-msg">
-          <p id="msg">
+        <div className="contact-msg" r>
+          <p id="msg" ref={(el) => (contactMessage = el)}>
             like what you see? have a project that you'd like to talk
             about,looking for a dev to hire? or want to ask a personal question?
           </p>
-          <div className="get-in-touch">
+          <div className="get-in-touch" ref={(el) => (getInTouch = el)}>
             <h1>
               <span>Get in </span>
               <p>touch</p>
@@ -40,8 +44,8 @@ const ContactMe = () => {
           </div>
         </div>
       </div>
-      <div className="form-container">
-        <form className="contact-form" ref={formRef}>
+      <div className="form-container" ref={formRef}>
+        <form className="contact-form">
           <div className="form-wrapper">
             <div className="form-group">
               <input type="text" name="name" required autoComplete="off" />

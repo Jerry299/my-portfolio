@@ -14,6 +14,7 @@ font-family: 'Poppins', sans-serif; */
 
 .home-container {
   background-color: #fff;
+  overflow-x: hidden;
 }
 
 /* media queries */
@@ -22,10 +23,9 @@ font-family: 'Poppins', sans-serif; */
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
   .home-container {
     margin-top: 40px;
-    width: 100vw;
+    width: 100%;
   }
   .home-wrapper {
-    overflow-x: hidden;
     width: 100%;
     display: flex;
     flex-direction: column;

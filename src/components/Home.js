@@ -22,11 +22,10 @@ const Home = () => {
   //let words = ["Javascript Full Stack Developer","Passionate Learner","Technology Enthusiast"]
   useEffect(() => {
     homeAnimationsForMySkills(mySkills);
-
     underlineTextAndFadeUp(box, letterA);
     wordsAnimation(text);
     animationForHomeHiandHomeName(homeHi, homeWorld, myName, myName1, myName2);
-  });
+  }, []);
 
   return (
     <section className="home-container">
