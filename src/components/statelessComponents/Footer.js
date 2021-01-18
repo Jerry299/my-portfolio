@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./Footer.css";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
@@ -13,13 +14,23 @@ import {
   faMap,
 } from "@fortawesome/free-regular-svg-icons";
 
+// import animation
+import { footerAnimate } from "../animations/FooterAnimation";
+
 const Footer = () => {
+  //function for getting current year
   const date = () => {
     return new Date().getFullYear();
   };
+  // DOM API
+  let footerRef = useRef(null);
+
+  useEffect(() => {
+    footerAnimate(footerRef, ".footer-wrapper");
+  }, []);
 
   return (
-    <div className="footer-container">
+    <div className="footer-container" ref={(el) => (footerRef = el)}>
       <div className="footer-wrapper">
         <div id="contact-wrapper">
           <div className="contact-phone">

@@ -1,6 +1,6 @@
 .footer-container {
-  background-color: #150485;
-
+  background-color: #222831;
+  overflow-x: hidden;
   padding: 0 4rem;
 }
 a.twitter,

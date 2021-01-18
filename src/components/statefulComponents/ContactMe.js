@@ -3,6 +3,7 @@ import contactSVG from "../../images/contactSVG.svg";
 import "./ContactMe.css";
 import Footer from "../statelessComponents/Footer";
 import { useIntersection } from "react-use";
+// Import animations
 import { fadeIn, fadeOut, svgAnimate } from "../animations/ContactmeAnimations";
 
 const ContactMe = () => {
@@ -31,7 +32,7 @@ const ContactMe = () => {
         <div className="contact-svg" ref={(el) => (svgRef = el)}>
           <img src={contactSVG} alt="Contact-svg" />
         </div>
-        <div className="contact-msg" r>
+        <div className="contact-msg">
           <p id="msg" ref={(el) => (contactMessage = el)}>
             like what you see? have a project that you'd like to talk
             about,looking for a dev to hire? or want to ask a personal question?
