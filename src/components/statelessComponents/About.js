@@ -1,4 +1,4 @@
-import React,{useRef,useEffect} from "react";
+import React, { useRef, useEffect } from "react";
 import "./About.css";
 import Footer from "./Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,16 +14,16 @@ import {
 import {} from "@fortawesome/free-regular-svg-icons";
 
 const About = () => {
-  let totalPage = useRef(null)
+  let totalPage = useRef(null);
 
   useEffect(() => {
-    console.log(totalPage.current)
-  })
+    console.log(totalPage.current);
+  });
   return (
-    <section className="about-container" ref={el => totalPage = el} >
+    <section className="about-container" ref={(el) => (totalPage = el)}>
       <div className="about-wrapper">
         <div className="about-header">
-          <h1>WHO AM I?</h1>
+          <p>WHO AM I?</p>
         </div>
         <div className="about-body">
           <div className="about-photo">
@@ -49,11 +49,10 @@ const About = () => {
                 and boundless enthusiasm for understanding technologies and
                 considers himself a "Life long learner" eager to build on
                 existing web technologies knowledge and stay in tune with the
-                latest web technologies through continued coursework(On
-                udemy,frontend masters,pluralsight lectures and workshops) and
-                professional development.skills can be taught, but personality
-                is inherent, i prefer to keep learning, continue challenging
-                myself and do interesting things that matters.
+                latest web technologies through continued courseworks and
+                strongly believes professional development skills can be taught,
+                but personality is inherent, i prefer to keep learning, continue
+                challenging myself and do interesting things that matters.
               </div>
             </div>
           </div>
@@ -70,72 +69,117 @@ const About = () => {
             </a>
           </div>
         </div>
-        <div className="about-skills">
+        {/* div below is about-skills */}
+        <section className="about-skills">
           <p>Skills Set</p>
-          <div className="about-skills__list">
+          <div className="container ">
+            <div className="row justify-content-center">
+              <div className="col-xs-6 col-sm-6 col-md-4 ">
+                <div className="box">
+                  HTML
+                  <FontAwesomeIcon
+                    icon={faHtml5}
+                    size="2x"
+                    style={{ color: "#e34626", marginLeft: ".5rem" }}
+                  />
+                </div>
+              </div>
+              <div className="col-xs-6 col-sm-6 col-md-4 ">
+                <div className="box">
+                  CSS
+                  <FontAwesomeIcon
+                    icon={faCss3}
+                    size="2x"
+                    style={{ color: "#264de4", marginLeft: ".5rem" }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* second row */}
+            <div className="row justify-content-center">
+              <div className="col-xs-6 col-sm-6 col-md-4 ">
+                <div className="box">
+                  Javascript
+                  <FontAwesomeIcon
+                    icon={faJs}
+                    size="2x"
+                    style={{
+                      color: "#f0db4f",
+                      marginLeft: ".5rem",
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="col-xs-6 col-sm-6 col-md-4 ">
+                <div className="box">
+                  React Js
+                  <FontAwesomeIcon
+                    icon={faReact}
+                    size="2x"
+                    style={{ color: "#61DBFB", marginLeft: ".5rem" }}
+                  />
+                </div>
+              </div>
+            </div>
+            {/* third row */}
+            <div className="row justify-content-center">
+              <div className="col-xs-6 col-sm-6 col-md-4 ">
+                <div className="box">
+                  Node Js
+                  <FontAwesomeIcon
+                    icon={faNodeJs}
+                    size="2x"
+                    style={{ color: "#68A063", marginLeft: ".5rem" }}
+                  />
+                </div>
+              </div>
+              <div className="col-xs-6 col-sm-6 col-md-4 ">
+                <div className="box">
+                  BootStrap
+                  <FontAwesomeIcon
+                    icon={faBootstrap}
+                    size="2x"
+                    style={{ color: "#602C50", marginLeft: ".5rem" }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* fourth row */}
+            <div className="row justify-content-center">
+              <div className="col-xs-6 col-sm-6 col-md-4 ">
+                <div className="box">
+                  Git & Github
+                  <FontAwesomeIcon
+                    icon={faGit}
+                    size="2x"
+                    style={{ color: "#f14e32", marginLeft: ".5rem" }}
+                  />
+                </div>
+              </div>
+              <div className="col-xs-6 col-sm-6 col-md-4 ">
+                <div className="box">
+                  MongoDb
+                  <FontAwesomeIcon
+                    icon={faBootstrap}
+                    size="2x"
+                    style={{ color: "#602C50", marginLeft: ".5rem" }}
+                  />
+                </div>
+              </div>
+            </div>
+
             <ul>
-              <li>
-                HTML
-                <FontAwesomeIcon
-                  icon={faHtml5}
-                  size="2x"
-                  style={{ color: "#e34626", marginLeft: ".5rem" }}
-                />
-              </li>
-              <li>
-                CSS
-                <FontAwesomeIcon
-                  icon={faCss3}
-                  size="2x"
-                  style={{ color: "#264de4", marginLeft: ".5rem" }}
-                />
-              </li>
-              <li>
-                Javascript
-                <FontAwesomeIcon
-                  icon={faJs}
-                  size="2x"
-                  style={{
-                    color: "#f0db4f",
-                    marginLeft: ".5rem",
-                    background: "#000",
-                  }}
-                />
-              </li>
-              <li>
-                React Js
-                <FontAwesomeIcon
-                  icon={faReact}
-                  size="2x"
-                  style={{ color: "#61DBFB", marginLeft: ".5rem" }}
-                />
-              </li>
-              <li>
-                Node Js
-                <FontAwesomeIcon
-                  icon={faNodeJs}
-                  size="2x"
-                  style={{ color: "#68A063", marginLeft: ".5rem" }}
-                />
-              </li>
-              <li>
-                BootStrap
-                <FontAwesomeIcon
-                  icon={faBootstrap}
-                  size="2x"
-                  style={{ color: "#602C50", marginLeft: ".5rem" }}
-                />
-              </li>
-              <li>
-                Git & Github
-              
-              </li>
+              <li></li>
+              <li></li>
+              <li>Git & Github</li>
               <li>MongoDb/Postgres </li>
               <li>Express Js</li>
               <li>Testing WIth Jest</li>
             </ul>
           </div>
-        </div>
+        </section>
       </div>
       <Footer />
     </section>

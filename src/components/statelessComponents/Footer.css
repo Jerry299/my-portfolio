@@ -1,7 +1,10 @@
 .footer-container {
-  background-color: #222831;
+  /* background-color: #222831; */
   overflow-x: hidden;
-  padding: 0 4rem;
+  padding: 1.3rem 4rem;
+  background-image: url("../../images/footerBg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 a.twitter,
 a.facebook,
@@ -153,6 +156,7 @@ a.linkedin {
     justify-content: space-between;
     align-items: center;
     width: 91%;
+    padding: 3rem;
   }
   #contact-wrapper {
     padding-top: 1.3rem;

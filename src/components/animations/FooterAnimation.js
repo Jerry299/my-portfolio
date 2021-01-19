@@ -16,11 +16,11 @@ export const footerAnimate = (target, target2) => {
       opacity: 1,
       duration: 2,
       ease: "slow(0.7, 0.7, false)",
-      background: "red",
+      // background: "red",
       scrollTrigger: {
         trigger: target2,
-        start: "top center",
-        end: "bottom bottom",
+        start: "top 70%",
+        end: "top 30%",
         scrub: 1,
       },
     });
