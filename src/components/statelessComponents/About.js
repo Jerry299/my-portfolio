@@ -11,7 +11,8 @@ import {
   faBootstrap,
   faReact,
 } from "@fortawesome/free-brands-svg-icons";
-import {} from "@fortawesome/free-regular-svg-icons";
+
+import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 
 const About = () => {
   let totalPage = useRef(null);
@@ -162,22 +163,38 @@ const About = () => {
                 <div className="box">
                   MongoDb
                   <FontAwesomeIcon
-                    icon={faBootstrap}
+                    icon={faDatabase}
                     size="2x"
-                    style={{ color: "#602C50", marginLeft: ".5rem" }}
+                    style={{ color: "#116149", marginLeft: ".5rem" }}
+                  />
+                </div>
+              </div>
+            </div>
+            {/* fifth row */}
+            <div className="row justify-content-center">
+              <div className="col-xs-6 col-sm-6 col-md-4 ">
+                <div className="box">
+                  Postgres
+                  <FontAwesomeIcon
+                    icon={faDatabase}
+                    size="2x"
+                    style={{ color: "#336791", marginLeft: ".5rem" }}
+                  />
+                </div>
+              </div>
+              <div className="col-xs-6 col-sm-6 col-md-4 ">
+                <div className="box">
+                  Express
+                  <FontAwesomeIcon
+                    icon={faNodeJs}
+                    size="2x"
+                    style={{ color: "#68A063", marginLeft: ".5rem" }}
                   />
                 </div>
               </div>
             </div>
 
-            <ul>
-              <li></li>
-              <li></li>
-              <li>Git & Github</li>
-              <li>MongoDb/Postgres </li>
-              <li>Express Js</li>
-              <li>Testing WIth Jest</li>
-            </ul>
+            {/* end of boxes */}
           </div>
         </section>
       </div>
