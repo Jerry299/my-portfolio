@@ -1,10 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import "./Home.css";
 import {
-  homeAnimationsForMySkills,
-  underlineTextAndFadeUp,
-  wordsAnimation,
-  animationForHomeHiandHomeName,
+  homeContainerAnimation,
+  animateHelloWorld,
 } from "./animations/HomeAnimations";
 
 const Home = () => {
@@ -18,17 +16,19 @@ const Home = () => {
   let myName = useRef(null);
   let myName1 = useRef(null);
   let myName2 = useRef(null);
-  //array for what i do
-  //let words = ["Javascript Full Stack Developer","Passionate Learner","Technology Enthusiast"]
+  let homeContainer = useRef(null);
+
   useEffect(() => {
-    homeAnimationsForMySkills(mySkills);
-    underlineTextAndFadeUp(box, letterA);
-    wordsAnimation(text);
-    animationForHomeHiandHomeName(homeHi, homeWorld, myName, myName1, myName2);
+    homeContainerAnimation(homeContainer);
+    animateHelloWorld(homeHi);
+    // homeAnimationsForMySkills(mySkills);
+    // underlineTextAndFadeUp(box, letterA);
+    // wordsAnimation(text);
+    // animationForHomeHiandHomeName(homeHi, homeWorld, myName, myName1, myName2);
   }, []);
 
   return (
-    <section className="home-container">
+    <section className="home-container" ref={(el) => (homeContainer = el)}>
       <div className="home-wrapper">
         <h1 className="home-hi" ref={(el) => (homeHi = el)}>
           {" "}

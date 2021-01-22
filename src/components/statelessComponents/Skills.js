@@ -1,11 +1,1 @@
-import React from "react";
-
-const Skills = () => {
-  return (
-    <div>
-      <div>I am the skills Pages</div>
-    </div>
-  );
-};
-
-export default Skills;
+// Illustration by <a href="undefined">Icons 8</a> from <a href="https://icons8.com/">Icons8</a>

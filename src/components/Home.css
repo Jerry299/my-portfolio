@@ -12,9 +12,20 @@ font-family: 'Titillium Web', sans-serif;
 font-family: 'Josefin Sans', sans-serif;
 font-family: 'Poppins', sans-serif; */
 
+/* general css for home component */
 .home-container {
   background-color: #fff;
-  overflow-x: hidden;
+  overflow: hidden;
+}
+.home-wrapper {
+  background-color: rgba(252, 252, 252, 0.24);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 2rem;
+}
+.home-sentence .home-skills {
+  font-family: "Work Sans", sans-serif;
+  color: #64dfdf;
 }
 
 /* media queries */
@@ -73,7 +84,6 @@ font-family: 'Poppins', sans-serif; */
     margin-top: 0.5rem;
     padding: 0 20px;
     font-size: 1.3rem;
-    font-family: "Roboto Condensed", sans-serif;
   }
 
   .click {
@@ -179,11 +189,20 @@ font-family: 'Poppins', sans-serif; */
   }
 }
 /* css for latptops and large screens */
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
+@media screen and (min-device-width: 1200px) and (max-device-width: 1900px) {
+  .home-container {
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 85vh;
+    text-align: center;
+  }
   .home-wrapper {
-    color: #000000;
-    padding: 0 8rem 0 8rem;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 15%;
     margin-top: 4rem;
+    margin-bottom: 3rem;
+    border-radius: 5px;
   }
   .home-skills {
     text-transform: capitalize;
@@ -207,43 +226,19 @@ font-family: 'Poppins', sans-serif; */
   .home-name.my-name {
     text-transform: uppercase;
   }
-
-  .my-name {
-    background: -webkit-linear-gradient(rgb(238, 108, 108), rgb(18, 18, 36));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    /* color: #000000; */
-    display: inline-block;
-  }
-  .my-name2 {
-    background: -webkit-linear-gradient(rgb(18, 18, 36), rgb(238, 108, 108));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    display: inline-block;
-  }
+  .my-name,
+  .my-name2,
   .my-name3 {
-    background: -webkit-linear-gradient(rgb(238, 108, 108), rgb(18, 18, 36));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    display: inline-block;
+    color: #dddddd;
+    font-family: "Nanum Gothic", "Roboto Condensed", sans-serif;
   }
-  /* .i-am {
-    height: 1vw;
-    background-color: #e6739f;
-  } */
-  .home-container {
-    background-attachment: fixed;
-    width: 100%;
-    /* min-height: 100vh; */
-    height: 75vh;
-    text-align: center;
-    background: #ffffff;
+
+  .i-am {
+    color: #cdfffc;
   }
+
   .click {
-    color: #221f3b;
+    color: #f7f7e8;
     position: fixed;
     margin-top: 4rem;
     letter-spacing: 1.3px;
@@ -279,10 +274,10 @@ font-family: 'Poppins', sans-serif; */
   /* css for svg background*/
   .home-container {
     /*Free Snowball Dots SVG provided by SVGeez.com - CC 4.0 License - © 2019 Megan Young */
-    background-color: transparent;
-    fill: rgb(138, 216, 229);
+    background-color: black;
+    /* fill: rgb(96, 235, 142); */
     background-size: 358px 358px;
     background-repeat: repeat;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='Layer_1' fill-opacity='1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500' style='enable-background:new 0 0 500 500'%3E%3Cstyle%3E .st0{fill:rgb(138, 216, 229)} %3C/style%3E%3Ccircle class='st0' cx='87.5' cy='46.5' r='8.5'/%3E%3Ccircle class='st0' cx='94.5' cy='124.5' r='15.5'/%3E%3Ccircle class='st0' cx='244.5' cy='91.5' r='21.5'/%3E%3Ccircle class='st0' cx='348.5' cy='80.5' r='7.5'/%3E%3Ccircle class='st0' cx='155' cy='356' r='10'/%3E%3Ccircle class='st0' cx='422' cy='139' r='14'/%3E%3Ccircle class='st0' cx='123' cy='251' r='6'/%3E%3Ccircle class='st0' cx='280' cy='204' r='11'/%3E%3Ccircle class='st0' cx='315' cy='311' r='11'/%3E%3Ccircle class='st0' cx='262' cy='411' r='6'/%3E%3Ccircle class='st0' cx='455.5' cy='395.5' r='12.5'/%3E%3Ccircle class='st0' cx='432' cy='500' r='25'/%3E%3Ccircle class='st0' cx='432' r='25'/%3E%3Ccircle class='st0' cx='-3.5' cy='240.5' r='10.5'/%3E%3Ccircle class='st0' cx='496.5' cy='240.5' r='10.5'/%3E%3Ccircle class='st0' cx='96' cy='437' r='3'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='Layer_1' fill-opacity='1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500' style='enable-background:new 0 0 500 500'%3E%3Cstyle%3E .st0{fill:rgb(96, 235, 142)} %3C/style%3E%3Ccircle class='st0' cx='87.5' cy='46.5' r='8.5'/%3E%3Ccircle class='st0' cx='94.5' cy='124.5' r='15.5'/%3E%3Ccircle class='st0' cx='244.5' cy='91.5' r='21.5'/%3E%3Ccircle class='st0' cx='348.5' cy='80.5' r='7.5'/%3E%3Ccircle class='st0' cx='155' cy='356' r='10'/%3E%3Ccircle class='st0' cx='422' cy='139' r='14'/%3E%3Ccircle class='st0' cx='123' cy='251' r='6'/%3E%3Ccircle class='st0' cx='280' cy='204' r='11'/%3E%3Ccircle class='st0' cx='315' cy='311' r='11'/%3E%3Ccircle class='st0' cx='262' cy='411' r='6'/%3E%3Ccircle class='st0' cx='455.5' cy='395.5' r='12.5'/%3E%3Ccircle class='st0' cx='432' cy='500' r='25'/%3E%3Ccircle class='st0' cx='432' r='25'/%3E%3Ccircle class='st0' cx='-3.5' cy='240.5' r='10.5'/%3E%3Ccircle class='st0' cx='496.5' cy='240.5' r='10.5'/%3E%3Ccircle class='st0' cx='96' cy='437' r='3'/%3E%3C/svg%3E");
   }
 }

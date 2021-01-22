@@ -9,88 +9,124 @@ let words = [
   "Technology Enthusiast...",
 ];
 
-let masterTl = gsap.timeline({ repeat: -1 }).pause();
+// let masterTl = gsap.timeline({ repeat: -1 }).pause();
+let masterTl = gsap.timeline();
 
-let homeTl = gsap.timeline();
-let boxTl = gsap.timeline();
+// let homeTl = gsap.timeline();
+// let boxTl = gsap.timeline();
 
-export const animationForHomeHiandHomeName = (el1, el2, el3, el4, el5) => {
-  homeTl.from(el1, {
-    duration: 2.3,
-    y: -300,
-    repeat: 0,
-    ease: "elastic.out(1, 0.3)",
-  });
-  homeTl.from(el2, {
-    duration: 1.9,
-    x: -500,
-    opacity: 0,
-    ease: "elastic.out(2, 0.3)",
-  });
-  homeTl.from(el3, {
-    duration: 1,
-    y: 200,
-    opacity: 0,
-    ease: "bounce.out",
-  });
-  homeTl.from(el4, {
-    duration: 1,
-    y: -200,
-    opacity: 0,
-    ease: "elastic.out(1.75, 0.3)",
-  });
-  homeTl.from(el5, {
-    duration: 1,
-    x: 200,
-    opacity: 0,
-    ease: "elastic.out(1.75, 0.3)",
-  });
+export const homeContainerAnimation = (element) => {
+  const tl = gsap.timeline({ duration: 0.5 });
+  tl.fromTo(
+    element,
+    {
+      width: 0,
+      marginLeft: "50%",
+      overflow: "hidden",
+      ease: "back.inOut(1.7)",
+    },
+    {
+      width: "100%",
+      marginLeft: 0,
+      delay: 1,
+    }
+  );
+  return tl;
 };
 
-export const underlineTextAndFadeUp = (el, el2) => {
-  boxTl
-    .to(el, {
-      duration: 4,
-      width: "77px",
-      ease: "power4.inOut",
-    })
-    .from(el2, {
-      duration: 4,
-      y: 50,
+export const animateHelloWorld = (element) => {
+  const tl = gsap.timeline({ duration: 1 });
+  tl.fromTo(
+    element,
+    {
       opacity: 0,
-      ease: "power3.out",
-      onComplete: () => masterTl.play(),
-    })
-    .to(el, {
-      duration: 4,
-      height: "34px",
-      ease: "elastic.out",
-    })
-    .to(el, {
-      duration: 4.5,
-      autoAlpha: 0.5,
-      yoyo: true,
-      repeat: -1,
-      ease: "power4.inOut",
-    });
+    },
+    {
+      opacity: 1,
+    }
+  );
+  return tl;
 };
 
-export const homeAnimationsForMySkills = (element) => {
-  gsap.to(element, {
-    opacity: 0,
-    ease: "power2.inOut",
-    repeat: -1,
-  });
-};
+// export const animationForHomeHiandHomeName = (el1, el2, el3, el4, el5) => {
+//   homeTl.from(el1, {
+//     duration: 2.3,
+//     y: -300,
+//     repeat: 0,
+//     ease: "elastic.out(1, 0.3)",
+//   });
+//   homeTl.from(el2, {
+//     duration: 1.9,
+//     x: -500,
+//     opacity: 0,
+//     ease: "elastic.out(2, 0.3)",
+//   });
+//   homeTl.from(el3, {
+//     duration: 1,
+//     y: 200,
+//     opacity: 0,
+//     ease: "bounce.out",
+//   });
+//   homeTl.from(el4, {
+//     duration: 1,
+//     y: -200,
+//     opacity: 0,
+//     ease: "elastic.out(1.75, 0.3)",
+//   });
+//   homeTl.from(el5, {
+//     duration: 1,
+//     x: 200,
+//     opacity: 0,
+//     ease: "elastic.out(1.75, 0.3)",
+//   });
+// };
 
-export const wordsAnimation = (textElement) => {
-  words.forEach((word) => {
-    let tl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1.5 });
-    tl.to(textElement, {
-      duration: 1.9,
-      text: word,
-    });
+// export const underlineTextAndFadeUp = (el, el2) => {
+//   boxTl
+//     .to(el, {
+//       duration: 4,
+//       width: "85px",
+//       ease: "power4.inOut",
+//     })
+//     .from(el2, {
+//       duration: 4,
+//       y: 50,
+//       opacity: 0,
+//       ease: "power3.out",
+//       onComplete: () => masterTl.play(),
+//     })
+//     .to(el, {
+//       duration: 4,
+//       height: "34px",
+//       ease: "elastic.out",
+//     })
+//     .to(el, {
+//       duration: 4.5,
+//       autoAlpha: 0.5,
+//       yoyo: true,
+//       repeat: -1,
+//       ease: "power4.inOut",
+//     });
+// };
 
-    masterTl.add(tl);
-  });
-};
+// export const homeAnimationsForMySkills = (element) => {
+//   gsap.to(element, {
+//     opacity: 0,
+//     ease: "power2.inOut",
+//     repeat: -1,
+//   });
+// };
+
+// export const wordsAnimation = (textElement) => {
+//   words.forEach((word) => {
+//     let tl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1.5 });
+//     tl.to(textElement, {
+//       duration: 1.9,
+//       text: word,
+//     });
+
+//     masterTl.add(tl);
+//   });
+// };
+
+masterTl.add(homeContainerAnimation()).add(animateHelloWorld());
