@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
+import { TimelineMax } from "gsap";
 
 gsap.registerPlugin(TextPlugin);
 let words = [
@@ -15,40 +16,49 @@ let masterTl = gsap.timeline();
 // let boxTl = gsap.timeline();
 
 export const homeContainerAnimation = (element, element2) => {
-  const tl = gsap.timeline({ duration: 1 });
+  const tl = new TimelineMax();
   tl.fromTo(
     element,
     {
-      opacity: 0,
-      height: "0%",
-      ease: "power4.inOut",
-      overflow: "hidden",
+      duration: 1.5,
+      height: "0vh",
     },
     {
-      opacity: 1,
-      height: "100%",
-      ease: "power4.inOut",
+      height: "60vh",
+      ease: "back.inOut(1.7)",
     }
-  );
+  )
+    .fromTo(
+      element,
+      { duration: 2.5, width: "100%" },
+      { width: "80%", ease: "back.inOut(1.7)" }
+    )
+    .fromTo(
+      element2,
+      {
+        x: "-100%",
+        ease: "back.inOut(1.7)",
+      },
+      {
+        x: "0%",
+        ease: "slow(0.7, 0.7, false)",
+      }
+    );
+
+  return tl;
+};
+
+export const homeContainerBgAnimation = (element) => {
+  const tl = new TimelineMax();
   tl.fromTo(
     element,
-    {
-      width: "105%",
-    },
-    {
-      width: "100%",
-      ease: "power2.out",
-    }
-  );
-  tl.fromTo(
-    element2,
     {
       x: "-100%",
+      ease: "back.inOut(1.7)",
     },
     {
       x: "0%",
-      ease: "power4.inOut",
-      padding: "5rem",
+      ease: "slow(0.7, 0.7, false)",
     }
   );
   return tl;

@@ -3,6 +3,7 @@ import "./Home.css";
 
 import {
   homeContainerAnimation,
+  homeContainerBgAnimation,
   // animateHelloWorld,
 } from "./animations/HomeAnimations";
 
@@ -17,16 +18,16 @@ const Home = () => {
   let myName = useRef(null);
   let myName1 = useRef(null);
   let myName2 = useRef(null);
-  let homeContainer = useRef(null);
+  let homeBg = useRef(null);
   let homeWrapper = useRef(null);
 
   useEffect(() => {
-    homeContainerAnimation(homeWrapper, homeContainer);
+    homeContainerAnimation(homeWrapper, homeBg);
   }, []);
 
   return (
     <section className="home-section">
-      <div className="home-container" ref={(el) => (homeContainer = el)}>
+      <div className="home-container">
         <div className="home-wrapper" ref={(el) => (homeWrapper = el)}>
           <h1 className="home-hi" ref={(el) => (homeHi = el)}>
             {" "}
@@ -60,6 +61,8 @@ const Home = () => {
             </p>
           </div>
         </div>
+
+        <div className="slider" ref={(el) => (homeBg = el)}></div>
       </div>
     </section>
   );
