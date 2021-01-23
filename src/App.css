@@ -27,6 +27,7 @@ a:hover {
 /* css for latptops and large screens */
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
   .container {
+    box-sizing: border-box;
     max-width: 1140px;
     cursor: none;
   }

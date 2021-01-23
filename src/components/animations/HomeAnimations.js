@@ -1,5 +1,4 @@
 import { gsap } from "gsap";
-
 import { TextPlugin } from "gsap/TextPlugin";
 
 gsap.registerPlugin(TextPlugin);
@@ -15,38 +14,60 @@ let masterTl = gsap.timeline();
 // let homeTl = gsap.timeline();
 // let boxTl = gsap.timeline();
 
-export const homeContainerAnimation = (element) => {
-  const tl = gsap.timeline({ duration: 0.5 });
-  tl.fromTo(
-    element,
-    {
-      width: 0,
-      marginLeft: "50%",
-      overflow: "hidden",
-      ease: "back.inOut(1.7)",
-    },
-    {
-      width: "100%",
-      marginLeft: 0,
-      delay: 1,
-    }
-  );
-  return tl;
-};
-
-export const animateHelloWorld = (element) => {
+export const homeContainerAnimation = (element, element2) => {
   const tl = gsap.timeline({ duration: 1 });
   tl.fromTo(
     element,
     {
       opacity: 0,
+      height: "0%",
+      ease: "power4.inOut",
+      overflow: "hidden",
     },
     {
       opacity: 1,
+      height: "100%",
+      ease: "power4.inOut",
+    }
+  );
+  tl.fromTo(
+    element,
+    {
+      width: "105%",
+    },
+    {
+      width: "100%",
+      ease: "power2.out",
+    }
+  );
+  tl.fromTo(
+    element2,
+    {
+      x: "-100%",
+    },
+    {
+      x: "0%",
+      ease: "power4.inOut",
+      padding: "5rem",
     }
   );
   return tl;
 };
+
+masterTl.add(homeContainerAnimation());
+// export const animateHelloWorld = (element) => {
+//   const tl = gsap.timeline({ duration: 1 });
+//   tl.fromTo(
+//     element,
+//     {
+//       opacity: 0,
+//     },
+//     {
+//       opacity: 1,
+//     }
+//   );
+//   return tl;
+// };
 
 // export const animationForHomeHiandHomeName = (el1, el2, el3, el4, el5) => {
 //   homeTl.from(el1, {
@@ -129,4 +150,17 @@ export const animateHelloWorld = (element) => {
 //   });
 // };
 
-masterTl.add(homeContainerAnimation()).add(animateHelloWorld());
+// tl.fromTo(
+//   element,
+//   {
+//     width: 0,
+//     marginLeft: "50%",
+//     overflow: "hidden",
+//     ease: "back.inOut(1.7)",
+//   },
+//   {
+//     width: "100%",
+//     marginLeft: 0,
+//     delay: 1,
+//   }
+// );

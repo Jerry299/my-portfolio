@@ -1,0 +1,61 @@
+.home-wrapper {
+}
+.home-skills {
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  font-family: "Zilla Slab", serif;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+}
+.home-hi {
+  font-size: 3.9rem;
+  text-align: left;
+  color: #ec3170;
+  font-family: "Oswald", sans-serif;
+}
+.home-name {
+  margin-top: 3rem;
+  margin-bottom: 1.4rem;
+  font-size: 70px;
+  position: relative;
+}
+.home-name.my-name {
+  text-transform: uppercase;
+}
+.my-name,
+.my-name2,
+.my-name3 {
+  color: #dddddd;
+  font-family: "Nanum Gothic", "Roboto Condensed", sans-serif;
+}
+
+.i-am {
+  color: #cdfffc;
+}
+
+.home-skills {
+  font-size: 2rem;
+  position: relative;
+}
+.home-sentence .home-skills .box {
+  position: absolute;
+  bottom: 7px;
+  display: inline-block;
+  /* background: #f05454; */
+  background-color: #ec3170;
+  height: 3px;
+  z-index: 0;
+  width: 0px;
+}
+.home-sentence .home-skills .letterA {
+  display: inline-block;
+}
+
+/* css for svg background*/
+
+/*Free Snowball Dots SVG provided by SVGeez.com - CC 4.0 License - © 2019 Megan Young */
+
+/* fill: rgb(96, 235, 142); */
+/* background-size: 358px 358px;
+    background-repeat: repeat;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='Layer_1' fill-opacity='1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500' style='enable-background:new 0 0 500 500'%3E%3Cstyle%3E .st0{fill:rgb(96, 235, 142)} %3C/style%3E%3Ccircle class='st0' cx='87.5' cy='46.5' r='8.5'/%3E%3Ccircle class='st0' cx='94.5' cy='124.5' r='15.5'/%3E%3Ccircle class='st0' cx='244.5' cy='91.5' r='21.5'/%3E%3Ccircle class='st0' cx='348.5' cy='80.5' r='7.5'/%3E%3Ccircle class='st0' cx='155' cy='356' r='10'/%3E%3Ccircle class='st0' cx='422' cy='139' r='14'/%3E%3Ccircle class='st0' cx='123' cy='251' r='6'/%3E%3Ccircle class='st0' cx='280' cy='204' r='11'/%3E%3Ccircle class='st0' cx='315' cy='311' r='11'/%3E%3Ccircle class='st0' cx='262' cy='411' r='6'/%3E%3Ccircle class='st0' cx='455.5' cy='395.5' r='12.5'/%3E%3Ccircle class='st0' cx='432' cy='500' r='25'/%3E%3Ccircle class='st0' cx='432' r='25'/%3E%3Ccircle class='st0' cx='-3.5' cy='240.5' r='10.5'/%3E%3Ccircle class='st0' cx='496.5' cy='240.5' r='10.5'/%3E%3Ccircle class='st0' cx='96' cy='437' r='3'/%3E%3C/svg%3E"); */

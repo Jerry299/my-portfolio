@@ -1,69 +1,62 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.css";
-import { Link ,withRouter} from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Burger from "./Burger";
 import "../../App.css";
 
-
-const Header = ({history}) => {
+const Header = ({ history }) => {
   //state for menu
-  const [state,setState] = useState({
+  const [state, setState] = useState({
     initial: false,
     clicked: null,
-    menuName : "MENU",
-    headerOpen : true
-  })
+    menuName: "MENU",
+    headerOpen: true,
+  });
   //state for disabled button
-  const [disabled,setDisabled] = useState(false)
+  const [disabled, setDisabled] = useState(false);
 
-//useeffect for page changes
-useEffect(() => {
-  document.title ="Joseph Chinemerem Jerry"
-  history.listen(() => {
-    setState({clicked: false,menuName: "MENU"})
-  })
-})
+  //useeffect for page changes
+  useEffect(() => {
+    document.title = "Joseph Chinemerem Jerry";
+    history.listen(() => {
+      setState({ clicked: false, menuName: "MENU" });
+    });
+  });
   const disableMenu = () => {
-  setDisabled(!disabled);
-  setTimeout(() => {
-    setDisabled(false)
-  },1200)
-  }
+    setDisabled(!disabled);
+    setTimeout(() => {
+      setDisabled(false);
+    }, 1200);
+  };
 
   const handleMenu = () => {
-    disableMenu()
-    if(state.initial === false){
+    disableMenu();
+    if (state.initial === false) {
       setState({
         initial: null,
         clicked: true,
-        headerOpen: false
-      }) 
-     
+        headerOpen: false,
+      });
+    } else if (state.clicked === true) {
+      setState({
+        clicked: !state.clicked,
+        menuName: "MENU",
+        headerOpen: true,
+      });
+    } else if (state.clicked === false) {
+      setState({
+        clicked: !state.clicked,
+        headerOpen: true,
+      });
     }
-    
-    else if(state.clicked === true){
-        setState({
-          clicked : !state.clicked,
-          menuName: "MENU",
-          headerOpen: true
-        })      
-      }
-       else if(state.clicked === false){
-        setState({
-          clicked : !state.clicked,
-          headerOpen: true
-        })      
-      }
-  }
+  };
 
-
-  
   return (
-    <header>
-         <div className="header-container ">
+    <header id="header-container">
+      <div className="header-container">
         <div className="wrapper ">
           <div className="inner-header">
-          <div className="logo">
+            <div className="logo">
               <Link to="/" className="logoInner">
                 {/* <img src={logo} alt="" /> */}
                 <svg
@@ -80,20 +73,20 @@ useEffect(() => {
                 </svg>
               </Link>
             </div>
-            
+
             <div className="toggle">
-              {/* <div className="mobile-toggler">
-                <div className="line line-1"></div>
-                <div className="line line-2"></div>
-                <div className="line line-3"></div>
-              </div> */}
-              <div className="btnH"  aria-disabled={disabled} onClick={handleMenu}>{state.menuName}</div>
+              <div
+                className="btnH"
+                aria-disabled={disabled}
+                onClick={handleMenu}
+              >
+                {state.menuName}
+              </div>
             </div>
-            
           </div>
         </div>
       </div>
-      <Burger state={state} handleMenu={handleMenu}/>
+      <Burger state={state} handleMenu={handleMenu} />
     </header>
   );
 };
