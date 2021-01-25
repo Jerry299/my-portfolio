@@ -75,7 +75,7 @@ const About = () => {
           <p>Skills Set</p>
           <div className="container ">
             <div className="row justify-content-center">
-              <div className="col-xs-6 col-sm-6 col-md-4 ">
+              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
                 <div className="box">
                   HTML
                   <FontAwesomeIcon
@@ -85,7 +85,7 @@ const About = () => {
                   />
                 </div>
               </div>
-              <div className="col-xs-6 col-sm-6 col-md-4 ">
+              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
                 <div className="box">
                   CSS
                   <FontAwesomeIcon
@@ -99,7 +99,7 @@ const About = () => {
 
             {/* second row */}
             <div className="row justify-content-center">
-              <div className="col-xs-6 col-sm-6 col-md-4 ">
+              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
                 <div className="box">
                   Javascript
                   <FontAwesomeIcon
@@ -112,7 +112,7 @@ const About = () => {
                   />
                 </div>
               </div>
-              <div className="col-xs-6 col-sm-6 col-md-4 ">
+              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
                 <div className="box">
                   React Js
                   <FontAwesomeIcon
@@ -125,7 +125,7 @@ const About = () => {
             </div>
             {/* third row */}
             <div className="row justify-content-center">
-              <div className="col-xs-6 col-sm-6 col-md-4 ">
+              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
                 <div className="box">
                   Node Js
                   <FontAwesomeIcon
@@ -135,7 +135,7 @@ const About = () => {
                   />
                 </div>
               </div>
-              <div className="col-xs-6 col-sm-6 col-md-4 ">
+              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
                 <div className="box">
                   BootStrap
                   <FontAwesomeIcon
@@ -149,7 +149,7 @@ const About = () => {
 
             {/* fourth row */}
             <div className="row justify-content-center">
-              <div className="col-xs-6 col-sm-6 col-md-4 ">
+              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
                 <div className="box">
                   Git & Github
                   <FontAwesomeIcon
@@ -159,7 +159,7 @@ const About = () => {
                   />
                 </div>
               </div>
-              <div className="col-xs-6 col-sm-6 col-md-4 ">
+              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
                 <div className="box">
                   MongoDb
                   <FontAwesomeIcon
@@ -172,7 +172,7 @@ const About = () => {
             </div>
             {/* fifth row */}
             <div className="row justify-content-center">
-              <div className="col-xs-6 col-sm-6 col-md-4 ">
+              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
                 <div className="box">
                   Postgres
                   <FontAwesomeIcon
@@ -182,7 +182,7 @@ const About = () => {
                   />
                 </div>
               </div>
-              <div className="col-xs-6 col-sm-6 col-md-4 ">
+              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
                 <div className="box">
                   Express
                   <FontAwesomeIcon

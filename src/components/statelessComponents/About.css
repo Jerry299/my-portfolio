@@ -78,22 +78,34 @@ font-family: 'Work Sans', sans-serif; */
     background-color: #00416d;
   }
   .about-skills {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
-    margin-top: 3rem;
     background-color: #e7e7de;
+    padding-bottom: 4rem;
   }
   .about-skills p {
     font-size: 2.8rem;
     color: #0278ae;
+    font-family: "Work Sans", sans-serif;
+    text-align: center;
   }
-  .about-skills__list ul {
+  .box-container {
+    padding: 2rem;
+  }
+
+  .about-skills .box {
+    background-color: #121013;
+
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border-radius: 20px;
+    /* transform: translateX(30px); */
+    color: #f4f5db;
+    height: 220px;
     display: flex;
     justify-content: center;
+    padding: 2rem;
     align-items: center;
-    flex-direction: column;
+    font-size: 1.8rem;
+    font-family: "Work Sans", sans-serif;
+    margin: 1.4rem 0;
   }
 }
 
@@ -108,28 +120,28 @@ font-family: 'Work Sans', sans-serif; */
     display: grid;
     place-items: center;
     padding: 2rem 0;
-    font-family: "Sansita Swashed", cursive;
+    font-family: "Raleway", sans-serif;
     margin-top: 2rem;
     color: #0f3057;
+  }
+  .about-header p {
+    font-size: 3rem;
+    font-weight: 900;
   }
   .about-body {
     display: flex;
     width: 100%;
     background-color: #ffe200;
     height: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row-reverse;
   }
-  .about-header p {
-    color: #0f3057;
-    font-size: 3rem;
-    font-weight: 900;
-  }
+
   .about-body .about-photo {
     padding: 2rem;
   }
   .about-details {
-    width: 70%;
+    width: 50%;
   }
   .about-details .about-details-content div ul li {
     font-size: 1.1rem;
@@ -179,13 +191,33 @@ font-family: 'Work Sans', sans-serif; */
   }
 
   .about-skills {
+    background-color: #f4f5db;
+    padding: 2rem;
   }
   .about-skills p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 2.8rem;
     color: #0278ae;
+    font-family: "Work Sans", sans-serif;
   }
-  .about-skills .about-skills__list ul li {
-    padding: 10px;
+
+  .about-skills .box {
+    background-color: #121013;
+
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border-radius: 20px;
+    /* transform: translateX(30px); */
+    color: #f4f5db;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    align-items: center;
+    font-size: 1.8rem;
+    font-family: "Work Sans", sans-serif;
+    margin: 1.4rem 0;
   }
 }
 
@@ -281,7 +313,7 @@ font-family: 'Work Sans', sans-serif; */
     /* box-shadow: 4px 13px 30px 15px rgba(252, 56, 56, 0.2); */
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     border-radius: 20px;
-    transform: translateX(30px);
+    /* transform: translateX(30px); */
     color: #f4f5db;
     height: 220px;
     display: flex;

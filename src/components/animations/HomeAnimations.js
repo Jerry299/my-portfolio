@@ -6,9 +6,11 @@ import { TimelineMax } from "gsap";
 gsap.registerPlugin(TextPlugin);
 
 let words = [
-  "Full Stack Javascript Developer...",
+  "Full Stack Developer...",
   "Passionate Learner...",
   "Technology Enthusiast...",
+  "Not Your Average Developer...",
+  "First Class Team Player...",
 ];
 
 let masterTl = gsap.timeline({ repeat: -1 }).pause();

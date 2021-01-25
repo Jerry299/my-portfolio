@@ -16,163 +16,185 @@ font-family: 'Poppins', sans-serif; */
 
 .home-sentence .home-skills {
   font-family: "Work Sans", sans-serif;
-  color: #64dfdf;
 }
 
 /* media queries */
 
 /* css for phone responsiveness */
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
-  .home-container {
-    margin-top: 40px;
-    width: 100%;
-  }
-  .home-wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  .home-section {
+    position: relative;
     height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  .home-hi {
-    padding: 2rem 20px;
-    font-size: 2.3rem;
-    text-align: left;
-    color: #ec3170;
-    font-family: "Oswald", sans-serif;
-  }
-  .home-name {
-    font-size: 40px;
-    text-align: center;
-    margin-top: 4.5rem;
-    padding: 10px;
-  }
-  .home-name .my-name {
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  .i-am {
-    margin-bottom: 2rem;
-  }
-  .my-name3,
-  .my-name2 {
-    background: -webkit-linear-gradient(rgb(238, 108, 108), rgb(18, 18, 36));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    display: inline-block;
-  }
-  .home-sentence {
+
+  .home-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
+  .home-wrapper {
+    height: 60vh;
+    width: 100%;
+    background-color: #dddddd;
+    padding: 1.2rem;
+    border-radius: 10px;
+    font-family: "Work Sans", sans-serif;
+    z-index: 3;
+  }
+
+  .home-wrapper .home-hi {
+    color: #214151;
+    margin-top: 1.5rem;
+  }
+
+  .home-wrapper .home-name {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #0f1123;
+  }
+
+  .home-wrapper .home-sentence .home-skills {
+    text-align: center;
+    color: #19456b;
+    font-size: 1.5rem;
+    margin-top: 4rem;
+  }
   .home-sentence .home-skills {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    color: #060930;
-    font-weight: 400;
-    margin-top: 0.5rem;
-    padding: 0 20px;
-    font-size: 1.3rem;
   }
 
-  .click {
+  .slider {
+    background-color: #07f873;
+    overflow-x: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .home-sentence .home-skills .skill {
+    opacity: 0;
+  }
+
+  .my-name {
+    font-weight: 750;
+    scale: 0.1;
+  }
+
+  .home-skills {
+    position: relative;
+  }
+
+  .text {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  .skill {
     display: none;
   }
 }
 
 /* css for tablet responsiveness */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  /* .intro {
-		text-transform: capitalize;
-		font-family: "Zilla Slab", serif;
-		font-size: 1.6rem;
-		line-height: 3.5rem;
-		margin-top: 4rem;
-		font-weight: 500;
-  } */
+  .home-section {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
   .home-container {
-    /* background-attachment: fixed; */
-    width: 100%;
-    /* min-height: 100vh; */
-    height: 82vh;
-    text-align: center;
-    background: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .home-wrapper {
-    color: #000000;
-    padding: 0 8rem 0 8rem;
+    height: 60vh;
+    width: 100%;
+    background-color: #dddddd;
+    padding: 4rem;
+    border-radius: 10px;
+    font-family: "Work Sans", sans-serif;
+    z-index: 3;
+  }
+
+  .home-wrapper .home-hi {
+    color: #214151;
+    margin-bottom: 2rem;
+  }
+
+  .home-wrapper .home-name {
+    text-align: center;
+    font-size: 3.4rem;
+    font-weight: 500;
+    color: #0f1123;
+  }
+
+  .home-wrapper .home-sentence .home-skills {
+    text-align: center;
+    color: #19456b;
+    font-size: 1.5rem;
     margin-top: 4rem;
   }
-  /* .home-skills {
-		text-transform: capitalize;
-		font-size: 1.4rem;
-		font-family: "Zilla Slab", serif;
-		letter-spacing: 0.1rem;
-		font-weight: 400;
-	} */
-  .home-hi {
-    font-size: 4.9rem;
-    text-align: left;
-    color: #ec3170;
-    font-family: "Oswald", sans-serif;
-    margin-top: 9rem;
+  .home-sentence .home-skills {
+    display: flex;
+    flex-direction: column;
   }
-  .home-name {
-    margin-top: 8rem;
-    margin-bottom: 1.4rem;
-    font-size: 100px;
-    position: relative;
-    margin-bottom: 9rem;
+
+  .slider {
+    background-color: #07f873;
+    overflow-x: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
   }
-  .home-name.my-name {
-    text-transform: uppercase;
+
+  .home-sentence .home-skills .skill {
+    opacity: 0;
   }
 
   .my-name {
-    background: -webkit-linear-gradient(rgb(238, 108, 108), rgb(18, 18, 36));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    /* color: #000000; */
-    display: inline-block;
+    font-weight: 750;
+    scale: 0.1;
   }
-  /* .my-name2 {
-    background: -webkit-linear-gradient(rgb(18, 18, 36), rgb(238, 108, 108));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    display: inline-block;
-  }
-  .my-name3 {
-    background: -webkit-linear-gradient(rgb(238, 108, 108), rgb(18, 18, 36));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    display: inline-block;
-  } */
 
   .home-skills {
-    font-size: 2rem;
     position: relative;
-    letter-spacing: 0.1rem;
-    font-weight: 400;
-    padding-top: 4rem;
   }
-  .home-sentence .home-skills .box {
-    position: absolute;
-    bottom: 7px;
-    display: inline-block;
-    /* background: #f05454; */
-    background-color: #ec3170;
-    height: 3px;
-    z-index: 0;
-    width: 0px;
+
+  .text {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
   }
-  .home-sentence .home-skills .letterA {
-    display: inline-block;
+  .skill {
+    display: none;
   }
 }
 
