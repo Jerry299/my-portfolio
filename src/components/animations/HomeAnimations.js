@@ -1,26 +1,43 @@
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
+
 import { TimelineMax } from "gsap";
 
 gsap.registerPlugin(TextPlugin);
+
 let words = [
   "Full Stack Javascript Developer...",
   "Passionate Learner...",
   "Technology Enthusiast...",
 ];
 
-// let masterTl = gsap.timeline({ repeat: -1 }).pause();
-let masterTl = gsap.timeline();
+let masterTl = gsap.timeline({ repeat: -1 }).pause();
 
-// let homeTl = gsap.timeline();
-// let boxTl = gsap.timeline();
+export const skillsAnimation = (textElement) => {
+  words.forEach((word) => {
+    let wordsTl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 2 });
+    wordsTl.to(textElement, {
+      duration: 2,
+      text: word,
+    });
+    masterTl.add(wordsTl);
+  });
+};
 
-export const homeContainerAnimation = (element, element2) => {
+export const homeContainerAnimation = (
+  element,
+  sliderBackground,
+  hello,
+  iAm,
+  myName,
+  underline,
+  letterA,
+  box
+) => {
   const tl = new TimelineMax();
   tl.fromTo(
     element,
     {
-      duration: 1.5,
       height: "0vh",
     },
     {
@@ -30,87 +47,103 @@ export const homeContainerAnimation = (element, element2) => {
   )
     .fromTo(
       element,
-      { duration: 2.5, width: "100%" },
+      { duration: 3.5, width: "100%" },
       { width: "80%", ease: "back.inOut(1.7)" }
     )
+    // for second animation
     .fromTo(
-      element2,
+      sliderBackground,
       {
         x: "-100%",
         ease: "back.inOut(1.7)",
       },
       {
+        duration: 1.3,
         x: "0%",
-        ease: "slow(0.7, 0.7, false)",
+        ease: "slow(1.7, 1.7, false)",
       }
-    );
+    )
+    // third element animation
+    .fromTo(
+      hello,
+      {
+        opacity: 0,
+        fontWeight: 300,
+      },
+      {
+        duration: 2,
+        opacity: 1,
+        ease: "bounce.in",
+        fontWeight: 800,
+        y: -20,
+      }
+    )
+    // animation for I am
+    .fromTo(
+      iAm,
+      {
+        opacity: 0,
+        y: "100",
+      },
+      {
+        opacity: 1,
+        y: "0%",
+        ease: "back.out(1.7)",
+      }
+    )
+    .fromTo(
+      myName,
+      {
+        opacity: 0,
+        y: "-60",
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        y: "0%",
+        ease: "back.out(1.7)",
+        stagger: {
+          amount: 1.5,
+        },
+      }
+    )
+    // target underline and animate it
+
+    .to(underline, {
+      opacity: 1,
+      ease: "power2.inOut",
+      repeat: -1,
+    })
+
+    //animate letterA ref
+    .from(letterA, {
+      duration: 1.5,
+      opacity: 0,
+      ease: "power3.out",
+    })
+
+    // create an animation for box animation
+    .to(box, {
+      duration: 1.2,
+      width: "62px",
+      ease: "power4.inOut",
+      onComplete: () => {
+        return masterTl.play();
+      },
+    })
+
+    .to(box, {
+      duration: 1.5,
+      autoAlpha: 0.5,
+      yoyo: true,
+      repeat: -1,
+      ease: "power4.inOut",
+    });
 
   return tl;
 };
 
-export const homeContainerBgAnimation = (element) => {
-  const tl = new TimelineMax();
-  tl.fromTo(
-    element,
-    {
-      x: "-100%",
-      ease: "back.inOut(1.7)",
-    },
-    {
-      x: "0%",
-      ease: "slow(0.7, 0.7, false)",
-    }
-  );
-  return tl;
-};
-
-masterTl.add(homeContainerAnimation());
-// export const animateHelloWorld = (element) => {
-//   const tl = gsap.timeline({ duration: 1 });
-//   tl.fromTo(
-//     element,
-//     {
-//       opacity: 0,
-//     },
-//     {
-//       opacity: 1,
-//     }
-//   );
-//   return tl;
-// };
-
-// export const animationForHomeHiandHomeName = (el1, el2, el3, el4, el5) => {
-//   homeTl.from(el1, {
-//     duration: 2.3,
-//     y: -300,
-//     repeat: 0,
-//     ease: "elastic.out(1, 0.3)",
-//   });
-//   homeTl.from(el2, {
-//     duration: 1.9,
-//     x: -500,
-//     opacity: 0,
-//     ease: "elastic.out(2, 0.3)",
-//   });
-//   homeTl.from(el3, {
-//     duration: 1,
-//     y: 200,
-//     opacity: 0,
-//     ease: "bounce.out",
-//   });
-//   homeTl.from(el4, {
-//     duration: 1,
-//     y: -200,
-//     opacity: 0,
-//     ease: "elastic.out(1.75, 0.3)",
-//   });
-//   homeTl.from(el5, {
-//     duration: 1,
-//     x: 200,
-//     opacity: 0,
-//     ease: "elastic.out(1.75, 0.3)",
-//   });
-// };
+// masterTl.add(homeContainerAnimation()).add(homeContainerBgAnimation());
 
 // export const underlineTextAndFadeUp = (el, el2) => {
 //   boxTl
@@ -150,27 +183,12 @@ masterTl.add(homeContainerAnimation());
 
 // export const wordsAnimation = (textElement) => {
 //   words.forEach((word) => {
-//     let tl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1.5 });
-//     tl.to(textElement, {
+//     let wordsTl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1.5 });
+//     wordsTl.to(textElement, {
 //       duration: 1.9,
 //       text: word,
 //     });
 
-//     masterTl.add(tl);
+//     tl.add(wordsTl);
 //   });
 // };
-
-// tl.fromTo(
-//   element,
-//   {
-//     width: 0,
-//     marginLeft: "50%",
-//     overflow: "hidden",
-//     ease: "back.inOut(1.7)",
-//   },
-//   {
-//     width: "100%",
-//     marginLeft: 0,
-//     delay: 1,
-//   }
-// );
