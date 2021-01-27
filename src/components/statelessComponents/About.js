@@ -14,12 +14,15 @@ import {
 
 import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 
+//animation functions
+import checkMediaAndApplyAnimation from "../animations/AboutAnimations";
+
 const About = () => {
   let totalPage = useRef(null);
 
   useEffect(() => {
-    console.log(totalPage.current);
-  });
+    checkMediaAndApplyAnimation(totalPage);
+  }, []);
   return (
     <section className="about-container" ref={(el) => (totalPage = el)}>
       <div className="about-wrapper">

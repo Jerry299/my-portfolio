@@ -16,7 +16,7 @@ font-family: 'Work Sans', sans-serif; */
     display: grid;
     place-items: center;
     padding: 2rem 0;
-    font-family: "Sansita Swashed", cursive;
+    font-family: "Raleway", sans-serif;
     margin-top: 2rem;
     color: #0f3057;
   }
@@ -28,7 +28,7 @@ font-family: 'Work Sans', sans-serif; */
     height: 100%;
     border-top: 0;
     justify-content: space-around;
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding: 2rem 2rem;
   }
   .about-header p {
@@ -39,6 +39,7 @@ font-family: 'Work Sans', sans-serif; */
   .about-body .about-photo img {
     max-width: 100%;
     height: auto;
+    margin: 1.5rem 0;
   }
   .about-details .about-details-content div ul li {
     font-size: 1.1rem;
