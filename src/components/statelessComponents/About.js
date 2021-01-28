@@ -13,16 +13,17 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 import { faDatabase } from "@fortawesome/free-solid-svg-icons";
+import useWindowSize from "../../utils/useWindowSize";
 
 //animation functions
-import checkMediaAndApplyAnimation from "../animations/AboutAnimations";
+//import checkMediaAndApplyAnimation from "../animations/AboutAnimations";
 
 const About = () => {
   let totalPage = useRef(null);
 
-  useEffect(() => {
-    checkMediaAndApplyAnimation(totalPage);
-  }, []);
+  const { width, height } = useWindowSize();
+
+  console.log(width);
   return (
     <section className="about-container" ref={(el) => (totalPage = el)}>
       <div className="about-wrapper">
