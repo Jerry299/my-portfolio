@@ -1,6 +1,5 @@
 import { TweenLite } from "gsap";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export const fadeIn = (target) => {
   TweenLite.to(target, 2, {

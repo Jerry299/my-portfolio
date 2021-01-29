@@ -16,21 +16,38 @@ import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import useWindowSize from "../../utils/useWindowSize";
 
 //animation functions
-//import checkMediaAndApplyAnimation from "../animations/AboutAnimations";
+import {
+  ApplyAnimationOnMobile,
+  ApplyAnimationOnTablet,
+  ApplyAnimationOnDesktop,
+} from "../animations/AboutAnimations";
 
 const About = () => {
   let totalPage = useRef(null);
+  let aboutHeader = useRef(null);
+  let aboutBody = useRef(null);
 
-  const { width, height } = useWindowSize();
+  const { width } = useWindowSize();
 
-  console.log(width);
+  useEffect(() => {
+    if (width >= 300 && width < 767) {
+      ApplyAnimationOnMobile(aboutHeader, aboutBody, ".details");
+    }
+    if (width >= 768 && width < 1199) {
+      ApplyAnimationOnTablet(totalPage);
+    }
+    if (width >= 1200 && width < 1600) {
+      ApplyAnimationOnDesktop(totalPage);
+    }
+  }, [width]);
+
   return (
     <section className="about-container" ref={(el) => (totalPage = el)}>
       <div className="about-wrapper">
-        <div className="about-header">
+        <div className="about-header" ref={(el) => (aboutHeader = el)}>
           <p>WHO AM I?</p>
         </div>
-        <div className="about-body">
+        <div className="about-body" ref={(el) => (aboutBody = el)}>
           <div className="about-photo">
             <img
               src="https://res.cloudinary.com/jerry299/image/upload/c_scale,r_8,w_354/v1601525318/Snapchat-1598616708_b63zjo.png"
@@ -39,14 +56,14 @@ const About = () => {
           </div>
           <div className="about-details">
             <div className="about-details-content">
-              <div>
+              <div className="details">
                 <ul>
                   <li>Description: Full Stack Javascript Developer.</li>
                   <li>Location: Nigeria.</li>
                   <li>Available: Yes,Interested In A New Challenge.</li>
                 </ul>
               </div>
-              <div className="about-details-speech">
+              <div className="about-details-speech details">
                 <span>Joseph Chinemerem Jeremiah</span> is a Passionate Tech
                 Enthusiast, who is willing to learn and build solutions.His
                 Background In Engineering inform his mindful but competitive
