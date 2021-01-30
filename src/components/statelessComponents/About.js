@@ -26,12 +26,15 @@ const About = () => {
   let totalPage = useRef(null);
   let aboutHeader = useRef(null);
   let aboutBody = useRef(null);
+  let description = useRef(null);
+  let speech = useRef(null);
+  let resume = useRef(null);
 
   const { width } = useWindowSize();
 
   useEffect(() => {
     if (width >= 300 && width < 767) {
-      ApplyAnimationOnMobile(aboutHeader, aboutBody, ".details");
+      ApplyAnimationOnMobile(aboutHeader, aboutBody, description, speech);
     }
     if (width >= 768 && width < 1199) {
       ApplyAnimationOnTablet(totalPage);
@@ -54,16 +57,19 @@ const About = () => {
               alt=""
             />
           </div>
-          <div className="about-details">
+          <div className="about-details" ref={(el) => (description = el)}>
             <div className="about-details-content">
-              <div className="details">
+              <div>
                 <ul>
                   <li>Description: Full Stack Javascript Developer.</li>
                   <li>Location: Nigeria.</li>
                   <li>Available: Yes,Interested In A New Challenge.</li>
                 </ul>
               </div>
-              <div className="about-details-speech details">
+              <div
+                className="about-details-speech details"
+                ref={(el) => (speech = el)}
+              >
                 <span>Joseph Chinemerem Jeremiah</span> is a Passionate Tech
                 Enthusiast, who is willing to learn and build solutions.His
                 Background In Engineering inform his mindful but competitive
@@ -79,7 +85,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="about-resume">
+        <div className="about-resume" ref={(el) => (resume = el)}>
           <div className="about-resume-button" align="center">
             <a
               className="resume-btn-link"

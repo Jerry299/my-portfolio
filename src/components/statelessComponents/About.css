@@ -143,6 +143,7 @@ font-family: 'Work Sans', sans-serif; */
   }
   .about-details {
     width: 50%;
+    position: relative;
   }
   .about-details .about-details-content div ul li {
     font-size: 1.1rem;

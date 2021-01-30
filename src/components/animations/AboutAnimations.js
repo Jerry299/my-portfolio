@@ -1,19 +1,20 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
-export const ApplyAnimationOnMobile = (header, body, details) => {
+export const ApplyAnimationOnMobile = (header, body, description, speech) => {
   let masterTl = gsap.timeline();
 
   let headertl = gsap.timeline();
   let bodyTimeline = gsap.timeline();
 
   headertl.to(header, {
-    duration: 1.5,
+    duration: 1,
     y: 300,
     ease: "power4.out",
   });
   headertl.from(header, {
-    duration: 1.2,
+    duration: 1,
     y: 300,
     ease: "power4.out",
   });
@@ -25,25 +26,25 @@ export const ApplyAnimationOnMobile = (header, body, details) => {
   bodyTimeline.fromTo(
     body,
     { opacity: 0, yPercent: 100, ease: "slow(0.7, 0.7, false)" },
-    { duration: 1.2, opacity: 1, yPercent: 0, ease: "slow(0.7, 0.7, false)" },
-
-    ScrollTrigger.batch(details, {
-      start: "top bottom-=10px",
-      onEnter: (batch) =>
-        gsap.to(batch, {
-          opacity: 1,
-          y: 0,
-          backgroundSize: "100%",
-          stagger: 0.15,
-        }),
-      onLeaveBack: (batch) =>
-        gsap.to(batch, {
-          opacity: 0,
-          y: 100,
-          backgroundSize: "0%",
-          stagger: 0.1,
-        }),
-    })
+    { duration: 1, opacity: 1, yPercent: 0, ease: "slow(0.7, 0.7, false)" }
+  );
+  bodyTimeline.fromTo(
+    description,
+    { opacity: 0 },
+    {
+      duration: 1.3,
+      opacity: 1,
+      backgroundColor: "white",
+      ease: "power4.inOut",
+      scrollTrigger: {
+        trigger: body,
+        start: 200,
+        end: 700,
+        scrub: 0.5,
+        onEnter: () => console.log("scroll trigger triggered"),
+        markers: true,
+      },
+    }
   );
 
   //add all children timeline to the master timeline
@@ -87,3 +88,21 @@ export const ApplyAnimationOnDesktop = (totalPage) => {
 // ScrollTrigger.addEventListener("refreshInit", () =>
 //   gsap.set(".box", { y: 0, backgroundSize: "0%" })
 // );
+
+// ScrollTrigger.batch(details, {
+//   start: "top bottom-=10px",
+//   onEnter: (batch) =>
+//     gsap.to(batch, {
+//       opacity: 1,
+//       y: 0,
+//       backgroundSize: "100%",
+//       stagger: 0.15,
+//     }),
+//   onLeaveBack: (batch) =>
+//     gsap.to(batch, {
+//       opacity: 0,
+//       y: 100,
+//       backgroundSize: "0%",
+//       stagger: 0.1,
+//     }),
+// })
