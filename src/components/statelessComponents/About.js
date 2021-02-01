@@ -28,13 +28,21 @@ const About = () => {
   let aboutBody = useRef(null);
   let description = useRef(null);
   let speech = useRef(null);
+  let resumeParent = useRef(null);
   let resume = useRef(null);
 
   const { width } = useWindowSize();
 
   useEffect(() => {
     if (width >= 300 && width < 767) {
-      ApplyAnimationOnMobile(aboutHeader, aboutBody, description, speech);
+      ApplyAnimationOnMobile(
+        aboutHeader,
+        aboutBody,
+        description,
+        speech,
+        resumeParent,
+        resume
+      );
     }
     if (width >= 768 && width < 1199) {
       ApplyAnimationOnTablet(totalPage);
@@ -85,13 +93,14 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="about-resume" ref={(el) => (resume = el)}>
+        <div className="about-resume" ref={(el) => (resumeParent = el)}>
           <div className="about-resume-button" align="center">
             <a
               className="resume-btn-link"
               href="www.w"
               target="_blank"
               rel="nofollow noopener"
+              ref={(el) => (resume = el)}
             >
               Check Out My C.V
             </a>

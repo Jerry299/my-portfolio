@@ -2,11 +2,19 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-export const ApplyAnimationOnMobile = (header, body, description, speech) => {
+export const ApplyAnimationOnMobile = (
+  header,
+  body,
+  description,
+  speech,
+  resumeParent,
+  resume
+) => {
   let masterTl = gsap.timeline();
 
   let headertl = gsap.timeline();
   let bodyTimeline = gsap.timeline();
+  let resumeTimeline = gsap.timeline();
 
   headertl.to(header, {
     duration: 1,
@@ -29,26 +37,51 @@ export const ApplyAnimationOnMobile = (header, body, description, speech) => {
     { duration: 1, opacity: 1, yPercent: 0, ease: "slow(0.7, 0.7, false)" }
   );
   bodyTimeline.fromTo(
-    description,
-    { opacity: 0 },
+    [description, speech],
+    { opacity: 0, y: 70 },
     {
       duration: 1.3,
       opacity: 1,
-      backgroundColor: "white",
+      y: 0,
       ease: "power4.inOut",
+      stagger: {
+        amount: 1.5,
+      },
       scrollTrigger: {
         trigger: body,
-        start: 200,
+        start: 10,
         end: 700,
         scrub: 0.5,
-        onEnter: () => console.log("scroll trigger triggered"),
-        markers: true,
       },
     }
   );
 
+  resumeTimeline.fromTo(
+    resume,
+    {
+      opacity: 0,
+      xPercent: -100,
+      ease: "power4.inOut",
+      onComplete: () => console.log("from Trigger fired"),
+    },
+    {
+      scrollTrigger: {
+        trigger: resumeParent,
+        start: 800,
+        end: 900,
+        scrub: true,
+      },
+      opacity: 1,
+      boxShadow: "5px 5px 20px",
+      xPercent: 0,
+      immediateRender: false,
+      ease: "power4.inOut",
+      onComplete: () => console.log("to trigger fired"),
+    }
+  );
+
   //add all children timeline to the master timeline
-  return masterTl.add(headertl).add(bodyTimeline);
+  return masterTl.add(headertl).add(bodyTimeline).add(resumeTimeline);
 };
 
 export const ApplyAnimationOnTablet = (totalPage) => {
