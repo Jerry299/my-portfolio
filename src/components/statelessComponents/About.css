@@ -63,8 +63,10 @@ font-family: 'Work Sans', sans-serif; */
   .about-details .about-details-content .about-details-speech span {
     font-weight: 600;
   }
+  .about-resume {
+    padding: 2rem 0;
+  }
   .about-resume .about-resume-button a {
-    margin: 2rem 0;
     border: 2px solid;
     border-radius: 20px;
     width: 50%;
@@ -73,20 +75,23 @@ font-family: 'Work Sans', sans-serif; */
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    box-shadow: 5px 5px 20px;
   }
-  .about-resume .about-resume-button a:hover {
-    color: #fff;
-    background-color: #00416d;
-  }
+
   .about-skills {
     background-color: #e7e7de;
     padding-bottom: 4rem;
   }
+
   .about-skills p {
-    font-size: 2.8rem;
+    font-size: 2rem;
     color: #0278ae;
     font-family: "Work Sans", sans-serif;
     text-align: center;
+  }
+  #skillsHeader2,
+  #skillsHeader3 {
+    visibility: hidden;
   }
   .box-container {
     padding: 2rem;

@@ -8,13 +8,17 @@ export const ApplyAnimationOnMobile = (
   description,
   speech,
   resumeParent,
-  resume
+  resume,
+  skillsHeader,
+  skillsHeader2,
+  skillsHeader3
 ) => {
   let masterTl = gsap.timeline();
 
   let headertl = gsap.timeline();
   let bodyTimeline = gsap.timeline();
   let resumeTimeline = gsap.timeline();
+  let skillsTimeline = gsap.timeline();
 
   headertl.to(header, {
     duration: 1,
@@ -38,7 +42,7 @@ export const ApplyAnimationOnMobile = (
   );
   bodyTimeline.fromTo(
     [description, speech],
-    { opacity: 0, y: 70 },
+    { opacity: 0, y: 70, ease: "power4.out" },
     {
       duration: 1.3,
       opacity: 1,
@@ -51,7 +55,7 @@ export const ApplyAnimationOnMobile = (
         trigger: body,
         start: 10,
         end: 700,
-        scrub: 0.5,
+        scrub: 1.5,
       },
     }
   );
@@ -60,28 +64,97 @@ export const ApplyAnimationOnMobile = (
     resume,
     {
       opacity: 0,
+      duration: 1.3,
       xPercent: -100,
       ease: "power4.inOut",
-      onComplete: () => console.log("from Trigger fired"),
     },
     {
       scrollTrigger: {
         trigger: resumeParent,
-        start: 800,
-        end: 900,
-        scrub: true,
+        start: "top center",
+        end: "bottom 200px",
+        scrub: 0.5,
       },
+      duration: 3,
       opacity: 1,
-      boxShadow: "5px 5px 20px",
       xPercent: 0,
-      immediateRender: false,
-      ease: "power4.inOut",
-      onComplete: () => console.log("to trigger fired"),
+      ease: "slow(0.5, 0.7, false)",
     }
   );
 
+  // this tl animates sliding in and out of the skills headers
+  skillsTimeline.to(skillsHeader, {
+    duration: 1.5,
+    y: 40,
+    fontSize: "2.5rem",
+    ease: "power3.inOut",
+  });
+  skillsTimeline.to(skillsHeader, {
+    xPercent: 100,
+    opacity: 0,
+    duration: 1.5,
+    ease: "power3.inOut",
+  });
+  skillsTimeline
+    .fromTo(
+      skillsHeader2,
+      {
+        xPercent: -100,
+        display: "block",
+        duration: 1.3,
+        y: -30,
+        ease: "power3.inOut",
+      },
+      {
+        xPercent: 0,
+        duration: 2.5,
+        opacity: 1,
+        fontSize: "2.5rem",
+        ease: "power3.inOut",
+      }
+    )
+    .to(skillsHeader2, {
+      xPercent: 100,
+      duration: 1.5,
+      opacity: 1,
+      ease: "power3.inOut",
+    });
+
+  // third header
+  skillsTimeline
+    .fromTo(
+      skillsHeader3,
+      {
+        xPercent: -100,
+
+        duration: 1.3,
+        y: -50,
+        ease: "power3.inOut",
+      },
+      {
+        xPercent: 0,
+        display: "block",
+        duration: 2.5,
+        opacity: 1,
+        fontSize: "2.5rem",
+        ease: "power3.inOut",
+      }
+    )
+    .to(skillsHeader3, {
+      xPercent: 100,
+      duration: 1.5,
+      opacity: 1,
+      y: -50,
+      ease: "power3.inOut",
+    })
+    .to(skillsHeader3, {});
+
   //add all children timeline to the master timeline
-  return masterTl.add(headertl).add(bodyTimeline).add(resumeTimeline);
+  return masterTl
+    .add(headertl)
+    .add(bodyTimeline)
+    .add(resumeTimeline)
+    .add(skillsTimeline);
 };
 
 export const ApplyAnimationOnTablet = (totalPage) => {

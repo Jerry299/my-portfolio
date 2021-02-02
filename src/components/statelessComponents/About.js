@@ -30,6 +30,10 @@ const About = () => {
   let speech = useRef(null);
   let resumeParent = useRef(null);
   let resume = useRef(null);
+  let aboutSection = useRef(null);
+  let skillsHeader = useRef(null);
+  let skillsHeader2 = useRef(null);
+  let skillsHeader3 = useRef(null);
 
   const { width } = useWindowSize();
 
@@ -41,7 +45,10 @@ const About = () => {
         description,
         speech,
         resumeParent,
-        resume
+        resume,
+        skillsHeader,
+        skillsHeader2,
+        skillsHeader3
       );
     }
     if (width >= 768 && width < 1199) {
@@ -107,8 +114,16 @@ const About = () => {
           </div>
         </div>
         {/* div below is about-skills */}
-        <section className="about-skills">
-          <p>Skills Set</p>
+        <section className="about-skills" ref={(el) => (aboutSection = el)}>
+          <p id="skillsHeader" ref={(el) => (skillsHeader = el)}>
+            Skills Set
+          </p>
+          <p id="skillsHeader2" ref={(el) => (skillsHeader2 = el)}>
+            What I Can Do.
+          </p>
+          <p id="skillsHeader3" ref={(el) => (skillsHeader3 = el)}>
+            Tools I Can Work WIth.
+          </p>
           <div className="container ">
             <div className="row justify-content-center">
               <div className="col-xs-6 col-sm-6 col-md-4 box-container">
