@@ -9,9 +9,7 @@ export const ApplyAnimationOnMobile = (
   speech,
   resumeParent,
   resume,
-  skillsHeader,
-  skillsHeader2,
-  skillsHeader3
+  skillsHeader
 ) => {
   let masterTl = gsap.timeline();
 
@@ -20,6 +18,7 @@ export const ApplyAnimationOnMobile = (
   let resumeTimeline = gsap.timeline();
   let skillsTimeline = gsap.timeline();
 
+  // header takes whole screen before re-sizing to normal
   headertl.to(header, {
     duration: 1,
     y: 300,
@@ -35,6 +34,7 @@ export const ApplyAnimationOnMobile = (
     ease: "power4.out",
   });
 
+  // body starts from being not to view to sliding up into view
   bodyTimeline.fromTo(
     body,
     { opacity: 0, yPercent: 100, ease: "slow(0.7, 0.7, false)" },
@@ -42,7 +42,11 @@ export const ApplyAnimationOnMobile = (
   );
   bodyTimeline.fromTo(
     [description, speech],
-    { opacity: 0, y: 70, ease: "power4.out" },
+    {
+      opacity: 0,
+      y: 70,
+      ease: "power4.out",
+    },
     {
       duration: 1.3,
       opacity: 1,
@@ -53,9 +57,10 @@ export const ApplyAnimationOnMobile = (
       },
       scrollTrigger: {
         trigger: body,
-        start: 10,
-        end: 700,
-        scrub: 1.5,
+        start: 5,
+        end: 600,
+        scrub: 0.5,
+        // markers: true,
       },
     }
   );
@@ -82,72 +87,97 @@ export const ApplyAnimationOnMobile = (
     }
   );
 
+  const skHeaders = gsap.utils.toArray(skillsHeader);
+
   // this tl animates sliding in and out of the skills headers
-  skillsTimeline.to(skillsHeader, {
-    duration: 1.5,
-    y: 40,
-    fontSize: "2.5rem",
-    ease: "power3.inOut",
-  });
-  skillsTimeline.to(skillsHeader, {
-    xPercent: 100,
-    opacity: 0,
-    duration: 1.5,
-    ease: "power3.inOut",
-  });
-  skillsTimeline
-    .fromTo(
-      skillsHeader2,
+  skHeaders.forEach((el) => {
+    skillsTimeline.fromTo(
+      el,
+      { opacity: 0 },
       {
-        xPercent: -100,
-        display: "block",
-        duration: 1.3,
-        y: -30,
-        ease: "power3.inOut",
-      },
-      {
-        xPercent: 0,
-        duration: 2.5,
         opacity: 1,
-        fontSize: "2.5rem",
-        ease: "power3.inOut",
+        duration: 2,
+        y: -100,
+        textAlign: "center",
+        height: "100%",
+        ease: "back.out(1.7)",
+        stagger: {
+          amount: 1.5,
+        },
       }
-    )
-    .to(skillsHeader2, {
-      xPercent: 100,
-      duration: 1.5,
-      opacity: 1,
-      ease: "power3.inOut",
+    );
+    skillsTimeline.to(el, {
+      display: "none",
+      ease: "back.out(1.7)",
+      duration: 1.4,
     });
+  });
 
-  // third header
-  skillsTimeline
-    .fromTo(
-      skillsHeader3,
-      {
-        xPercent: -100,
+  // skillsTimeline.to(skillsHeader, {
+  //   duration: 1.5,
+  //   y: 40,
+  //   fontSize: "2.5rem",
+  //   ease: "power3.inOut",
+  // });
+  // skillsTimeline.to(skillsHeader, {
+  //   xPercent: 100,
+  //   opacity: 0,
+  //   duration: 1.5,
+  //   ease: "power3.inOut",
+  // });
+  // skillsTimeline
+  //   .fromTo(
+  //     skillsHeader2,
+  //     {
+  //       xPercent: -100,
+  //       display: "block",
+  //       duration: 1.3,
+  //       y: -30,
+  //       ease: "power3.inOut",
+  //     },
+  //     {
+  //       xPercent: 0,
+  //       duration: 2.5,
+  //       opacity: 1,
+  //       fontSize: "2.5rem",
+  //       ease: "power3.inOut",
+  //     }
+  //   )
+  //   .to(skillsHeader2, {
+  //     xPercent: 100,
+  //     duration: 1.5,
+  //     opacity: 1,
+  //     ease: "power3.inOut",
+  //   });
 
-        duration: 1.3,
-        y: -50,
-        ease: "power3.inOut",
-      },
-      {
-        xPercent: 0,
-        display: "block",
-        duration: 2.5,
-        opacity: 1,
-        fontSize: "2.5rem",
-        ease: "power3.inOut",
-      }
-    )
-    .to(skillsHeader3, {
-      xPercent: 100,
-      duration: 1.5,
-      opacity: 1,
-      y: -50,
-      ease: "power3.inOut",
-    })
-    .to(skillsHeader3, {});
+  // // third header
+  // skillsTimeline
+  //   .fromTo(
+  //     skillsHeader3,
+  //     {
+  //       xPercent: -100,
+
+  //       duration: 1.3,
+  //       y: -50,
+  //       ease: "power3.inOut",
+  //     },
+  //     {
+  //       xPercent: 0,
+  //       display: "block",
+  //       duration: 2.5,
+  //       opacity: 1,
+  //       fontSize: "2.5rem",
+  //       ease: "power3.inOut",
+  //     }
+  //   )
+  //   .to(skillsHeader3, {
+  //     xPercent: 100,
+  //     duration: 1.5,
+  //     opacity: 1,
+  //     y: -50,
+  //     ease: "power3.inOut",
+  //   })
+  //   .to(skillsHeader3, {});
 
   //add all children timeline to the master timeline
   return masterTl

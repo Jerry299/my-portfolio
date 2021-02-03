@@ -46,9 +46,7 @@ const About = () => {
         speech,
         resumeParent,
         resume,
-        skillsHeader,
-        skillsHeader2,
-        skillsHeader3
+        ".skills_header"
       );
     }
     if (width >= 768 && width < 1199) {
@@ -115,15 +113,31 @@ const About = () => {
         </div>
         {/* div below is about-skills */}
         <section className="about-skills" ref={(el) => (aboutSection = el)}>
-          <p id="skillsHeader" ref={(el) => (skillsHeader = el)}>
-            Skills Set
+          <p>
+            <span
+              id="skillsHeader"
+              className="skills_header"
+              ref={(el) => (skillsHeader = el)}
+            >
+              Skills Set
+            </span>
+
+            <span
+              id="skillsHeader2"
+              className="skills_header"
+              ref={(el) => (skillsHeader2 = el)}
+            >
+              What I Can Do.
+            </span>
+            <span
+              id="skillsHeader3"
+              className="skills_header"
+              ref={(el) => (skillsHeader3 = el)}
+            >
+              Tools I Can Work WIth.
+            </span>
           </p>
-          <p id="skillsHeader2" ref={(el) => (skillsHeader2 = el)}>
-            What I Can Do.
-          </p>
-          <p id="skillsHeader3" ref={(el) => (skillsHeader3 = el)}>
-            Tools I Can Work WIth.
-          </p>
+
           <div className="container ">
             <div className="row justify-content-center">
               <div className="col-xs-6 col-sm-6 col-md-4 box-container">
