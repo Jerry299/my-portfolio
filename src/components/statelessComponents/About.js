@@ -32,8 +32,6 @@ const About = () => {
   let resume = useRef(null);
   let aboutSection = useRef(null);
   let skillsHeader = useRef(null);
-  let skillsHeader2 = useRef(null);
-  let skillsHeader3 = useRef(null);
 
   const { width } = useWindowSize();
 
@@ -46,7 +44,7 @@ const About = () => {
         speech,
         resumeParent,
         resume,
-        ".skills_header"
+        skillsHeader
       );
     }
     if (width >= 768 && width < 1199) {
@@ -74,7 +72,7 @@ const About = () => {
             <div className="about-details-content">
               <div>
                 <ul>
-                  <li>Description: Full Stack Javascript Developer.</li>
+                  <li>Description: Javascript Developer MERN STACK.</li>
                   <li>Location: Nigeria.</li>
                   <li>Available: Yes,Interested In A New Challenge.</li>
                 </ul>
@@ -113,29 +111,12 @@ const About = () => {
         </div>
         {/* div below is about-skills */}
         <section className="about-skills" ref={(el) => (aboutSection = el)}>
-          <p>
-            <span
-              id="skillsHeader"
-              className="skills_header"
-              ref={(el) => (skillsHeader = el)}
-            >
-              Skills Set
-            </span>
-
-            <span
-              id="skillsHeader2"
-              className="skills_header"
-              ref={(el) => (skillsHeader2 = el)}
-            >
-              What I Can Do.
-            </span>
-            <span
-              id="skillsHeader3"
-              className="skills_header"
-              ref={(el) => (skillsHeader3 = el)}
-            >
-              Tools I Can Work WIth.
-            </span>
+          <p ref={(el) => (skillsHeader = el)} id="skillsHeader">
+            <span className="skills_header">Tools</span>{" "}
+            <span className="skills_header">I</span>{" "}
+            <span className="skills_header">Can</span>{" "}
+            <span className="skills_header">Work</span>{" "}
+            <span className="skills_header">With.</span>
           </p>
 
           <div className="container ">
