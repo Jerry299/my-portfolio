@@ -296,13 +296,156 @@ export const ApplyAnimationOnTablet = (
     .add(skillsTimeline, "+=5");
 };
 
-export const ApplyAnimationOnDesktop = (totalPage) => {
-  let tl = gsap.timeline();
-  tl.to(totalPage, {
-    duration: 2,
-    opacity: 1,
-    backgroundColor: "red",
+export const ApplyAnimationOnDesktop = (
+  header,
+  body,
+  description,
+  speech,
+  photo,
+  resumeParent,
+  resume,
+  skillsHeader,
+  boxes
+) => {
+  let masterTl = gsap.timeline();
+
+  let headertl = gsap.timeline();
+  let bodyTimeline = gsap.timeline();
+  let resumeTimeline = gsap.timeline();
+  let skillsTimeline = gsap.timeline();
+
+  // header takes whole screen before re-sizing to normal
+  headertl.to(header, {
+    duration: 1.5,
+    y: 400,
+    ease: "power4.out",
   });
+  headertl.from(header, {
+    duration: 1,
+    y: 400,
+    ease: "power4.out",
+  });
+  headertl.to(header, {
+    y: 0,
+    ease: "power4.out",
+  });
+
+  // body starts from being not to view to sliding up into view
+  bodyTimeline.fromTo(
+    body,
+    {
+      opacity: 0,
+      duration: 2,
+      backgroundColor: "#ffe8e8",
+      yPercent: -100,
+      ease: "slow(0.7, 0.7, false)",
+    },
+    {
+      duration: 1.5,
+      backgroundColor: "#ffe200",
+      opacity: 1,
+      yPercent: 0,
+      ease: "slow(0.7, 0.7, false)",
+    }
+  );
+  bodyTimeline.fromTo(
+    [description, speech, photo],
+    {
+      opacity: 0,
+      y: -70,
+      ease: "power4.out",
+    },
+    {
+      duration: 1.3,
+      opacity: 1,
+      y: 0,
+      ease: "power4.inOut",
+      stagger: {
+        amount: 1.8,
+      },
+    }
+  );
+
+  resumeTimeline.fromTo(
+    resume,
+    {
+      opacity: 0,
+      duration: 1.5,
+      xPercent: -100,
+      ease: "power4.inOut",
+    },
+    {
+      scrollTrigger: {
+        trigger: resumeParent,
+        start: "top center",
+        end: "bottom 200px",
+        scrub: 0.5,
+      },
+      duration: 3,
+      opacity: 1,
+      xPercent: 0,
+      ease: "slow(0.5, 0.7, false)",
+    }
+  );
+
+  skillsTimeline.fromTo(
+    skillsHeader,
+    {
+      opacity: 0,
+      y: 70,
+      duration: 1.3,
+      ease: "circ.inOut",
+    },
+    {
+      opacity: 1,
+      ease: "circ.inOut",
+      duration: 1.4,
+      y: 0,
+      scrollTrigger: {
+        trigger: skillsHeader,
+        start: "top center",
+        end: "+=100px",
+        scrub: 0.5,
+      },
+    }
+  );
+
+  let allBoxes = gsap.utils.toArray(boxes);
+  allBoxes.forEach((box) => {
+    skillsTimeline.fromTo(
+      box,
+      {
+        opacity: 0,
+        yPercent: 50,
+        duration: 1.7,
+        scale: 2,
+        ease: "sine.out",
+      },
+      {
+        opacity: 1,
+        yPercent: 0,
+        ease: "back.out(1.7)",
+        duration: 1.5,
+        scale: 1,
+        stagger: {
+          amount: 1.4,
+        },
+        scrollTrigger: {
+          trigger: box,
+          start: "top center+=70",
+          end: "bottom bottom",
+          scrub: 0.7,
+        },
+      }
+    );
+  });
+
+  //add all children timeline to the master timeline
+  return masterTl
+    .add(headertl)
+    .add(bodyTimeline)
+    .add(resumeTimeline)
+    .add(skillsTimeline, "+=5");
 };
 
 // gsap.defaults({ ease: "power3" });

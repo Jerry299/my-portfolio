@@ -62,7 +62,17 @@ const About = () => {
       );
     }
     if (width >= 1200 && width < 1600) {
-      ApplyAnimationOnDesktop(totalPage);
+      ApplyAnimationOnDesktop(
+        aboutHeader,
+        aboutBody,
+        description,
+        speech,
+        ".about-photo",
+        resumeParent,
+        resume,
+        skillsHeader,
+        ".box"
+      );
     }
   }, [width]);
 
