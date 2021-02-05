@@ -44,11 +44,22 @@ const About = () => {
         speech,
         resumeParent,
         resume,
-        skillsHeader
+        skillsHeader,
+        ".box"
       );
     }
     if (width >= 768 && width < 1199) {
-      ApplyAnimationOnTablet(totalPage);
+      ApplyAnimationOnTablet(
+        aboutHeader,
+        aboutBody,
+        description,
+        speech,
+        ".about-photo",
+        resumeParent,
+        resume,
+        skillsHeader,
+        ".box"
+      );
     }
     if (width >= 1200 && width < 1600) {
       ApplyAnimationOnDesktop(totalPage);
@@ -112,10 +123,10 @@ const About = () => {
         {/* div below is about-skills */}
         <section className="about-skills" ref={(el) => (aboutSection = el)}>
           <p ref={(el) => (skillsHeader = el)} id="skillsHeader">
-            <span className="skills_header">Tools</span>{" "}
-            <span className="skills_header">I</span>{" "}
-            <span className="skills_header">Can</span>{" "}
-            <span className="skills_header">Work</span>{" "}
+            <span className="skills_header">Tools</span> <span> </span>
+            <span className="skills_header">I</span> <span> </span>
+            <span className="skills_header">Can</span> <span> </span>
+            <span className="skills_header">Work</span> <span> </span>
             <span className="skills_header">With.</span>
           </p>
 
