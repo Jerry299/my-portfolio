@@ -39,6 +39,9 @@ font-family: 'Cabin', sans-serif;
     font-size: 3rem;
     font-weight: 900;
   }
+  .circle {
+    display: none;
+  }
   .about-body .about-photo img {
     max-width: 100%;
     height: auto;
@@ -139,6 +142,9 @@ font-family: 'Cabin', sans-serif;
   .about-header p {
     font-size: 5rem;
     font-weight: 900;
+  }
+  .circle {
+    display: none;
   }
   .about-body {
     display: flex;
@@ -270,6 +276,17 @@ font-family: 'Cabin', sans-serif;
     color: #0f3057;
     font-size: 3rem;
     font-weight: 900;
+  }
+  .skills_header {
+    font-family: "Cabin", sans-serif;
+  }
+  .circle {
+    height: 100px;
+    width: 100px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.1;
   }
   .about-body {
     display: flex;

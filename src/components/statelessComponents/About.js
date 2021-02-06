@@ -64,6 +64,7 @@ const About = () => {
     if (width >= 1200 && width < 1600) {
       ApplyAnimationOnDesktop(
         aboutHeader,
+        ".circle",
         aboutBody,
         description,
         speech,
@@ -79,8 +80,9 @@ const About = () => {
   return (
     <section className="about-container" ref={(el) => (totalPage = el)}>
       <div className="about-wrapper">
-        <div className="about-header" ref={(el) => (aboutHeader = el)}>
-          <p>WHO AM I?</p>
+        <div className="about-header">
+          <p ref={(el) => (aboutHeader = el)}>WHO AM I?</p>
+          <span className="circle"></span>
         </div>
         <div className="about-body" ref={(el) => (aboutBody = el)}>
           <div className="about-photo">

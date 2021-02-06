@@ -296,8 +296,11 @@ export const ApplyAnimationOnTablet = (
     .add(skillsTimeline, "+=5");
 };
 
+// apply animation on desktop
+
 export const ApplyAnimationOnDesktop = (
   header,
+  circle,
   body,
   description,
   speech,
@@ -319,9 +322,48 @@ export const ApplyAnimationOnDesktop = (
     duration: 1.5,
     y: 400,
     ease: "power4.out",
+    opacity: 0,
   });
+
+  //animation for moving circle to and fro then display text
+  headertl.to(circle, {
+    opacity: 1,
+    x: 300,
+    y: -90,
+    duration: 2,
+    backgroundColor: "#edcfa9",
+    boxShadow: "50px -50px 70px 35px #faf3dd",
+    ease: "back.out(1.7)",
+  });
+  headertl.to(circle, {
+    x: -300,
+    backgroundColor: "#feceab",
+    duration: 1.4,
+    ease: "back.out(1.7)",
+    boxShadow: "50px -50px 70px 35px #b9fffc",
+  });
+  headertl.to(circle, {
+    x: 300,
+    duration: 1.4,
+    backgroundColor: "#ff9292",
+    ease: "back.out(1.7)",
+    boxShadow: "-50px 50px 70px 35px #ffb4b4",
+  });
+  headertl.to(circle, {
+    y: 500,
+    duration: 1.4,
+    backgroundColor: "#28df99",
+    ease: "slow(0.7, 0.7, false)",
+    boxShadow: "-50px -50px 70px 75px #99f3bd",
+  });
+  headertl.set(circle, {
+    display: "none",
+  });
+
+  //animation for moving circle to and fro then display text ends
   headertl.from(header, {
     duration: 1,
+    opacity: 1,
     y: 400,
     ease: "power4.out",
   });
@@ -337,7 +379,7 @@ export const ApplyAnimationOnDesktop = (
       opacity: 0,
       duration: 2,
       backgroundColor: "#ffe8e8",
-      yPercent: -100,
+      yPercent: 100,
       ease: "slow(0.7, 0.7, false)",
     },
     {
@@ -349,7 +391,7 @@ export const ApplyAnimationOnDesktop = (
     }
   );
   bodyTimeline.fromTo(
-    [description, speech, photo],
+    [description, speech],
     {
       opacity: 0,
       y: -70,
@@ -366,6 +408,19 @@ export const ApplyAnimationOnDesktop = (
     }
   );
 
+  bodyTimeline.fromTo(
+    photo,
+    {
+      opacity: 0,
+      duration: 1,
+    },
+    {
+      opacity: 1,
+      duration: 1.8,
+      ease: "slow(0.5, 0.7, false)",
+    }
+  );
+
   resumeTimeline.fromTo(
     resume,
     {
@@ -377,8 +432,8 @@ export const ApplyAnimationOnDesktop = (
     {
       scrollTrigger: {
         trigger: resumeParent,
-        start: "top center",
-        end: "bottom 200px",
+        start: "top bottom",
+        end: "bottom 600px",
         scrub: 0.5,
       },
       duration: 3,
@@ -400,10 +455,12 @@ export const ApplyAnimationOnDesktop = (
       opacity: 1,
       ease: "circ.inOut",
       duration: 1.4,
+      textAlign: "center",
+      paddingTop: "2rem",
       y: 0,
       scrollTrigger: {
         trigger: skillsHeader,
-        start: "top center",
+        start: "top bottom",
         end: "+=100px",
         scrub: 0.5,
       },
@@ -418,7 +475,7 @@ export const ApplyAnimationOnDesktop = (
         opacity: 0,
         yPercent: 50,
         duration: 1.7,
-        scale: 2,
+        scale: 0.2,
         ease: "sine.out",
       },
       {
@@ -432,8 +489,8 @@ export const ApplyAnimationOnDesktop = (
         },
         scrollTrigger: {
           trigger: box,
-          start: "top center+=70",
-          end: "bottom bottom",
+          start: "top bottom+=200",
+          end: "bottom center",
           scrub: 0.7,
         },
       }
@@ -447,41 +504,3 @@ export const ApplyAnimationOnDesktop = (
     .add(resumeTimeline)
     .add(skillsTimeline, "+=5");
 };
-
-// gsap.defaults({ ease: "power3" });
-// gsap.set(".box", { y: 100 });
-
-// ScrollTrigger.batch(".box", {
-//   start: "top bottom-=100px",
-//   onEnter: (batch) =>
-//     gsap.to(batch, { opacity: 1, y: 0, backgroundSize: "100%", stagger: 0.15 }),
-//   onLeaveBack: (batch) =>
-//     gsap.to(batch, { opacity: 0, y: 100, backgroundSize: "0%", stagger: 0.1 }),
-// });
-
-// when ScrollTrigger does a refresh(), it maps all the positioning data which
-// factors in transforms, but in this example we're initially setting all the ".box"
-// elements to a "y" of 100 solely for the animation in which would throw off the normal
-// positioning, so we use a "refreshInit" listener to reset the y temporarily. When we
-// return a gsap.set() in the listener, it'll automatically revert it after the refresh()!
-// ScrollTrigger.addEventListener("refreshInit", () =>
-//   gsap.set(".box", { y: 0, backgroundSize: "0%" })
-// );
-
-// ScrollTrigger.batch(details, {
-//   start: "top bottom-=10px",
-//   onEnter: (batch) =>
-//     gsap.to(batch, {
-//       opacity: 1,
-//       y: 0,
-//       backgroundSize: "100%",
-//       stagger: 0.15,
-//     }),
-//   onLeaveBack: (batch) =>
-//     gsap.to(batch, {
-//       opacity: 0,
-//       y: 100,
-//       backgroundSize: "0%",
-//       stagger: 0.1,
-//     }),
-// })
