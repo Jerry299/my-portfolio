@@ -3,12 +3,14 @@ img {
   max-width: 100%;
 }
 
+// media query for mobile.
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
   .works-wrapper {
     margin-bottom: 5rem;
     .project-header {
       margin-top: 5rem;
       text-align: center;
+      // height: 100%;
     }
   }
   //container for each project card
@@ -16,12 +18,16 @@ img {
     width: 100%;
     padding-left: 2rem;
     padding-right: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.3rem;
     margin-top: 5rem;
+
     .work-wrapper {
       .card-info {
         div {
           display: flex;
           flex-direction: column;
+          text-align: center;
           h2 {
             font-weight: 660;
           }
@@ -31,7 +37,13 @@ img {
           }
           .tags {
             font-weight: 500;
-            color: #f08a5d;
+            font-family: "Cabin", sans-serif;
+            .solid_tag {
+              color: #153e90;
+            }
+            .tag_items {
+              color: #54e346;
+            }
           }
         }
       }
@@ -39,42 +51,18 @@ img {
         margin-top: 1.2rem;
         .body_post {
           margin-top: 1.5rem;
-          .body_post_info {
-            .body_post_links {
-              .butn-cover {
-                display: flex;
-                a {
-                  -webkit-transition: all 500ms
-                    cubic-bezier(0.39, 0.5, 0.15, 1.36);
-                  -moz-transition: all 500ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
-                  -ms-transition: all 500ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
-                  -o-transition: all 500ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
-                  transition: all 500ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
-                  display: block;
-                  margin: 5px auto;
-                  max-width: 180px;
-                  text-decoration: none;
-                  border-radius: 5px;
-                  padding: 10px 20px;
-                  text-align: center;
-                }
-                a.butn {
-                  color: rgba(30, 22, 54, 0.6);
-                  box-shadow: rgba(0, 65, 109, 0.6) 0 0px 0px 4px inset;
-                  &:hover {
-                    color: rgba(255, 255, 255, 0.85);
-                    box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
-                  }
-                }
-                a.butn2 {
-                  color: rgba(30, 22, 54, 0.6);
-                  box-shadow: rgba(0, 65, 109, 0.6) 0 0px 0px 4px inset;
-                  &:hover {
-                    color: rgba(255, 255, 255, 0.85);
-                    box-shadow: rgba(30, 22, 54, 0.7) 0 80px 0px 2px inset;
-                  }
-                }
-              }
+
+          .butn-cover {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            .butn,
+            .butn2 {
+              color: #252525;
+              box-shadow: #64dfdf 0 0px 0px 2px inset;
+              display: block;
+              padding: 0.8rem 1.3rem;
+              border-radius: 15px;
             }
           }
         }
@@ -420,3 +408,35 @@ img {
 //           position: absolute;
 //           top: 70px;
 //         }
+
+// a {
+//   -webkit-transition: all 500ms
+//     cubic-bezier(0.39, 0.5, 0.15, 1.36);
+//   -moz-transition: all 500ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
+//   -ms-transition: all 500ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
+//   -o-transition: all 500ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
+//   transition: all 500ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
+//   display: block;
+//   margin: 5px auto;
+//   max-width: 180px;
+//   text-decoration: none;
+//   border-radius: 5px;
+//   padding: 10px 20px;
+//   text-align: center;
+// }
+// a.butn {
+//   color: rgba(30, 22, 54, 0.6);
+//   box-shadow: rgba(0, 65, 109, 0.6) 0 0px 0px 4px inset;
+//   &:hover {
+//     color: rgba(255, 255, 255, 0.85);
+//     box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+//   }
+// }
+// a.butn2 {
+//   color: rgba(30, 22, 54, 0.6);
+//   box-shadow: rgba(0, 65, 109, 0.6) 0 0px 0px 4px inset;
+//   &:hover {
+//     color: rgba(255, 255, 255, 0.85);
+//     box-shadow: rgba(30, 22, 54, 0.7) 0 80px 0px 2px inset;
+//   }
+// }
