@@ -10,20 +10,21 @@ import { projectHeaderAnimation } from "../animations/WorkAnimation";
 const MyWorks = () => {
   // variables for dom nodes
   let projectHeader = useRef(null);
+  let name = useRef(null);
 
   useEffect(() => {
-    projectHeaderAnimation(projectHeader);
+    // projectHeaderAnimation(projectHeader, name);
   }, []);
   return (
     <section className="works-container">
       <div className="works-wrapper">
-        <h2 className="project-header" ref={(el) => (projectHeader = el)}>
+        <p className="project-header" ref={(el) => (projectHeader = el)}>
           Some Projects I Have Worked On.
-        </h2>
+        </p>
 
         <div className="projects-container">
           <div className="projects-wrapper">
-            <div>
+            <div ref={(el) => (name = el)}>
               {workData.map((work) => {
                 return (
                   <Work

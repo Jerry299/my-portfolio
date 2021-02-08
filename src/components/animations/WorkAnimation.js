@@ -1,10 +1,9 @@
 import { gsap } from "gsap";
 
-let masterTl = gsap.timeline();
-//animation for MyWorks.js component
-export const projectHeaderAnimation = (projectHeader) => {
-  const tl = gsap.timeline();
+// use dom manipulation
 
+//animation for MyWorks.js component
+export const projectHeaderAnimation = (projectHeader, name) => {
   tl.to(projectHeader, {
     duration: 1.5,
     y: 300,
@@ -27,20 +26,52 @@ export const projectHeaderAnimation = (projectHeader) => {
       height: "100%",
     }
   );
-  masterTl.add(tl);
+  // tl.fromTo(
+  //   name,
+  //   {
+  //     opacity: 0,
+  //     duration: 1.5,
+  //   },
+  //   {
+  //     opacity: 1,
+  //   }
+  // );
+
   return tl;
 };
 
 //animation for individual work.js component
 
-export const ApplyWorkAnimationOnMobile = (wrapper) => {
-  let tl = gsap.timeline();
-  tl.from(wrapper, { opacity: 0 }, { opacity: 1 });
-
-  masterTl.add(tl);
-  return tl;
-};
+export const ApplyWorkAnimationOnMobile = () => {};
 
 export const ApplyWorkAnimationTablet = () => {};
 
-export const ApplyWorkAnimationOnDesktop = () => {};
+export const ApplyWorkAnimationOnDesktop = (
+  name,
+  intro,
+  tag,
+  tagItem,
+  imageWrapper
+) => {
+  let masterTl = gsap.timeline();
+  console.log(name);
+  // children timeline
+  let nametl = gsap.timeline();
+  nametl.fromTo(
+    name,
+    {
+      opacity: 0,
+      y: 30,
+      duration: 2,
+    },
+    {
+      opacity: 1,
+      y: 0,
+    }
+  );
+
+  masterTl.add(nametl);
+  return masterTl;
+};
+
+const tl = gsap.timeline();
