@@ -42,7 +42,13 @@ export const projectHeaderAnimation = (projectHeader, name) => {
 
 //animation for individual work.js component
 
-export const ApplyWorkAnimationOnMobile = () => {};
+export const ApplyWorkAnimationOnMobile = (
+  name,
+  intro,
+  tag,
+  tagItem,
+  imageWrapper
+) => {};
 
 export const ApplyWorkAnimationTablet = () => {};
 
@@ -51,26 +57,38 @@ export const ApplyWorkAnimationOnDesktop = (
   intro,
   tag,
   tagItem,
-  imageWrapper
+  imageWrapper,
+  container
 ) => {
   let masterTl = gsap.timeline();
-  console.log(name);
+
   // children timeline
-  let nametl = gsap.timeline();
-  nametl.fromTo(
-    name,
+  let containerTl = gsap.timeline();
+  containerTl.fromTo(
+    container,
     {
-      opacity: 0,
-      y: 30,
+      y: 80,
       duration: 2,
     },
     {
-      opacity: 1,
       y: 0,
     }
   );
+  containerTl.fromTo(
+    container,
+    {
+      backgroundSize: "550px",
+      height: "0%",
+      duration: 2,
+    },
+    {
+      backgroundSize: "250px",
+      height: "100%",
+      ease: "back.out(1.7)",
+    }
+  );
 
-  masterTl.add(nametl);
+  masterTl.add(containerTl);
   return masterTl;
 };
 

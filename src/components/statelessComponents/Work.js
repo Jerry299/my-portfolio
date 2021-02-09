@@ -16,13 +16,14 @@ const Work = (props) => {
   let tag = useRef(null);
   let tagItem = useRef(null);
   let imageWrapper = useRef(null);
+  let container = useRef(null);
 
   // get device width
   const { width } = useWindowSize();
 
   useEffect(() => {
     if (width >= 300 && width < 767) {
-      ApplyWorkAnimationOnMobile();
+      ApplyWorkAnimationOnMobile(name, intro, tag, tagItem, imageWrapper);
     }
 
     if (width >= 768 && width < 1199) {
@@ -30,7 +31,14 @@ const Work = (props) => {
     }
 
     if (width >= 1200 && width < 1600) {
-      ApplyWorkAnimationOnDesktop(name, intro, tag, tagItem, imageWrapper);
+      ApplyWorkAnimationOnDesktop(
+        name,
+        intro,
+        tag,
+        tagItem,
+        imageWrapper,
+        container
+      );
     }
   }, [width]);
 
@@ -39,13 +47,16 @@ const Work = (props) => {
       {/* project start */}
       {/* this div immediately below just reverses the layout of the card if it is odd  */}
       <div
+        ref={(el) => (container = el)}
         className={`work-wrapper ${
           props.id % 2 === 0 ? "work-wrapper-even" : "work-wrapper-odd"
         }`}
       >
         <div className="card-info">
           <div>
-            <h2 ref={(el) => (name = el)}>{props.name}.</h2>
+            <p ref={(el) => (name = el)} id="name">
+              {props.name}.
+            </p>
             <p className="intro" ref={(el) => (intro = el)}>
               {" "}
               {props.intro}.{" "}
