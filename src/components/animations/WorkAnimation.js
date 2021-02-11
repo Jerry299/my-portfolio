@@ -1,4 +1,6 @@
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 // use dom manipulation
 
@@ -64,31 +66,45 @@ export const ApplyWorkAnimationOnDesktop = (
 
   // children timeline
   let containerTl = gsap.timeline();
+  let nameTl = gsap.timeline();
+
   containerTl.fromTo(
     container,
     {
-      y: 80,
-      duration: 2,
+      opacity: 0,
+      y: -60,
     },
     {
       y: 0,
-    }
-  );
-  containerTl.fromTo(
-    container,
-    {
-      backgroundSize: "550px",
-      height: "0%",
-      duration: 2,
-    },
-    {
-      backgroundSize: "250px",
-      height: "100%",
-      ease: "back.out(1.7)",
+      opacity: 1,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: container,
+        start: "top center+=10px",
+        end: "bottom bottom",
+        scrub: 0.5,
+      },
     }
   );
 
-  masterTl.add(containerTl);
+  nameTl.fromTo(
+    name,
+    {
+      opacity: 0,
+      height: "0%",
+    },
+    {
+      opacity: 1,
+      duration: 1.5,
+      height: "100%",
+      scrollTrigger: {
+        trigger: name,
+        start: "top center",
+      },
+    }
+  );
+
+  masterTl.add(containerTl).add(nameTl);
   return masterTl;
 };
 

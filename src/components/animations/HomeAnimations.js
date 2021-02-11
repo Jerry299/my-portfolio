@@ -6,10 +6,9 @@ import { TimelineMax } from "gsap";
 gsap.registerPlugin(TextPlugin);
 
 let words = [
-  "Full Stack Developer...",
+  "Javascript Developer...",
   "Passionate Learner...",
   "Technology Enthusiast...",
-  "Not Your Average Developer...",
   "First Class Team Player...",
 ];
 
@@ -144,53 +143,3 @@ export const homeContainerAnimation = (
 
   return tl;
 };
-
-// masterTl.add(homeContainerAnimation()).add(homeContainerBgAnimation());
-
-// export const underlineTextAndFadeUp = (el, el2) => {
-//   boxTl
-//     .to(el, {
-//       duration: 4,
-//       width: "85px",
-//       ease: "power4.inOut",
-//     })
-//     .from(el2, {
-//       duration: 4,
-//       y: 50,
-//       opacity: 0,
-//       ease: "power3.out",
-//       onComplete: () => masterTl.play(),
-//     })
-//     .to(el, {
-//       duration: 4,
-//       height: "34px",
-//       ease: "elastic.out",
-//     })
-//     .to(el, {
-//       duration: 4.5,
-//       autoAlpha: 0.5,
-//       yoyo: true,
-//       repeat: -1,
-//       ease: "power4.inOut",
-//     });
-// };
-
-// export const homeAnimationsForMySkills = (element) => {
-//   gsap.to(element, {
-//     opacity: 0,
-//     ease: "power2.inOut",
-//     repeat: -1,
-//   });
-// };
-
-// export const wordsAnimation = (textElement) => {
-//   words.forEach((word) => {
-//     let wordsTl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1.5 });
-//     wordsTl.to(textElement, {
-//       duration: 1.9,
-//       text: word,
-//     });
-
-//     tl.add(wordsTl);
-//   });
-// };
