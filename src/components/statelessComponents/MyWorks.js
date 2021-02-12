@@ -1,16 +1,11 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./MyWorks.scss";
 import Footer from "./Footer";
 import Work from "./Work";
 import { workData } from "./WorksData";
 
-// import animations
-import { projectHeaderAnimation } from "../animations/WorkAnimation";
-
 const MyWorks = () => {
   // variables for dom nodes
-  let projectHeader = useRef(null);
-  let name = useRef(null);
 
   useEffect(() => {
     // projectHeaderAnimation(projectHeader, name);
@@ -18,13 +13,11 @@ const MyWorks = () => {
   return (
     <section className="works-container">
       <div className="works-wrapper">
-        <p className="project-header" ref={(el) => (projectHeader = el)}>
-          Some Projects I Have Worked On.
-        </p>
+        <p className="project-header">Some Projects I Have Worked On.</p>
 
         <div className="projects-container">
           <div className="projects-wrapper">
-            <div ref={(el) => (name = el)}>
+            <div>
               {workData.map((work) => {
                 return (
                   <Work

@@ -23,14 +23,13 @@ import {
 } from "../animations/AboutAnimations";
 
 const About = () => {
-  let totalPage = useRef(null);
   let aboutHeader = useRef(null);
   let aboutBody = useRef(null);
   let description = useRef(null);
   let speech = useRef(null);
   let resumeParent = useRef(null);
   let resume = useRef(null);
-  let aboutSection = useRef(null);
+
   let skillsHeader = useRef(null);
 
   const { width } = useWindowSize();
@@ -78,7 +77,7 @@ const About = () => {
   }, [width]);
 
   return (
-    <section className="about-container" ref={(el) => (totalPage = el)}>
+    <section className="about-container">
       <div className="about-wrapper">
         <div className="about-header">
           <p ref={(el) => (aboutHeader = el)}>WHO AM I?</p>
@@ -121,7 +120,7 @@ const About = () => {
               className="resume-btn-link"
               href="https://docs.google.com/document/d/1dyPodNxdfH4Megnb9S759mKMapjZN_7XrzZ7uudcjBo/edit?usp=sharing"
               target="_blank"
-              rel="nofollow noopener"
+              rel="nofollow noopener noreferrer"
               ref={(el) => (resume = el)}
             >
               Check Out My C.V
@@ -129,7 +128,7 @@ const About = () => {
           </div>
         </div>
         {/* div below is about-skills */}
-        <section className="about-skills" ref={(el) => (aboutSection = el)}>
+        <section className="about-skills">
           <p ref={(el) => (skillsHeader = el)} id="skillsHeader">
             <span className="skills_header">Tools</span> <span> </span>
             <span className="skills_header">I</span> <span> </span>
