@@ -104,17 +104,13 @@ const About = () => {
                 className="about-details-speech details"
                 ref={(el) => (speech = el)}
               >
-                <span>Joseph Chinemerem Jeremiah</span> is a Passionate Tech
-                Enthusiast, who is willing to learn and build solutions.His
-                Background In Engineering inform his mindful but competitive
-                approach.Jeremiah is Fueled by his passion,high energy levels
-                and boundless enthusiasm for understanding technologies and
-                considers himself a "Life long learner" eager to build on
-                existing web technologies knowledge and stay in tune with the
-                latest web technologies through continued courseworks and
-                strongly believes professional development skills can be taught,
-                but personality is inherent, i prefer to keep learning, continue
-                challenging myself and do interesting things that matters.
+                <span>Joseph Chinemerem Jeremiah</span> is a Passionate Human
+                Being, Who loves to Learn new things,tools and technologies. He
+                takes Functionality to the core and has a great eye for
+                aesthetics, A very cool team player who feels collaboration
+                brings out the best in participating parties. He always takes
+                time to update existing knowledge, A fantastic football
+                player,video game lover.
               </div>
             </div>
           </div>
@@ -123,7 +119,7 @@ const About = () => {
           <div className="about-resume-button" align="center">
             <a
               className="resume-btn-link"
-              href="www.w"
+              href="https://docs.google.com/document/d/1dyPodNxdfH4Megnb9S759mKMapjZN_7XrzZ7uudcjBo/edit?usp=sharing"
               target="_blank"
               rel="nofollow noopener"
               ref={(el) => (resume = el)}

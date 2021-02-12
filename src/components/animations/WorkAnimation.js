@@ -44,29 +44,23 @@ export const projectHeaderAnimation = (projectHeader, name) => {
 
 //animation for individual work.js component
 
-export const ApplyWorkAnimationOnMobile = (
-  name,
-  intro,
-  tag,
-  tagItem,
-  imageWrapper
-) => {};
+// export const ApplyWorkAnimationOnMobile = (
+//   name,
+//   intro,
+//   tag,
+//   tagItem,
+//   imageWrapper
+// ) => {};
 
-export const ApplyWorkAnimationTablet = () => {};
+// export const ApplyWorkAnimationTablet = () => {};
 
-export const ApplyWorkAnimationOnDesktop = (
-  name,
-  intro,
-  tag,
-  tagItem,
-  imageWrapper,
-  container
-) => {
+export const ApplyWorkAnimation = (name, intro, tag, tagItem, container) => {
   let masterTl = gsap.timeline();
 
   // children timeline
   let containerTl = gsap.timeline();
   let nameTl = gsap.timeline();
+  let introTl = gsap.timeline();
 
   containerTl.fromTo(
     container,
@@ -81,7 +75,7 @@ export const ApplyWorkAnimationOnDesktop = (
       scrollTrigger: {
         trigger: container,
         start: "top center+=10px",
-        end: "bottom bottom",
+        end: "bottom bottom-=120",
         scrub: 0.5,
       },
     }
@@ -92,19 +86,45 @@ export const ApplyWorkAnimationOnDesktop = (
     {
       opacity: 0,
       height: "0%",
+      duration: 1.5,
     },
     {
       opacity: 1,
       duration: 1.5,
       height: "100%",
+      ease: "power4.out",
       scrollTrigger: {
         trigger: name,
         start: "top center",
+        end: "bottom bottom",
+        scrub: 0.5,
       },
     }
   );
 
-  masterTl.add(containerTl).add(nameTl);
+  introTl.fromTo(
+    [intro, tag, tagItem],
+    {
+      y: -70,
+      opacity: 0,
+    },
+    {
+      y: 0,
+      opacity: 1,
+      ease: "power4.out",
+      stagger: {
+        each: 1.5,
+      },
+      scrollTrigger: {
+        trigger: intro,
+        start: "top center+=50",
+        end: " bottom bottom-=20,",
+        scrub: 0.5,
+      },
+    }
+  );
+
+  masterTl.add(containerTl).add(nameTl).add(introTl);
   return masterTl;
 };
 

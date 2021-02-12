@@ -330,7 +330,7 @@ export const ApplyAnimationOnDesktop = (
     opacity: 1,
     x: 300,
     y: -90,
-    duration: 2,
+    duration: 1.2,
     backgroundColor: "#edcfa9",
     boxShadow: "50px -50px 70px 35px #faf3dd",
     ease: "back.out(1.7)",

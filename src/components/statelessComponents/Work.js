@@ -1,46 +1,30 @@
-import React, { useEffect, useRef } from "react";
+// move it to stateful components folder for uniformity
+import React, { useEffect, useRef, useState } from "react";
 import "./MyWorks.scss";
-import useWindowSize from "../../utils/useWindowSize";
+//import useWindowSize from "../../utils/useWindowSize";
 
 // import animations
-import {
-  ApplyWorkAnimationOnMobile,
-  ApplyWorkAnimationTablet,
-  ApplyWorkAnimationOnDesktop,
-} from "../animations/WorkAnimation";
+import { ApplyWorkAnimation } from "../animations/WorkAnimation";
 
 const Work = (props) => {
+  //state for displaying image
+  const [imgState, setImgState] = useState(false);
+
+  // handler for image onload
+  const showImageAfterItLoads = () => {
+    setImgState(true);
+  };
+
   //target DOM nodes
   let name = useRef(null);
   let intro = useRef(null);
   let tag = useRef(null);
   let tagItem = useRef(null);
-  let imageWrapper = useRef(null);
   let container = useRef(null);
 
-  // get device width
-  const { width } = useWindowSize();
-
   useEffect(() => {
-    if (width >= 300 && width < 767) {
-      ApplyWorkAnimationOnMobile(name, intro, tag, tagItem, imageWrapper);
-    }
-
-    if (width >= 768 && width < 1199) {
-      ApplyWorkAnimationTablet();
-    }
-
-    if (width >= 1200 && width < 1600) {
-      ApplyWorkAnimationOnDesktop(
-        name,
-        intro,
-        tag,
-        tagItem,
-        imageWrapper,
-        container
-      );
-    }
-  }, [width]);
+    ApplyWorkAnimation(name, intro, tag, tagItem, container);
+  });
 
   return (
     <div className="work-container">
@@ -73,8 +57,21 @@ const Work = (props) => {
         </div>
 
         <div className="cards">
-          <div className="header-image" ref={(el) => (imageWrapper = el)}>
-            <img src={`${props.imageUrl}`} alt="" className="img" />
+          <div className="header-image">
+            {/* <img src={`${props.imageUrl}`} alt="" className="img" /> */}
+            {/* <img alt="" className="img" /> */}
+            <img
+              className="img"
+              style={imgState ? { display: "none" } : {}}
+              alt=""
+            />
+            <img
+              className="img"
+              src={`${props.imageUrl}`}
+              onLoad={showImageAfterItLoads}
+              style={imgState ? {} : { display: "none" }}
+              alt=""
+            />
           </div>
 
           <div className="body_post">
