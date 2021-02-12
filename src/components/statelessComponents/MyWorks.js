@@ -1,15 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./MyWorks.scss";
 import Footer from "./Footer";
 import Work from "./Work";
 import { workData } from "./WorksData";
 
 const MyWorks = () => {
-  // variables for dom nodes
-
-  useEffect(() => {
-    // projectHeaderAnimation(projectHeader, name);
-  }, []);
   return (
     <section className="works-container">
       <div className="works-wrapper">

@@ -25,7 +25,7 @@ export const svgAnimate = (target, target2, target3) => {
   gsap
     .timeline()
     .from(target, {
-      duration: 2.5,
+      duration: 0.5,
       opacity: 0,
       xPercent: -100,
       ease: "slow(0.7, 0.7, false)",
@@ -33,7 +33,7 @@ export const svgAnimate = (target, target2, target3) => {
     .to(target, {
       opacity: 1,
       x: 10,
-      duration: 2,
+      duration: 1,
       ease: "slow(0.7, 0.7, false)",
     })
     .from(target2, {
@@ -44,18 +44,18 @@ export const svgAnimate = (target, target2, target3) => {
     })
     .to(target2, {
       opacity: 1,
-      duration: 2,
+      duration: 1,
       ease: "back.out(1.7)",
     })
     .from(target3, {
       opacity: 0,
       ease: "elastic.out(1, 0.3)",
       yPercent: -100,
-      duration: 2,
+      duration: 1.2,
     })
     .to(target3, {
       opacity: 1,
-      duration: 2,
+      duration: 1.2,
       ease: "elastic.out(1, 0.3)",
     });
 };
