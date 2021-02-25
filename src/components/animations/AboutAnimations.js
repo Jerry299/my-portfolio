@@ -184,13 +184,13 @@ export const ApplyAnimationOnTablet = (
     {
       opacity: 0,
       duration: 2,
-      backgroundColor: "#ffe8e8",
+      backgroundColor: "##1e212d",
       yPercent: -100,
       ease: "slow(0.7, 0.7, false)",
     },
     {
       duration: 1.5,
-      backgroundColor: "#ffe200",
+      backgroundColor: "#1e212d",
       opacity: 1,
       yPercent: 0,
       ease: "slow(0.7, 0.7, false)",
@@ -378,13 +378,13 @@ export const ApplyAnimationOnDesktop = (
     {
       opacity: 0,
       duration: 2,
-      backgroundColor: "#ffe8e8",
+      backgroundColor: "#1e212d",
       yPercent: 100,
       ease: "slow(0.7, 0.7, false)",
     },
     {
       duration: 1.5,
-      backgroundColor: "#ffe200",
+      backgroundColor: "#1e212d",
       opacity: 1,
       yPercent: 0,
       ease: "slow(0.7, 0.7, false)",

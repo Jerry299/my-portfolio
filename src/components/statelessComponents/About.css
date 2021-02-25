@@ -26,8 +26,8 @@ font-family: 'Cabin', sans-serif;
   .about-body {
     display: flex;
     width: 100%;
-    background-color: #ffe200;
-    color: #fff;
+    background-color: var(--bgColor);
+    color: var(--textColor);
     height: 100%;
     border-top: 0;
     justify-content: space-around;
@@ -52,13 +52,12 @@ font-family: 'Cabin', sans-serif;
     font-weight: 100;
     font-family: "Space Mono", monospace;
     line-height: 1.8rem;
-    color: #1a1919;
+    /* color: #1a1919; */
   }
   .about-details .about-details-content {
     margin-bottom: 1.5rem;
   }
   .about-details .about-details-content .about-details-speech {
-    color: #1a1919;
     text-align: center;
     margin-top: 2rem;
     text-transform: capitalize;
@@ -149,10 +148,11 @@ font-family: 'Cabin', sans-serif;
   .about-body {
     display: flex;
     width: 100%;
-    background-color: #ffe200;
+    background-color: var(--bgColor);
     height: 100%;
     justify-content: space-around;
     flex-direction: row-reverse;
+    color: var(--textColor);
   }
 
   .about-body .about-photo {
@@ -167,13 +167,11 @@ font-family: 'Cabin', sans-serif;
     font-weight: 100;
     font-family: "Space Mono", monospace;
     line-height: 1.8rem;
-    color: #1a1919;
   }
   .about-details .about-details-content {
     padding: 2rem;
   }
   .about-details .about-details-content .about-details-speech {
-    color: #1a1919;
     text-align: justify;
     margin-top: 2rem;
     text-transform: capitalize;
@@ -255,11 +253,14 @@ font-family: 'Cabin', sans-serif;
 /* @media only screen and (min-device-width: 1025px) and (max-device-width: 1200px) {
   .about-container {
     background-color: red;
+    1e212d
+    f4f9f9
+
   }
 } */
 
 /* css for laptops and large screens */
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
+@media screen and (min-device-width: 1200px) and (max-device-width: 2900px) {
   .about-container {
     width: 100%;
     font-family: "Poppins", sans-serif;
@@ -291,10 +292,11 @@ font-family: 'Cabin', sans-serif;
   .about-body {
     display: flex;
     width: 100%;
-    background-color: #ffe200;
+    background-color: var(--bgColor);
     justify-content: space-around;
     padding: 4rem;
     margin-bottom: 2rem;
+    color: var(--textColor);
   }
   .about-details {
     width: 40%;
@@ -304,10 +306,8 @@ font-family: 'Cabin', sans-serif;
     font-weight: 100;
     font-family: "Space Mono", monospace;
     line-height: 1.8rem;
-    color: #1a1919;
   }
   .about-details .about-details-content .about-details-speech {
-    color: #1a1919;
     text-align: justify;
     margin-top: 2rem;
     text-transform: capitalize;

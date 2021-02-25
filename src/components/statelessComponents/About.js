@@ -60,7 +60,7 @@ const About = () => {
         ".box"
       );
     }
-    if (width >= 1200 && width < 1600) {
+    if (width >= 1200 && width < 2900) {
       ApplyAnimationOnDesktop(
         aboutHeader,
         ".circle",

@@ -290,7 +290,7 @@
 }
 
 /* css for latptops and large screens */
-@media screen and (min-device-width: 1200px) and (max-device-width: 1900px) {
+@media screen and (min-device-width: 1200px) and (max-device-width: 2900px) {
   .burger-menu {
     display: none;
     z-index: 9;
