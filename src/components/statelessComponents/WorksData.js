@@ -12,6 +12,17 @@ export const workData = [
   },
   {
     id: 2,
+    projectName: "Kountries",
+    briefIntro:
+      "The Project consumes a restful services and display 250 countries around the world,it includes a general and detailed page about each country,it includes dark mode feature",
+    imageLink:
+      "https://res.cloudinary.com/jerry299/image/upload/v1614315393/desktop1_gggbrf.png",
+    githubLink: "https://github.com/Jerry299/restful-countries",
+    liveAppLink: "https://kountries.netlify.app/",
+    tags: "React Js, CSS",
+  },
+  {
+    id: 3,
     projectName: "A Coffee Shop Website",
     briefIntro:
       "A Coffee shop website that displays the shop's product,location and services to customers online",
@@ -20,60 +31,5 @@ export const workData = [
     githubLink: "https://github.com/Jerry299/Coffee-store",
     liveAppLink: "https://blendz.netlify.app/",
     tags: "React Js, HTML, CSS ,Bootstrap",
-  },
-  {
-    id: 3,
-    projectName: "A Huge Project",
-    briefIntro:
-      "this project is huge and calculates and automatically adds profit on a regular",
-    imageLink:
-      "https://res.cloudinary.com/jerry299/image/upload/v1566285479/sample.jpg",
-    githubLink: "",
-    liveAppLink: "",
-    tags: "React Js, HTML, CSS , Java",
-  },
-  {
-    id: 4,
-    projectName: "A Huge Project",
-    briefIntro:
-      "this project is huge and calculates and automatically adds profit on a regular",
-    imageLink:
-      "https://res.cloudinary.com/jerry299/image/upload/v1566285479/sample.jpg",
-    githubLink: "",
-    liveAppLink: "",
-    tags: "React Js, HTML, CSS , Java",
-  },
-  {
-    id: 5,
-    projectName: "A Huge Project",
-    briefIntro:
-      "this project is huge and calculates and automatically adds profit on a regular",
-    imageLink:
-      "https://res.cloudinary.com/jerry299/image/upload/v1566285479/sample.jpg",
-    githubLink: "",
-    liveAppLink: "",
-    tags: "React Js, HTML, CSS , Java",
-  },
-  {
-    id: 6,
-    projectName: "A Huge Project",
-    briefIntro:
-      "this project is huge and calculates and automatically adds profit on a regular",
-    imageLink:
-      "https://res.cloudinary.com/jerry299/image/upload/v1566285479/sample.jpg",
-    githubLink: "",
-    liveAppLink: "",
-    tags: "React Js, HTML, CSS , Java",
-  },
-  {
-    id: 7,
-    projectName: "A Huge Project",
-    briefIntro:
-      "this project is huge and calculates and automatically adds profit on a regular",
-    imageLink:
-      "https://res.cloudinary.com/jerry299/image/upload/v1566285479/sample.jpg",
-    githubLink: "",
-    liveAppLink: "",
-    tags: "React Js, HTML, CSS , Java",
   },
 ];
