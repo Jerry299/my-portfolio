@@ -102,7 +102,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="copyrights">
-        <small className="copy">
+        <small className="copy" style={{ color: "#fff" }}>
           {" "}
           &copy; {date()}, Joseph Chinemerem Jeremiah
         </small>
