@@ -1,6 +1,13 @@
 .contact-container {
   overflow-x: hidden;
 }
+small {
+  color: #c70039;
+  padding: 0px 1.2rem;
+}
+.get-in-touch {
+  font-family: "Work Sans", sans-serif;
+}
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
   .contact-container {
@@ -41,6 +48,7 @@
     width: 40%;
     padding: 12px 23px;
     font-size: 18px;
+    margin-top: 3rem;
   }
   .submit:active,
   .submit:focus {
@@ -159,6 +167,7 @@
     width: 40%;
     padding: 12px 23px;
     font-size: 18px;
+    margin-top: 3rem;
   }
   .submit:active,
   .submit:focus {
@@ -172,7 +181,7 @@
     width: 60%;
   }
   .form-group {
-    margin-bottom: 3.3rem;
+    margin: 40px 0px;
     position: relative;
   }
   .form-group input {
@@ -219,6 +228,10 @@
     transform: translateX(0%);
     border-bottom: 3px solid #28df99;
   }
+  .form-group input:invalid + .label-name::after {
+    transform: translateX(0%);
+    border-bottom: 3px solid #91091e;
+  }
 }
 /* css for latptops and large screens */
 @media screen and (min-device-width: 1200px) and (max-device-width: 2900px) {
@@ -251,12 +264,11 @@
     right: 87.3px;
     font-size: 5rem;
     font-weight: 900;
-    font-family: "Josefin Sans", sans-serif;
   }
   .get-in-touch h1 p {
     font-size: 4.2rem;
     font-weight: 700;
-    font-family: "Josefin Sans", sans-serif;
+
     text-transform: lowercase;
   }
 
@@ -274,8 +286,8 @@
     width: 40%;
   }
   .form-group {
-    margin-bottom: 2rem;
     position: relative;
+    margin: 30px 0px;
   }
   .form-group input {
     height: 100%;
@@ -323,12 +335,18 @@
     border-bottom: 3px solid #28df99;
   }
 
+  .form-group input:invalid + .label-name::after {
+    transform: translateX(0%);
+    border-bottom: 3px solid #91091e;
+  }
   .submit {
     margin: 2rem 0 2rem 0;
     font-size: 1.3rem;
     font-weight: 600;
     position: relative;
     width: 17%;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
   }
   .line {
     width: 20px;
