@@ -77,7 +77,7 @@ const Work = (props) => {
           <div className="body_post">
             <div className="butn-cover">
               <a
-                href="www"
+                href={`${props.githubUrl}`}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="butn"
@@ -85,7 +85,7 @@ const Work = (props) => {
                 See On Github
               </a>
               <a
-                href="www"
+                href={`${props.appLink}`}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="butn2"
