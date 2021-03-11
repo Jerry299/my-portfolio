@@ -27,6 +27,8 @@ const ContactMe = () => {
     document.title = "Contact Jerry";
     svgAnimate(svgRef, contactMessage, getInTouch);
   }, [svgRef]);
+
+  // contact form animation starts
   const intersection = useIntersection(formRef, {
     root: null,
     rootMargin: "0px",
@@ -36,6 +38,8 @@ const ContactMe = () => {
   intersection && intersection.intersectionRatio < 0.8
     ? fadeOut(".contact-form")
     : fadeIn(".contact-form");
+
+  // contact form animation ends
 
   //event handlers
 
@@ -73,16 +77,18 @@ const ContactMe = () => {
       errors["contactMessageError"] =
         "Message shouldn't be less than 4 letters";
     }
-    if (contactmessage.length > 35) {
+    if (contactmessage.length > 55) {
       formIsValid = false;
       errors["contactMessageError"] =
-        "Message shouldn't be more than 35 letters";
+        "Message shouldn't be more than 55 letters";
     }
 
     setErrors(errors);
 
     return formIsValid;
   };
+
+  // send message to backend
 
   return (
     <div className="contact-container">
