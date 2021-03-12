@@ -2,20 +2,26 @@ import React, { useEffect, useRef, useState } from "react";
 import contactSVG from "../../images/contactSVG.svg";
 import "./ContactMe.css";
 import Footer from "../statelessComponents/Footer";
+import FlashMessage from "../statelessComponents/FlashMessage";
 import { useIntersection } from "react-use";
+
 // Import animations
 import { fadeIn, fadeOut, svgAnimate } from "../animations/ContactmeAnimations";
 
 const ContactMe = () => {
   // state for input
 
-  const [state, setState] = useState({
-    name: "",
-    email: "",
-    contactmessage: "",
-  });
+  // const [state, setState] = useState({
+  //   name: "",
+  //   email: "",
+  //   contactmessage: "",
+  // });
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [contactmessage, setContactMessage] = useState("");
   const [errors, setErrors] = useState("");
-  console.log(errors);
+  const [serverMessage, setServerMessage] = useState([]);
 
   //variables for Dom API
   let formRef = useRef(null);
@@ -43,16 +49,20 @@ const ContactMe = () => {
 
   //event handlers
 
-  const handleChange = (e) => {
-    let { name, value } = e.target;
-    setState((prevState) => ({ ...prevState, [name]: value }));
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const handleContactMessageChange = (e) => {
+    setContactMessage(e.target.value);
   };
   // form validation
   const validateForm = () => {
     let formIsValid = true;
     let errors = {};
 
-    const { name, email, contactmessage } = state;
     //regex for name validation
     let regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
     let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -90,6 +100,36 @@ const ContactMe = () => {
 
   // send message to backend
 
+  const sendMessage = () => {
+    fetch("http://localhost:5000/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        contactmessage: contactmessage,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => setServerMessage(data))
+      .catch((error) => console.log(error));
+  };
+
+  // clear the form
+  const clearForm = () => {
+    setName("");
+    setEmail("");
+    setContactMessage("");
+  };
+
+  // handle submit
+  const handleSubmit = () => {
+    if (validateForm()) {
+      sendMessage();
+      clearForm();
+    }
+  };
+
   return (
     <div className="contact-container">
       <div className="contact-wrapper">
@@ -111,9 +151,16 @@ const ContactMe = () => {
       </div>
       <div className="form-container" ref={formRef}>
         <form className="contact-form">
+          <FlashMessage message={serverMessage} />
           <div className="form-wrapper">
             <div className="form-group">
-              <input type="text" name="name" required onChange={handleChange} />
+              <input
+                type="text"
+                name="name"
+                required
+                onChange={handleNameChange}
+                value={name}
+              />
               <label className="label-name">
                 {" "}
                 <span className="content-name">Full Name</span>
@@ -125,8 +172,8 @@ const ContactMe = () => {
                 type="email"
                 name="email"
                 required
-                autoComplete="off"
-                onChange={handleChange}
+                onChange={handleEmailChange}
+                value={email}
               />
               <label className="label-name">
                 {" "}
@@ -139,8 +186,8 @@ const ContactMe = () => {
                 type="text"
                 name="contactmessage"
                 required
-                autoComplete="off"
-                onChange={handleChange}
+                onChange={handleContactMessageChange}
+                value={contactmessage}
               />
               <label className="label-name">
                 {" "}
@@ -150,7 +197,7 @@ const ContactMe = () => {
             {errors.contactMessageError ? (
               <small>{errors.contactMessageError}</small>
             ) : null}
-            <div type="submit" className="submit" onClick={validateForm}>
+            <div type="submit" className="submit" onClick={handleSubmit}>
               Send it
               <div className="line"></div>
             </div>

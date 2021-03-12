@@ -1,0 +1,59 @@
+/* css for phone responsiveness */
+@media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
+  #snackbar-container {
+    position: fixed;
+    top: 40%;
+    left: 15%;
+    background-color: #00af91;
+    z-index: 99;
+    color: #fff;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.4rem;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 5px;
+  }
+}
+
+/* css for tablet responsiveness */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  #snackbar-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #00af91;
+    z-index: 99;
+    color: #fff;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.4rem;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 5px;
+  }
+}
+
+/* css for latptops and large screens */
+@media screen and (min-device-width: 1200px) and (max-device-width: 2900px) {
+  #snackbar-container {
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    background-color: #00af91;
+    z-index: 99;
+    color: #fff;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.4rem;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 5px;
+  }
+}
