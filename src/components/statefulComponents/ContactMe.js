@@ -102,7 +102,7 @@ const ContactMe = () => {
   // send message to backend
 
   const sendMessage = () => {
-    fetch("http://localhost:5000/messages", {
+    fetch("https://secret-fjord-57935.herokuapp.com/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
