@@ -22,6 +22,7 @@ const ContactMe = () => {
   const [contactmessage, setContactMessage] = useState("");
   const [errors, setErrors] = useState("");
   const [serverMessage, setServerMessage] = useState([]);
+  const [showFlashMesg, setShowFlashMsg] = useState(false);
 
   //variables for Dom API
   let formRef = useRef(null);
@@ -111,7 +112,10 @@ const ContactMe = () => {
       }),
     })
       .then((res) => res.json())
-      .then((data) => setServerMessage(data))
+      .then((data) => {
+        setServerMessage(data);
+        setShowFlashMsg(true);
+      })
       .catch((error) => console.log(error));
   };
 
@@ -151,7 +155,7 @@ const ContactMe = () => {
       </div>
       <div className="form-container" ref={formRef}>
         <form className="contact-form">
-          <FlashMessage message={serverMessage} />
+          {showFlashMesg ? <FlashMessage message={serverMessage} /> : null}
           <div className="form-wrapper">
             <div className="form-group">
               <input
