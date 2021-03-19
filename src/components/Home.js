@@ -39,10 +39,10 @@ const Home = () => {
     <section className="home-section">
       <div className="home-container">
         <div className="home-wrapper" ref={(el) => (homeWrapper = el)}>
-          <h1 className="home-hi" ref={(el) => (homeHi = el)}>
+          <p className="home-hi" ref={(el) => (homeHi = el)}>
             {" "}
-            Hello World,
-          </h1>
+            Hi everyone,
+          </p>
           <h2 className="home-name">
             <div className="i-am" ref={(el) => (homeWorld = el)}>
               I am

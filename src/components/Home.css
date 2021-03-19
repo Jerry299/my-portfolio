@@ -18,6 +18,9 @@ font-family: 'Poppins', sans-serif; */
   font-family: "Work Sans", sans-serif;
 }
 
+.home-wrapper .home-hi {
+  color: #020c1b;
+}
 /* media queries */
 
 /* css for phone responsiveness */
@@ -54,7 +57,6 @@ font-family: 'Poppins', sans-serif; */
   }
 
   .home-wrapper .home-hi {
-    color: #214151;
     margin-top: 1.5rem;
   }
 
@@ -143,7 +145,6 @@ font-family: 'Poppins', sans-serif; */
   }
 
   .home-wrapper .home-hi {
-    color: #214151;
     margin-bottom: 2rem;
   }
 
@@ -231,7 +232,6 @@ font-family: 'Poppins', sans-serif; */
   }
 
   .home-wrapper .home-hi {
-    color: #214151;
     margin-bottom: 2rem;
     /* font-weight: 800; */
   }

@@ -1,13 +1,7 @@
-/* variables for header.js */
-:root {
-  --base: #0f1923;
-  --white: #ece8e1;
-  --pink: #ff4655;
-  --height: 54px;
-  --transition: 0.3s ease-out all;
-}
 .header-container {
-  background: #f4f9f9;
+  background: #0a192f;
+  color: #a8b2d1;
+  box-shadow: #020c1b 0px 10px 20px, #020c1b 0px 6px 6px;
 }
 .logo img {
   height: 50px;

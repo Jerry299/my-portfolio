@@ -85,16 +85,18 @@ const About = () => {
         </div>
         <div className="about-body" ref={(el) => (aboutBody = el)}>
           <div className="about-photo">
-            <img
-              src="https://res.cloudinary.com/jerry299/image/upload/c_scale,r_8,w_354/v1601525318/Snapchat-1598616708_b63zjo.png"
-              alt=""
-            />
+            <div>
+              <img
+                src="https://res.cloudinary.com/jerry299/image/upload/c_scale,r_7,w_354/v1566591871/IMG_20190707_123854_5_edlopp.png"
+                alt=""
+              />
+            </div>
           </div>
           <div className="about-details" ref={(el) => (description = el)}>
             <div className="about-details-content">
               <div>
                 <ul>
-                  <li>Description: Javascript Developer MERN STACK.</li>
+                  <li>Description: Javascript Developer.</li>
                   <li>Location: Nigeria.</li>
                   <li>Available: Yes,Interested In A New Challenge.</li>
                 </ul>
@@ -103,13 +105,19 @@ const About = () => {
                 className="about-details-speech details"
                 ref={(el) => (speech = el)}
               >
-                <span>Joseph Chinemerem Jeremiah</span> is a Passionate Human
-                Being, Who loves to Learn new things,tools and technologies. He
-                takes Functionality to the core and has a great eye for
-                aesthetics, A very cool team player who feels collaboration
-                brings out the best in participating parties. He always takes
-                time to update existing knowledge, A fantastic football
-                player,video game lover.
+                <p>
+                  Hello, I am Jerry, a software engineer from Anambra,Nigeria.
+                </p>
+                <p>
+                  I really enjoy creating things that are live on the internet,
+                  I am motivated by thirst for knowledge ,and building products
+                  that would always be cost effective and meet stakeholders
+                  value
+                </p>
+                <p>
+                  Fantastic football player just if you need an excellent team
+                  player and goal getter.
+                </p>
               </div>
             </div>
           </div>

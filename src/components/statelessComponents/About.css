@@ -2,13 +2,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
 
 /* sample fonts */
 /* font-family: 'Raleway', sans-serif;
 font-family: 'Work Sans', sans-serif; 
 font-family: 'Cabin', sans-serif;
 */
+.about-body {
+  background-color: #0a192f;
+  color: var(--textColor);
+}
+.about-header {
+  color: #0f3057;
+  font-family: "Raleway", sans-serif;
+}
+.about-details .about-details-content .about-details-speech {
+  font-family: "Abel", sans-serif;
+  color: #8892b0;
+}
+.about-details .about-details-content {
+  color: #a8b2d1;
+}
+.about-details .about-details-content div ul li {
+  font-size: 0.8rem;
+  font-family: "Space Mono", monospace;
+}
 
+.about-body .about-photo div::after {
+  border: 2px solid #64ffda;
+  top: 20px;
+  left: 20px;
+  z-index: -1;
+}
+.about-body .about-photo div::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* media query for smaller devices */
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
   .about-container {
     width: 100%;
@@ -19,15 +56,13 @@ font-family: 'Cabin', sans-serif;
     display: grid;
     place-items: center;
     padding: 2rem 0;
-    font-family: "Raleway", sans-serif;
+
     margin-top: 2rem;
-    color: #0f3057;
   }
   .about-body {
     display: flex;
     width: 100%;
-    background-color: var(--bgColor);
-    color: var(--textColor);
+
     height: 100%;
     border-top: 0;
     justify-content: space-around;
@@ -48,9 +83,8 @@ font-family: 'Cabin', sans-serif;
     margin: 1.5rem 0;
   }
   .about-details .about-details-content div ul li {
-    font-size: 1.1rem;
     font-weight: 100;
-    font-family: "Space Mono", monospace;
+
     line-height: 1.8rem;
     /* color: #1a1919; */
   }
@@ -58,12 +92,11 @@ font-family: 'Cabin', sans-serif;
     margin-bottom: 1.5rem;
   }
   .about-details .about-details-content .about-details-speech {
-    text-align: center;
+    /* text-align: center; */
     margin-top: 2rem;
-    text-transform: capitalize;
+
     line-height: 1.67;
     font-size: 20px;
-    font-family: "Work Sans", sans-serif;
   }
   .about-details .about-details-content .about-details-speech span {
     font-weight: 600;
@@ -134,9 +167,8 @@ font-family: 'Cabin', sans-serif;
     display: grid;
     place-items: center;
     padding: 2rem 0;
-    font-family: "Raleway", sans-serif;
+
     margin-top: 2rem;
-    color: #0f3057;
   }
   .about-header p {
     font-size: 5rem;
@@ -148,11 +180,10 @@ font-family: 'Cabin', sans-serif;
   .about-body {
     display: flex;
     width: 100%;
-    background-color: var(--bgColor);
+
     height: 100%;
     justify-content: space-around;
     flex-direction: row-reverse;
-    color: var(--textColor);
   }
 
   .about-body .about-photo {
@@ -172,12 +203,12 @@ font-family: 'Cabin', sans-serif;
     padding: 2rem;
   }
   .about-details .about-details-content .about-details-speech {
-    text-align: justify;
+    /* text-align: justify; */
     margin-top: 2rem;
-    text-transform: capitalize;
+
     line-height: 1.67;
     font-size: 20px;
-    font-family: "Work Sans", sans-serif;
+
     padding: 2rem;
   }
   .about-details .about-details-content .about-details-speech span {
@@ -270,11 +301,10 @@ font-family: 'Cabin', sans-serif;
     display: grid;
     place-items: center;
     padding: 2rem 0;
-    font-family: "Raleway", sans-serif;
+
     margin-top: 2rem;
   }
   .about-header p {
-    color: #0f3057;
     font-size: 3rem;
     font-weight: 900;
   }
@@ -292,11 +322,10 @@ font-family: 'Cabin', sans-serif;
   .about-body {
     display: flex;
     width: 100%;
-    background-color: var(--bgColor);
+
     justify-content: space-around;
     padding: 4rem;
     margin-bottom: 2rem;
-    color: var(--textColor);
   }
   .about-details {
     width: 40%;
@@ -308,12 +337,11 @@ font-family: 'Cabin', sans-serif;
     line-height: 1.8rem;
   }
   .about-details .about-details-content .about-details-speech {
-    text-align: justify;
+    /* text-align: justify; */
     margin-top: 2rem;
-    text-transform: capitalize;
+
     line-height: 1.67;
-    font-size: 20px;
-    font-family: "Work Sans", sans-serif;
+    font-size: 21px;
   }
   .about-details .about-details-content .about-details-speech span {
     font-weight: 600;
