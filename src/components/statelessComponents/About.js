@@ -1,18 +1,18 @@
 import React, { useRef, useEffect } from "react";
 import "./About.css";
 import Footer from "./Footer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHtml5,
-  faCss3,
-  faJs,
-  faGit,
-  faNodeJs,
-  faBootstrap,
-  faReact,
-} from "@fortawesome/free-brands-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faHtml5,
+//   faCss3,
+//   faJs,
+//   faGit,
+//   faNodeJs,
+//   faBootstrap,
+//   faReact,
+// } from "@fortawesome/free-brands-svg-icons";
 
-import { faDatabase } from "@fortawesome/free-solid-svg-icons";
+// import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import useWindowSize from "../../utils/useWindowSize";
 
 //animation functions
@@ -30,8 +30,6 @@ const About = () => {
   let resumeParent = useRef(null);
   let resume = useRef(null);
 
-  let skillsHeader = useRef(null);
-
   const { width } = useWindowSize();
 
   useEffect(() => {
@@ -42,9 +40,7 @@ const About = () => {
         description,
         speech,
         resumeParent,
-        resume,
-        skillsHeader,
-        ".box"
+        resume
       );
     }
     if (width >= 768 && width < 1199) {
@@ -55,23 +51,19 @@ const About = () => {
         speech,
         ".about-photo",
         resumeParent,
-        resume,
-        skillsHeader,
-        ".box"
+        resume
       );
     }
     if (width >= 1200 && width < 2900) {
       ApplyAnimationOnDesktop(
         aboutHeader,
-        ".circle",
+
         aboutBody,
         description,
         speech,
         ".about-photo",
         resumeParent,
-        resume,
-        skillsHeader,
-        ".box"
+        resume
       );
     }
   }, [width]);
@@ -81,11 +73,11 @@ const About = () => {
       <div className="about-wrapper">
         <div className="about-header">
           <p ref={(el) => (aboutHeader = el)}>WHO AM I?</p>
-          <span className="circle"></span>
         </div>
         <div className="about-body" ref={(el) => (aboutBody = el)}>
           <div className="about-photo">
             <div>
+              <div className="overlay"></div>
               <img
                 src="https://res.cloudinary.com/jerry299/image/upload/c_scale,r_7,w_354/v1566591871/IMG_20190707_123854_5_edlopp.png"
                 alt=""
@@ -112,7 +104,7 @@ const About = () => {
                   I really enjoy creating things that are live on the internet,
                   I am motivated by thirst for knowledge ,and building products
                   that would always be cost effective and meet stakeholders
-                  value
+                  value.
                 </p>
                 <p>
                   Fantastic football player just if you need an excellent team
@@ -122,6 +114,19 @@ const About = () => {
             </div>
           </div>
         </div>
+        <section className="about-skills">
+          <p>Here is a list of technologies that I can work with.</p>
+          <ul className="skills-list">
+            <li className="list-item">HTML</li>
+            <li className="list-item">(S)CSS</li>
+            <li className="list-item">Javascript</li>
+            <li className="list-item">React Js</li>
+            <li className="list-item">Node Js</li>
+            <li className="list-item">Express Js</li>
+            <li className="list-item">MongoDb</li>
+            <li className="list-item">Postgres</li>
+          </ul>
+        </section>
         <div className="about-resume" ref={(el) => (resumeParent = el)}>
           <div className="about-resume-button" align="center">
             <a
@@ -136,7 +141,7 @@ const About = () => {
           </div>
         </div>
         {/* div below is about-skills */}
-        <section className="about-skills">
+        {/* <section className="about-skills">
           <p ref={(el) => (skillsHeader = el)} id="skillsHeader">
             <span className="skills_header">Tools</span> <span> </span>
             <span className="skills_header">I</span> <span> </span>
@@ -169,7 +174,7 @@ const About = () => {
               </div>
             </div>
 
-            {/* second row */}
+            
             <div className="row justify-content-center">
               <div className="col-xs-6 col-sm-6 col-md-4 box-container">
                 <div className="box">
@@ -195,7 +200,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            {/* third row */}
+            
             <div className="row justify-content-center">
               <div className="col-xs-6 col-sm-6 col-md-4 box-container">
                 <div className="box">
@@ -219,7 +224,7 @@ const About = () => {
               </div>
             </div>
 
-            {/* fourth row */}
+            
             <div className="row justify-content-center">
               <div className="col-xs-6 col-sm-6 col-md-4 box-container">
                 <div className="box">
@@ -242,7 +247,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            {/* fifth row */}
+            
             <div className="row justify-content-center">
               <div className="col-xs-6 col-sm-6 col-md-4 box-container">
                 <div className="box">
@@ -266,9 +271,9 @@ const About = () => {
               </div>
             </div>
 
-            {/* end of boxes */}
+            end of boxes
           </div>
-        </section>
+        </section> */}
       </div>
       <Footer />
     </section>

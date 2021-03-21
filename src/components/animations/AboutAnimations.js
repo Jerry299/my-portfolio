@@ -300,7 +300,6 @@ export const ApplyAnimationOnTablet = (
 
 export const ApplyAnimationOnDesktop = (
   header,
-  circle,
   body,
   description,
   speech,
@@ -326,39 +325,39 @@ export const ApplyAnimationOnDesktop = (
   });
 
   //animation for moving circle to and fro then display text
-  headertl.to(circle, {
-    opacity: 1,
-    x: 300,
-    y: -90,
-    duration: 1.2,
-    backgroundColor: "#edcfa9",
-    boxShadow: "50px -50px 70px 35px #faf3dd",
-    ease: "back.out(1.7)",
-  });
-  headertl.to(circle, {
-    x: -300,
-    backgroundColor: "#feceab",
-    duration: 1.4,
-    ease: "back.out(1.7)",
-    boxShadow: "50px -50px 70px 35px #b9fffc",
-  });
-  headertl.to(circle, {
-    x: 300,
-    duration: 1.4,
-    backgroundColor: "#ff9292",
-    ease: "back.out(1.7)",
-    boxShadow: "-50px 50px 70px 35px #ffb4b4",
-  });
-  headertl.to(circle, {
-    y: 500,
-    duration: 1.4,
-    backgroundColor: "#28df99",
-    ease: "slow(0.7, 0.7, false)",
-    boxShadow: "-50px -50px 70px 75px #99f3bd",
-  });
-  headertl.set(circle, {
-    display: "none",
-  });
+  // headertl.to(circle, {
+  //   opacity: 1,
+  //   x: 300,
+  //   y: -90,
+  //   duration: 1.2,
+  //   backgroundColor: "#edcfa9",
+  //   boxShadow: "50px -50px 70px 35px #faf3dd",
+  //   ease: "back.out(1.7)",
+  // });
+  // headertl.to(circle, {
+  //   x: -300,
+  //   backgroundColor: "#feceab",
+  //   duration: 1.4,
+  //   ease: "back.out(1.7)",
+  //   boxShadow: "50px -50px 70px 35px #b9fffc",
+  // });
+  // headertl.to(circle, {
+  //   x: 300,
+  //   duration: 1.4,
+  //   backgroundColor: "#ff9292",
+  //   ease: "back.out(1.7)",
+  //   boxShadow: "-50px 50px 70px 35px #ffb4b4",
+  // });
+  // headertl.to(circle, {
+  //   y: 500,
+  //   duration: 1.4,
+  //   backgroundColor: "#28df99",
+  //   ease: "slow(0.7, 0.7, false)",
+  //   boxShadow: "-50px -50px 70px 75px #99f3bd",
+  // });
+  // headertl.set(circle, {
+  //   display: "none",
+  // });
 
   //animation for moving circle to and fro then display text ends
   headertl.from(header, {

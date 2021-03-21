@@ -3,11 +3,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cuprum&display=swap");
 
 /* sample fonts */
 /* font-family: 'Raleway', sans-serif;
 font-family: 'Work Sans', sans-serif; 
 font-family: 'Cabin', sans-serif;
+font-family: 'Cuprum', sans-serif;
 */
 .about-body {
   background-color: #0a192f;
@@ -15,7 +17,7 @@ font-family: 'Cabin', sans-serif;
 }
 .about-header {
   color: #0f3057;
-  font-family: "Raleway", sans-serif;
+  font-family: "Cuprum", sans-serif;
 }
 .about-details .about-details-content .about-details-speech {
   font-family: "Abel", sans-serif;
@@ -28,21 +30,20 @@ font-family: 'Cabin', sans-serif;
   font-size: 0.8rem;
   font-family: "Space Mono", monospace;
 }
-
-.about-body .about-photo div::after {
-  border: 2px solid #64ffda;
-  top: 20px;
-  left: 20px;
-  z-index: -1;
+.about-skills {
+  background-color: #0a192f;
+  color: #8892b0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.about-body .about-photo div::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 7px;
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+.about-skills p {
+  font-size: 1.2rem;
+}
+.about-skills ul {
+  font-family: "Cuprum", sans-serif;
+  list-style: none;
 }
 
 /* media query for smaller devices */
@@ -101,6 +102,23 @@ font-family: 'Cabin', sans-serif;
   .about-details .about-details-content .about-details-speech span {
     font-weight: 600;
   }
+
+  .about-skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .about-skills p {
+    padding: 1.2rem;
+    font-size: 20px;
+    text-align: justify;
+    font-weight: 200;
+  }
+  .about-skills ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(40px, 200px));
+    font-size: 17px;
+  }
   .about-resume {
     padding: 2rem 0;
   }
@@ -116,44 +134,8 @@ font-family: 'Cabin', sans-serif;
     box-shadow: 5px 5px 20px;
   }
 
-  .about-skills {
-    background-color: #e7e7de;
-    padding-bottom: 4rem;
-  }
-
-  .about-skills p {
-    font-size: 3rem;
-    font-family: "Work Sans", sans-serif;
-    text-align: center;
-    padding-top: 2rem;
-    font-weight: 700;
-  }
-  #skillsHeader {
-    color: #00edd1;
-    background-image: linear-gradient(-270deg, #0a5249, #4b5e07);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: "Cabin", sans-serif;
-  }
   .box-container {
     padding: 2rem;
-  }
-
-  .about-skills .box {
-    background-color: #121013;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    border-radius: 20px;
-    /* transform: translateX(30px); */
-    color: #f4f5db;
-    height: 220px;
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-    align-items: center;
-    font-size: 1.8rem;
-    font-family: "Work Sans", sans-serif;
-    margin: 1.4rem 0;
   }
 }
 
@@ -238,19 +220,6 @@ font-family: 'Cabin', sans-serif;
     text-decoration: none;
   }
 
-  .about-skills {
-    background-color: #161d6f;
-    padding: 2rem;
-  }
-  .about-skills p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.8rem;
-    color: #0278ae;
-    font-family: "Work Sans", sans-serif;
-  }
-
   #skillsHeader {
     color: #00edd1;
     background-image: linear-gradient(-170deg, #7adbd0, #a4ce0f);
@@ -261,23 +230,6 @@ font-family: 'Cabin', sans-serif;
   }
   span {
     white-space: pre-wrap;
-  }
-
-  .about-skills .box {
-    background-color: #121013;
-
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    border-radius: 20px;
-    /* transform: translateX(30px); */
-    color: #f4f5db;
-    height: 220px;
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-    align-items: center;
-    font-size: 1.8rem;
-    font-family: "Work Sans", sans-serif;
-    margin: 1.8rem 0;
   }
 }
 
@@ -311,21 +263,12 @@ font-family: 'Cabin', sans-serif;
   .skills_header {
     font-family: "Cabin", sans-serif;
   }
-  .circle {
-    height: 100px;
-    width: 100px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    opacity: 0.1;
-  }
+
   .about-body {
     display: flex;
     width: 100%;
-
     justify-content: space-around;
     padding: 4rem;
-    margin-bottom: 2rem;
   }
   .about-details {
     width: 40%;
@@ -337,14 +280,69 @@ font-family: 'Cabin', sans-serif;
     line-height: 1.8rem;
   }
   .about-details .about-details-content .about-details-speech {
-    /* text-align: justify; */
     margin-top: 2rem;
-
     line-height: 1.67;
-    font-size: 21px;
+    font-size: 20px;
   }
   .about-details .about-details-content .about-details-speech span {
     font-weight: 600;
+  }
+
+  .about-body .about-photo {
+    position: relative;
+  }
+
+  .about-body .about-photo div::after {
+    border: 2px solid #64ffda;
+    top: 20px;
+    left: 20px;
+    z-index: -1;
+  }
+  .about-body .about-photo div::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(14, 233, 167, 0.4);
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+  }
+
+  .about-body .about-photo div:hover .overlay {
+    background-color: rgba(14, 233, 167, 0);
+  }
+  .about-body .about-photo div:hover::after {
+    top: 10px;
+    left: 10px;
+  }
+  .about-skills ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px, 200px));
+  }
+  .about-skills ul li {
+    font-size: 17px;
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+  .about-skills ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 0px;
+    bottom: 8px;
+    color: #64ffda;
+    font-size: 14px;
+    line-height: 12px;
   }
   .about-resume {
     margin-bottom: 3.7rem;
@@ -370,20 +368,13 @@ font-family: 'Cabin', sans-serif;
     transition: all 0.3s ease 0s;
     text-decoration: none;
   }
-  .about-skills {
-    margin-top: 3rem;
-    background-color: #f4f5db;
-  }
-  .about-skills p {
-    font-size: 2.8rem;
-    color: #0278ae;
-  }
-  .about-skills .box {
+
+  /* .about-skills .box {
     background-color: #121013;
-    /* box-shadow: 4px 13px 30px 15px rgba(252, 56, 56, 0.2); */
+    box-shadow: 4px 13px 30px 15px rgba(252, 56, 56, 0.2); 
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     border-radius: 20px;
-    /* transform: translateX(30px); */
+    transform: translateX(30px); 
     color: #f4f5db;
     height: 220px;
     display: flex;
@@ -391,8 +382,8 @@ font-family: 'Cabin', sans-serif;
     align-items: center;
     font-size: 2rem;
     font-family: "Work Sans", sans-serif;
-    margin: 2.4rem 0;
-  }
+    margin: 2.4rem 0; */
+
   /* .about-skills__list ul {
     display: grid;
     grid-template-columns: 2fr 2fr;
