@@ -45,6 +45,30 @@ font-family: 'Cuprum', sans-serif;
   font-family: "Cuprum", sans-serif;
   list-style: none;
 }
+.about-resume {
+  background-color: #0a192f;
+}
+.resume-btn-link {
+  margin-bottom: 3.7rem;
+  color: #64ffda !important;
+  background: transparent;
+  padding: 1.25rem 1.75rem;
+  border: 2px solid #64ffda !important;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.3s ease 0s;
+  line-height: 1;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.resume-btn-link:hover,
+.resume-btn-link:focus,
+.resume-btn-link:active {
+  background-color: rgba(100, 255, 218, 0.1);
+  outline: none;
+}
 
 /* media query for smaller devices */
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
@@ -75,9 +99,7 @@ font-family: 'Cuprum', sans-serif;
     font-size: 3rem;
     font-weight: 900;
   }
-  .circle {
-    display: none;
-  }
+
   .about-body .about-photo img {
     max-width: 100%;
     height: auto;
@@ -116,14 +138,31 @@ font-family: 'Cuprum', sans-serif;
   }
   .about-skills ul {
     display: grid;
-    grid-template-columns: repeat(2, minmax(40px, 200px));
+    grid-template-columns: repeat(2, minmax(40px, 150px));
     font-size: 17px;
   }
+
+  .about-skills ul li {
+    font-size: 17px;
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+  .about-skills ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    color: #64ffda;
+    font-size: 14px;
+    line-height: 12px;
+  }
+
   .about-resume {
     padding: 2rem 0;
   }
-  .about-resume .about-resume-button a {
-    border: 2px solid;
+  /* .about-resume .about-resume-button a {
+    border: 2px solid rgba(100, 255, 218, 0.1);
     border-radius: 20px;
     width: 50%;
     height: 50px;
@@ -131,8 +170,8 @@ font-family: 'Cuprum', sans-serif;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    box-shadow: 5px 5px 20px;
-  }
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  } */
 
   .box-container {
     padding: 2rem;
@@ -199,35 +238,7 @@ font-family: 'Cuprum', sans-serif;
   .about-resume {
     padding: 20px 0;
   }
-  .resume-btn-link {
-    margin-bottom: 1.7rem;
-    color: #24677e !important;
-    text-transform: uppercase;
-    background: #ffffff;
-    padding: 20px;
-    border: 4px solid #0d6481 !important;
-    border-radius: 6px;
-    display: inline-block;
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  .resume-btn-link:hover {
-    color: #20bf6b !important;
-    border-radius: 50px;
-    border-color: #20bf6b !important;
-    transition: all 0.3s ease 0s;
-    text-decoration: none;
-  }
 
-  #skillsHeader {
-    color: #00edd1;
-    background-image: linear-gradient(-170deg, #7adbd0, #a4ce0f);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: "Cabin", sans-serif;
-  }
   span {
     white-space: pre-wrap;
   }
@@ -345,48 +356,30 @@ font-family: 'Cuprum', sans-serif;
     line-height: 12px;
   }
   .about-resume {
-    margin-bottom: 3.7rem;
-  }
-  .resume-btn-link {
-    margin-bottom: 3.7rem;
-    color: #24677e !important;
-    text-transform: uppercase;
-    background: #ffffff;
-    padding: 20px;
-    border: 4px solid #0d6481 !important;
-    border-radius: 6px;
-    display: inline-block;
-    transition: all 0.3s ease 0s;
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  .resume-btn-link:hover {
-    color: #20bf6b !important;
-    border-radius: 50px;
-    border-color: #20bf6b !important;
-    transition: all 0.3s ease 0s;
-    text-decoration: none;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
-  /* .about-skills .box {
-    background-color: #121013;
-    box-shadow: 4px 13px 30px 15px rgba(252, 56, 56, 0.2); 
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    border-radius: 20px;
-    transform: translateX(30px); 
-    color: #f4f5db;
-    height: 220px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    font-family: "Work Sans", sans-serif;
-    margin: 2.4rem 0; */
-
-  /* .about-skills__list ul {
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-    grid-template-rows: repeat(5, 50px);
+  /* element.style {
+  }
+  <style > .lpplKD .email-link:hover,
+  .lpplKD .email-link:focus,
+  .lpplKD .email-link:active {
+    background-color: var(--green-tint);
+    outline: none;
+  }
+  <style > .lpplKD .email-link {
+    color: var(--green);
+    background-color: transparent;
+    border: 1px solid var(--green);
+    border-radius: var(--border-radius);
+    padding: 1.25rem 1.75rem;
+    font-size: var(--fz-sm);
+    font-family: var(--font-mono);
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 50px;
   } */
 }
