@@ -28,6 +28,8 @@ const About = () => {
   let description = useRef(null);
   let speech = useRef(null);
   let resumeParent = useRef(null);
+  let aboutSkills = useRef(null);
+  let skillsContainer = useRef(null);
   let resume = useRef(null);
 
   const { width } = useWindowSize();
@@ -50,6 +52,8 @@ const About = () => {
         description,
         speech,
         ".about-photo",
+        aboutSkills,
+        ".list-item",
         resumeParent,
         resume
       );
@@ -57,11 +61,12 @@ const About = () => {
     if (width >= 1200 && width < 2900) {
       ApplyAnimationOnDesktop(
         aboutHeader,
-
         aboutBody,
         description,
         speech,
         ".about-photo",
+        aboutSkills,
+        ".list-item",
         resumeParent,
         resume
       );
@@ -115,7 +120,9 @@ const About = () => {
           </div>
         </div>
         <section className="about-skills">
-          <p>Here is a list of technologies that I can work with.</p>
+          <p ref={(el) => (aboutSkills = el)}>
+            Here is a list of technologies that I can work with.
+          </p>
           <ul className="skills-list">
             <li className="list-item">HTML</li>
             <li className="list-item">(S)CSS</li>
@@ -140,140 +147,6 @@ const About = () => {
             </a>
           </div>
         </div>
-        {/* div below is about-skills */}
-        {/* <section className="about-skills">
-          <p ref={(el) => (skillsHeader = el)} id="skillsHeader">
-            <span className="skills_header">Tools</span> <span> </span>
-            <span className="skills_header">I</span> <span> </span>
-            <span className="skills_header">Can</span> <span> </span>
-            <span className="skills_header">Work</span> <span> </span>
-            <span className="skills_header">With.</span>
-          </p>
-
-          <div className="container ">
-            <div className="row justify-content-center">
-              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
-                <div className="box">
-                  HTML
-                  <FontAwesomeIcon
-                    icon={faHtml5}
-                    size="2x"
-                    style={{ color: "#e34626", marginLeft: ".5rem" }}
-                  />
-                </div>
-              </div>
-              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
-                <div className="box">
-                  CSS
-                  <FontAwesomeIcon
-                    icon={faCss3}
-                    size="2x"
-                    style={{ color: "#264de4", marginLeft: ".5rem" }}
-                  />
-                </div>
-              </div>
-            </div>
-
-            
-            <div className="row justify-content-center">
-              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
-                <div className="box">
-                  Javascript
-                  <FontAwesomeIcon
-                    icon={faJs}
-                    size="2x"
-                    style={{
-                      color: "#f0db4f",
-                      marginLeft: ".5rem",
-                    }}
-                  />
-                </div>
-              </div>
-              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
-                <div className="box">
-                  React Js
-                  <FontAwesomeIcon
-                    icon={faReact}
-                    size="2x"
-                    style={{ color: "#61DBFB", marginLeft: ".5rem" }}
-                  />
-                </div>
-              </div>
-            </div>
-            
-            <div className="row justify-content-center">
-              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
-                <div className="box">
-                  Node Js
-                  <FontAwesomeIcon
-                    icon={faNodeJs}
-                    size="2x"
-                    style={{ color: "#68A063", marginLeft: ".5rem" }}
-                  />
-                </div>
-              </div>
-              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
-                <div className="box">
-                  BootStrap
-                  <FontAwesomeIcon
-                    icon={faBootstrap}
-                    size="2x"
-                    style={{ color: "#602C50", marginLeft: ".5rem" }}
-                  />
-                </div>
-              </div>
-            </div>
-
-            
-            <div className="row justify-content-center">
-              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
-                <div className="box">
-                  Git & Github
-                  <FontAwesomeIcon
-                    icon={faGit}
-                    size="2x"
-                    style={{ color: "#f14e32", marginLeft: ".5rem" }}
-                  />
-                </div>
-              </div>
-              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
-                <div className="box">
-                  MongoDb
-                  <FontAwesomeIcon
-                    icon={faDatabase}
-                    size="2x"
-                    style={{ color: "#116149", marginLeft: ".5rem" }}
-                  />
-                </div>
-              </div>
-            </div>
-            
-            <div className="row justify-content-center">
-              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
-                <div className="box">
-                  Postgres
-                  <FontAwesomeIcon
-                    icon={faDatabase}
-                    size="2x"
-                    style={{ color: "#336791", marginLeft: ".5rem" }}
-                  />
-                </div>
-              </div>
-              <div className="col-xs-6 col-sm-6 col-md-4 box-container">
-                <div className="box">
-                  Express
-                  <FontAwesomeIcon
-                    icon={faNodeJs}
-                    size="2x"
-                    style={{ color: "#68A063", marginLeft: ".5rem" }}
-                  />
-                </div>
-              </div>
-            </div>
-
-            end of boxes
-          </div>
-        </section> */}
       </div>
       <Footer />
     </section>

@@ -150,17 +150,16 @@ export const ApplyAnimationOnTablet = (
   description,
   speech,
   photo,
+  aboutSkills,
+  listItems,
   resumeParent,
-  resume,
-  skillsHeader,
-  boxes
+  resume
 ) => {
   let masterTl = gsap.timeline();
-
   let headertl = gsap.timeline();
   let bodyTimeline = gsap.timeline();
   let resumeTimeline = gsap.timeline();
-  let skillsTimeline = gsap.timeline();
+  let aboutSkillsTl = gsap.timeline();
 
   // header takes whole screen before re-sizing to normal
   headertl.to(header, {
@@ -214,19 +213,59 @@ export const ApplyAnimationOnTablet = (
     }
   );
 
+  aboutSkillsTl.fromTo(
+    aboutSkills,
+    {
+      opacity: 0,
+      duration: 1.2,
+      yPercent: -100,
+      ease: "power4.inOut",
+    },
+    {
+      opacity: 1,
+      duration: 1,
+      yPercent: 0,
+      ease: "power4.inOut",
+      scrollTrigger: {
+        trigger: aboutSkills,
+        scrub: 1,
+      },
+    }
+  );
+
+  let lists = gsap.utils.toArray(listItems);
+
+  ScrollTrigger.batch(lists, {
+    interval: 1.5, // time window (in seconds) for batching to occur. The first callback that occurs (of its type) will start the timer, and when it elapses, any other similar callbacks for other targets will be batched into an array and fed to the callback. Default is 0.1
+    scrub: 1,
+    onEnter: (batch) =>
+      gsap.to(batch, {
+        opacity: 1,
+        y: 0,
+        stagger: { each: 0.15 },
+        overwrite: true,
+      }),
+    onLeave: (batch) =>
+      gsap.set(batch, { opacity: 0, y: -100, overwrite: true }),
+    onEnterBack: (batch) =>
+      gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, overwrite: true }),
+    onLeaveBack: (batch) =>
+      gsap.set(batch, { opacity: 0, y: 100, overwrite: true }),
+  });
+
   resumeTimeline.fromTo(
     resume,
     {
       opacity: 0,
-      duration: 1.5,
-      xPercent: -100,
+      duration: 1,
+      xPercent: -10,
       ease: "power4.inOut",
     },
     {
       scrollTrigger: {
         trigger: resumeParent,
-        start: "top center",
-        end: "bottom 200px",
+        // start: "top center",
+        // end: "bottom 200px",
         scrub: 0.5,
       },
       duration: 3,
@@ -236,64 +275,12 @@ export const ApplyAnimationOnTablet = (
     }
   );
 
-  skillsTimeline.fromTo(
-    skillsHeader,
-    {
-      opacity: 0,
-      y: 70,
-      duration: 1.3,
-      ease: "circ.inOut",
-    },
-    {
-      opacity: 1,
-      ease: "circ.inOut",
-      duration: 1.4,
-      y: 0,
-      scrollTrigger: {
-        trigger: skillsHeader,
-        start: "top center",
-        end: "+=100px",
-        scrub: 0.5,
-      },
-    }
-  );
-
-  let allBoxes = gsap.utils.toArray(boxes);
-  allBoxes.forEach((box) => {
-    skillsTimeline.fromTo(
-      box,
-      {
-        opacity: 0,
-        yPercent: 50,
-        duration: 1.7,
-        scale: 2,
-        ease: "sine.out",
-      },
-      {
-        opacity: 1,
-        yPercent: 0,
-        ease: "back.out(1.7)",
-        duration: 1.5,
-        scale: 1,
-        stagger: {
-          amount: 1.4,
-        },
-        scrollTrigger: {
-          trigger: box,
-          start: "top center+=70",
-          end: "bottom bottom",
-          scrub: 0.7,
-        },
-      }
-    );
-  });
-
   //add all children timeline to the master timeline
   return masterTl
     .add(headertl)
     .add(bodyTimeline)
-    .add(resumeTimeline)
-    .add(skillsTimeline, "+=5");
+    .add(aboutSkillsTl)
+    .add(resumeTimeline);
 };
 
 // apply animation on desktop
@@ -304,17 +291,16 @@ export const ApplyAnimationOnDesktop = (
   description,
   speech,
   photo,
+  aboutSkills,
+  listItems,
   resumeParent,
-  resume,
-  skillsHeader,
-  boxes
+  resume
 ) => {
   let masterTl = gsap.timeline();
-
   let headertl = gsap.timeline();
   let bodyTimeline = gsap.timeline();
   let resumeTimeline = gsap.timeline();
-  let skillsTimeline = gsap.timeline();
+  let aboutSkillsTl = gsap.timeline();
 
   // header takes whole screen before re-sizing to normal
   headertl.to(header, {
@@ -324,42 +310,6 @@ export const ApplyAnimationOnDesktop = (
     opacity: 0,
   });
 
-  //animation for moving circle to and fro then display text
-  // headertl.to(circle, {
-  //   opacity: 1,
-  //   x: 300,
-  //   y: -90,
-  //   duration: 1.2,
-  //   backgroundColor: "#edcfa9",
-  //   boxShadow: "50px -50px 70px 35px #faf3dd",
-  //   ease: "back.out(1.7)",
-  // });
-  // headertl.to(circle, {
-  //   x: -300,
-  //   backgroundColor: "#feceab",
-  //   duration: 1.4,
-  //   ease: "back.out(1.7)",
-  //   boxShadow: "50px -50px 70px 35px #b9fffc",
-  // });
-  // headertl.to(circle, {
-  //   x: 300,
-  //   duration: 1.4,
-  //   backgroundColor: "#ff9292",
-  //   ease: "back.out(1.7)",
-  //   boxShadow: "-50px 50px 70px 35px #ffb4b4",
-  // });
-  // headertl.to(circle, {
-  //   y: 500,
-  //   duration: 1.4,
-  //   backgroundColor: "#28df99",
-  //   ease: "slow(0.7, 0.7, false)",
-  //   boxShadow: "-50px -50px 70px 75px #99f3bd",
-  // });
-  // headertl.set(circle, {
-  //   display: "none",
-  // });
-
-  //animation for moving circle to and fro then display text ends
   headertl.from(header, {
     duration: 1,
     opacity: 1,
@@ -377,13 +327,11 @@ export const ApplyAnimationOnDesktop = (
     {
       opacity: 0,
       duration: 2,
-      // backgroundColor: "#0a192f",
       yPercent: 100,
       ease: "slow(0.7, 0.7, false)",
     },
     {
       duration: 1.5,
-      // backgroundColor: " #0a192f",
       opacity: 1,
       yPercent: 0,
       ease: "slow(0.7, 0.7, false)",
@@ -420,6 +368,46 @@ export const ApplyAnimationOnDesktop = (
     }
   );
 
+  aboutSkillsTl.fromTo(
+    aboutSkills,
+    {
+      opacity: 0,
+      duration: 1.2,
+      yPercent: -100,
+      ease: "power4.inOut",
+    },
+    {
+      opacity: 1,
+      duration: 1,
+      yPercent: 0,
+      ease: "power4.inOut",
+      scrollTrigger: {
+        trigger: aboutSkills,
+        scrub: 1,
+      },
+    }
+  );
+
+  let lists = gsap.utils.toArray(listItems);
+
+  ScrollTrigger.batch(lists, {
+    interval: 1.5, // time window (in seconds) for batching to occur. The first callback that occurs (of its type) will start the timer, and when it elapses, any other similar callbacks for other targets will be batched into an array and fed to the callback. Default is 0.1
+    scrub: 1,
+    onEnter: (batch) =>
+      gsap.to(batch, {
+        opacity: 1,
+        y: 0,
+        stagger: { each: 0.15 },
+        overwrite: true,
+      }),
+    onLeave: (batch) =>
+      gsap.set(batch, { opacity: 0, y: -100, overwrite: true }),
+    onEnterBack: (batch) =>
+      gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, overwrite: true }),
+    onLeaveBack: (batch) =>
+      gsap.set(batch, { opacity: 0, y: 100, overwrite: true }),
+  });
+
   resumeTimeline.fromTo(
     resume,
     {
@@ -442,64 +430,10 @@ export const ApplyAnimationOnDesktop = (
     }
   );
 
-  skillsTimeline.fromTo(
-    skillsHeader,
-    {
-      opacity: 0,
-      y: 70,
-      duration: 1.3,
-      ease: "circ.inOut",
-    },
-    {
-      opacity: 1,
-      ease: "circ.inOut",
-      duration: 1.4,
-      textAlign: "center",
-      paddingTop: "2rem",
-      y: 0,
-      scrollTrigger: {
-        trigger: skillsHeader,
-        start: "top bottom",
-        end: "+=100px",
-        scrub: 0.5,
-      },
-    }
-  );
-
-  let allBoxes = gsap.utils.toArray(boxes);
-  allBoxes.forEach((box) => {
-    skillsTimeline.fromTo(
-      box,
-      {
-        opacity: 0,
-        yPercent: 50,
-        duration: 1.7,
-        scale: 0.2,
-        ease: "sine.out",
-      },
-      {
-        opacity: 1,
-        yPercent: 0,
-        ease: "back.out(1.7)",
-        duration: 1.5,
-        scale: 1,
-        stagger: {
-          amount: 1.4,
-        },
-        scrollTrigger: {
-          trigger: box,
-          start: "top bottom+=200",
-          end: "bottom center",
-          scrub: 0.7,
-        },
-      }
-    );
-  });
-
   //add all children timeline to the master timeline
   return masterTl
     .add(headertl)
     .add(bodyTimeline)
-    .add(resumeTimeline)
-    .add(skillsTimeline, "+=5");
+    .add(aboutSkillsTl)
+    .add(resumeTimeline);
 };
