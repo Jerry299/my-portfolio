@@ -7,17 +7,18 @@ export const ApplyAnimationOnMobile = (
   body,
   description,
   speech,
+  aboutSkills,
+  listItems,
   resumeParent,
-  resume,
-  skillsHeader,
-  boxes
+  resume
 ) => {
   let masterTl = gsap.timeline();
 
   let headertl = gsap.timeline();
   let bodyTimeline = gsap.timeline();
   let resumeTimeline = gsap.timeline();
-  let skillsTimeline = gsap.timeline();
+  let aboutSkillsTl = gsap.timeline();
+  let listsTl = gsap.timeline();
 
   // header takes whole screen before re-sizing to normal
   headertl.to(header, {
@@ -66,6 +67,48 @@ export const ApplyAnimationOnMobile = (
     }
   );
 
+  aboutSkillsTl.fromTo(
+    aboutSkills,
+    {
+      opacity: 0,
+      yPercent: 20,
+    },
+    {
+      opacity: 1,
+      yPercent: 0,
+      ease: "power4.inOut",
+      scrollTrigger: {
+        scrub: 1,
+        start: "top center-=300",
+      },
+    }
+  );
+
+  let allList = gsap.utils.toArray(listItems);
+  allList.forEach((list) => {
+    listsTl.fromTo(
+      list,
+      {
+        opacity: 0,
+        x: -20,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1.2,
+        ease: "power4.inOut",
+        stagger: {
+          amount: 1.5,
+        },
+        scrollTrigger: {
+          scrub: 1.2,
+          // start: "top center-=300",
+          // end: "bottom center",
+        },
+      }
+    );
+  });
+
   resumeTimeline.fromTo(
     resume,
     {
@@ -76,71 +119,25 @@ export const ApplyAnimationOnMobile = (
     },
     {
       scrollTrigger: {
-        trigger: resumeParent,
-        start: "top center",
-        end: "bottom 200px",
+        // trigger: resumeParent,
+        // start: "top center",
+        // end: "bottom 200px",
         scrub: 0.5,
       },
-      duration: 3,
+      duration: 1.5,
       opacity: 1,
       xPercent: 0,
       ease: "slow(0.5, 0.7, false)",
     }
   );
 
-  skillsTimeline.fromTo(
-    skillsHeader,
-    {
-      opacity: 0,
-      y: 70,
-      duration: 1.3,
-      ease: "circ.inOut",
-    },
-    {
-      opacity: 1,
-      ease: "circ.inOut",
-      duration: 1.4,
-      y: 0,
-      scrollTrigger: {
-        trigger: skillsHeader,
-        start: "top center",
-        end: "+=100px",
-        scrub: 0.5,
-      },
-    }
-  );
-
-  let allBoxes = gsap.utils.toArray(boxes);
-  allBoxes.forEach((box) => {
-    skillsTimeline.fromTo(
-      box,
-      {
-        opacity: 0,
-        yPercent: 50,
-      },
-      {
-        opacity: 1,
-        yPercent: 0,
-        ease: "back.out(1.7)",
-        stagger: {
-          amount: 1,
-        },
-        scrollTrigger: {
-          trigger: box,
-          start: "top center+=50",
-          end: "+=220px",
-          scrub: 0.7,
-        },
-      }
-    );
-  });
-
   //add all children timeline to the master timeline
   return masterTl
     .add(headertl)
     .add(bodyTimeline)
-    .add(resumeTimeline)
-    .add(skillsTimeline, "+=2");
+    .add(aboutSkillsTl)
+    .add(listsTl)
+    .add(resumeTimeline);
 };
 
 // the function below is for animating tablets view
@@ -152,7 +149,6 @@ export const ApplyAnimationOnTablet = (
   photo,
   aboutSkills,
   listItems,
-  resumeParent,
   resume
 ) => {
   let masterTl = gsap.timeline();
@@ -183,13 +179,11 @@ export const ApplyAnimationOnTablet = (
     {
       opacity: 0,
       duration: 2,
-      // backgroundColor: "##1e212d",
       yPercent: -100,
       ease: "slow(0.7, 0.7, false)",
     },
     {
       duration: 1.5,
-      // backgroundColor: "#1e212d",
       opacity: 1,
       yPercent: 0,
       ease: "slow(0.7, 0.7, false)",
@@ -217,58 +211,53 @@ export const ApplyAnimationOnTablet = (
     aboutSkills,
     {
       opacity: 0,
-      duration: 1.2,
-      yPercent: -100,
       ease: "power4.inOut",
     },
     {
       opacity: 1,
       duration: 1,
-      yPercent: 0,
       ease: "power4.inOut",
       scrollTrigger: {
-        trigger: aboutSkills,
-        scrub: 1,
+        // trigger: aboutSkills,
+        scrub: 0.3,
       },
     }
   );
 
   let lists = gsap.utils.toArray(listItems);
-
-  ScrollTrigger.batch(lists, {
-    interval: 1.5, // time window (in seconds) for batching to occur. The first callback that occurs (of its type) will start the timer, and when it elapses, any other similar callbacks for other targets will be batched into an array and fed to the callback. Default is 0.1
-    scrub: 1,
-    onEnter: (batch) =>
-      gsap.to(batch, {
+  lists.forEach((listItem) => {
+    aboutSkillsTl.fromTo(
+      listItem,
+      {
+        x: -10,
+        opacity: 0,
+      },
+      {
+        x: 0,
         opacity: 1,
-        y: 0,
-        stagger: { each: 0.15 },
-        overwrite: true,
-      }),
-    onLeave: (batch) =>
-      gsap.set(batch, { opacity: 0, y: -100, overwrite: true }),
-    onEnterBack: (batch) =>
-      gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, overwrite: true }),
-    onLeaveBack: (batch) =>
-      gsap.set(batch, { opacity: 0, y: 100, overwrite: true }),
+        ease: "power4.inOut",
+        stagger: {
+          amount: 1.5,
+        },
+        scrollTrigger: {
+          scrub: 1,
+        },
+      }
+    );
   });
 
   resumeTimeline.fromTo(
     resume,
     {
       opacity: 0,
-      duration: 1,
-      xPercent: -10,
+      xPercent: -5,
       ease: "power4.inOut",
     },
     {
       scrollTrigger: {
-        trigger: resumeParent,
-        // start: "top center",
-        // end: "bottom 200px",
         scrub: 0.5,
       },
-      duration: 3,
+
       opacity: 1,
       xPercent: 0,
       ease: "slow(0.5, 0.7, false)",
@@ -280,7 +269,7 @@ export const ApplyAnimationOnTablet = (
     .add(headertl)
     .add(bodyTimeline)
     .add(aboutSkillsTl)
-    .add(resumeTimeline);
+    .add(resumeTimeline, "+5");
 };
 
 // apply animation on desktop

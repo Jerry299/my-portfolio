@@ -1,16 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import "./About.css";
 import Footer from "./Footer";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {
-//   faHtml5,
-//   faCss3,
-//   faJs,
-//   faGit,
-//   faNodeJs,
-//   faBootstrap,
-//   faReact,
-// } from "@fortawesome/free-brands-svg-icons";
 
 // import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import useWindowSize from "../../utils/useWindowSize";
@@ -29,7 +19,7 @@ const About = () => {
   let speech = useRef(null);
   let resumeParent = useRef(null);
   let aboutSkills = useRef(null);
-  let skillsContainer = useRef(null);
+  // let skillsContainer = useRef(null);
   let resume = useRef(null);
 
   const { width } = useWindowSize();
@@ -41,6 +31,8 @@ const About = () => {
         aboutBody,
         description,
         speech,
+        aboutSkills,
+        ".list-item",
         resumeParent,
         resume
       );
@@ -54,7 +46,6 @@ const About = () => {
         ".about-photo",
         aboutSkills,
         ".list-item",
-        resumeParent,
         resume
       );
     }
