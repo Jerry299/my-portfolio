@@ -8,7 +8,7 @@ const MyWorks = () => {
   return (
     <section className="works-container">
       <div className="works-wrapper">
-        <p className="project-header">Some Projects I Have Worked On.</p>
+        <p className="project-header">Some Things That I've Built.</p>
 
         <div className="projects-container">
           <div className="projects-wrapper">

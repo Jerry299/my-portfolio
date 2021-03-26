@@ -212,15 +212,13 @@ export const ApplyAnimationOnTablet = (
     {
       opacity: 0,
       ease: "power4.inOut",
+      yPercent: 50,
     },
     {
       opacity: 1,
       duration: 1,
+      yPercent: 0,
       ease: "power4.inOut",
-      scrollTrigger: {
-        // trigger: aboutSkills,
-        scrub: 0.3,
-      },
     }
   );
 
@@ -269,7 +267,7 @@ export const ApplyAnimationOnTablet = (
     .add(headertl)
     .add(bodyTimeline)
     .add(aboutSkillsTl)
-    .add(resumeTimeline, "+5");
+    .add(resumeTimeline);
 };
 
 // apply animation on desktop

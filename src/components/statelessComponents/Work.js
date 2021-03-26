@@ -1,7 +1,6 @@
-// move it to stateful components folder for uniformity
+// TODO : move it to stateful components folder for uniformity
 import React, { useEffect, useRef, useState } from "react";
 import "./MyWorks.scss";
-//import useWindowSize from "../../utils/useWindowSize";
 
 // import animations
 import { ApplyWorkAnimation } from "../animations/WorkAnimation";
@@ -23,7 +22,7 @@ const Work = (props) => {
   let container = useRef(null);
 
   useEffect(() => {
-    ApplyWorkAnimation(name, intro, tag, tagItem, container);
+    // ApplyWorkAnimation(name, intro, tag, tagItem, container);
   });
 
   return (
@@ -36,7 +35,7 @@ const Work = (props) => {
           props.id % 2 === 0 ? "work-wrapper-even" : "work-wrapper-odd"
         }`}
       >
-        <div className="card-info">
+        <div className="project-content">
           <div>
             <p ref={(el) => (name = el)} id="name">
               {props.name}.
@@ -56,10 +55,8 @@ const Work = (props) => {
           </div>
         </div>
 
-        <div className="cards">
+        <div className="project-image">
           <div className="header-image">
-            {/* <img src={`${props.imageUrl}`} alt="" className="img" /> */}
-            {/* <img alt="" className="img" /> */}
             <img
               className="img"
               style={imgState ? { display: "none" } : {}}
@@ -74,8 +71,18 @@ const Work = (props) => {
             />
           </div>
 
-          <div className="body_post">
-            <div className="butn-cover">
+          <div className="body_post"></div>
+        </div>
+      </div>
+      {/* project ends */}
+    </div>
+  );
+};
+
+export default Work;
+
+{
+  /* <div className="butn-cover">
               <a
                 href={`${props.githubUrl}`}
                 target="_blank"
@@ -92,13 +99,5 @@ const Work = (props) => {
               >
                 See Live
               </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* project ends */}
-    </div>
-  );
-};
-
-export default Work;
+            </div> */
+}
