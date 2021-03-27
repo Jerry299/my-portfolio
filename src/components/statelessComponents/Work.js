@@ -17,12 +17,12 @@ const Work = (props) => {
   //target DOM nodes
   let name = useRef(null);
   let intro = useRef(null);
-  let tag = useRef(null);
+
   let tagItem = useRef(null);
   let container = useRef(null);
 
   useEffect(() => {
-    // ApplyWorkAnimation(name, intro, tag, tagItem, container);
+    // ApplyWorkAnimation(name, intro,  tagItem, container);
   });
 
   return (
@@ -45,9 +45,6 @@ const Work = (props) => {
               {props.intro}.{" "}
             </p>
             <p className="tags">
-              <span className="solid_tag" ref={(el) => (tag = el)}>
-                Tools:{" "}
-              </span>{" "}
               <span className="tag_items" ref={(el) => (tagItem = el)}>
                 {props.tag}.
               </span>
@@ -81,8 +78,7 @@ const Work = (props) => {
 
 export default Work;
 
-{
-  /* <div className="butn-cover">
+/* <div className="butn-cover">
               <a
                 href={`${props.githubUrl}`}
                 target="_blank"
@@ -100,4 +96,3 @@ export default Work;
                 See Live
               </a>
             </div> */
-}

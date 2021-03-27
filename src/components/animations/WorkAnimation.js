@@ -54,7 +54,7 @@ export const projectHeaderAnimation = (projectHeader, name) => {
 
 // export const ApplyWorkAnimationTablet = () => {};
 
-export const ApplyWorkAnimation = (name, intro, tag, tagItem, container) => {
+export const ApplyWorkAnimation = (name, intro, tagItem, container) => {
   let masterTl = gsap.timeline();
 
   // children timeline
@@ -103,7 +103,7 @@ export const ApplyWorkAnimation = (name, intro, tag, tagItem, container) => {
   );
 
   introTl.fromTo(
-    [intro, tag, tagItem],
+    [intro, tagItem],
     {
       y: -70,
       opacity: 0,

@@ -27,7 +27,6 @@ const MyWorks = () => {
                   />
                 );
               })}
-              {/* <Work/> */}
             </div>
           </div>
         </div>

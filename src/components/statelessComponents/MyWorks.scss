@@ -4,15 +4,11 @@ img {
 }
 
 .works-container {
-  margin: 0;
-  padding: 2rem;
   background-color: #0a192f;
 }
 .works-wrapper {
   .project-header {
-    background: -webkit-linear-gradient(#16c79a, #fff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #a8b2d1;
   }
 }
 
@@ -206,43 +202,61 @@ img {
 
 // media queries for laptops and big screens
 @media screen and (min-device-width: 1200px) and (max-device-width: 2900px) {
+  .projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .projects-wrapper {
+      width: 74%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
   .project-header {
     font-size: 30px;
     font-weight: 600;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    padding-left: 2rem;
+    margin-top: 1.23px;
+    padding: 4rem 0 2rem 4rem;
+    position: relative;
+  }
+  .project-header::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -20px;
+    left: 370px;
+    width: 300px;
+    height: 1px;
+    margin-left: 20px;
+    background-color: #233554;
   }
 
-  //container for each project card
   .work-container {
-    width: 70%;
-    // padding-left: 40px;
-    // padding-right: 1px;
-    // margin-top: 1.5rem;
-    // margin-bottom: 1.5rem;
+    margin: 7rem 0;
+    padding: 3rem;
     .work-wrapper {
       background-color: white;
-      display: grid;
+      height: 500px;
+
+      // syling project content
+      .project-content {
+        div {
+          font-family: "Cabin", sans-serif;
+          background-color: red;
+        }
+      }
     }
     //this style is used to make odd children of the work card look different
     .work-wrapper-odd {
-      padding-left: 5rem;
     }
     //this style is used to make even children of the work card look different
     .work-wrapper-even {
-      padding-left: 5rem;
     }
 
-    .work-wrapper .project-content {
-      background-color: red;
-      div {
-        margin-top: 7rem;
-        font-family: "Cabin", sans-serif;
-      }
-    }
     .work-wrapper .project-image {
-      width: 50%;
+      width: 100%;
       height: 100%;
       border-radius: 5px;
       background-color: blue;
