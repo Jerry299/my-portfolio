@@ -19,7 +19,7 @@ const MyWorks = () => {
                     key={work.id}
                     id={work.id}
                     name={work.projectName}
-                    intro={work.briefIntro}
+                    description={work.briefIntro}
                     imageUrl={work.imageLink}
                     githubUrl={work.githubLink}
                     appLink={work.liveAppLink}
