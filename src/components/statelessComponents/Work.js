@@ -78,6 +78,7 @@ const Work = (props) => {
 
         <div className="project-image">
           <div className="header-image">
+            <div className="overlay"></div>
             <img
               className="img"
               style={imgState ? { display: "none" } : {}}
