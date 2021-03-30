@@ -42,9 +42,7 @@ const Work = (props) => {
               {" "}
               {props.name}.
             </h3>
-            {/* <p ref={(el) => (name = el)} id="name">
-              {props.name}.
-            </p> */}
+
             <div className="project-description">
               <p className="intro" ref={(el) => (intro = el)}>
                 {" "}
@@ -100,22 +98,3 @@ const Work = (props) => {
 };
 
 export default Work;
-
-/* <div className="butn-cover">
-              <a
-                href={`${props.githubUrl}`}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="butn"
-              >
-                See On Github
-              </a>
-              <a
-                href={`${props.appLink}`}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="butn2"
-              >
-                See Live
-              </a>
-            </div> */

@@ -1,5 +1,6 @@
 import React from "react";
 import "./MyWorks.scss";
+import OtherProjects from "./OtherProjects.js";
 import Footer from "./Footer";
 import Work from "./Work";
 import { workData } from "./WorksData";
@@ -31,6 +32,8 @@ const MyWorks = () => {
           </div>
         </div>
       </div>
+      {/* other projects starts */}
+      <OtherProjects />
       <Footer />
     </section>
   );
