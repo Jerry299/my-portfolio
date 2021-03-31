@@ -32,7 +32,7 @@ const ContactMe = () => {
 
   useEffect(() => {
     document.title = "Contact Jerry";
-    svgAnimate(svgRef, contactMessage, getInTouch);
+    // svgAnimate(svgRef, contactMessage, getInTouch);
   }, [svgRef]);
 
   // contact form animation starts
@@ -115,6 +115,9 @@ const ContactMe = () => {
       .then((data) => {
         setServerMessage(data);
         setShowFlashMsg(true);
+        setTimeout(() => {
+          setShowFlashMsg(false);
+        }, 5000);
       })
       .catch((error) => console.log(error));
   };

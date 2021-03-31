@@ -79,4 +79,26 @@ export const otherProjectsData = [
     liveAppLink: "https://blendz.netlify.app/",
     tags: ["React Js", "HTML", "CSS", "Bootstrap"],
   },
+  {
+    id: 5,
+    projectName: "Jblendz Coffee",
+    briefIntro:
+      "A Coffee shop website that displays the shop's product,location and services to customers online",
+    imageLink:
+      "https://res.cloudinary.com/jerry299/image/upload/c_scale,h_653,r_9,w_1131/v1613100346/jblends_ndhh8y.png",
+    githubLink: "https://github.com/Jerry299/Coffee-store",
+    liveAppLink: "https://blendz.netlify.app/",
+    tags: ["React Js", "HTML", "CSS", "Bootstrap"],
+  },
+  {
+    id: 6,
+    projectName: "Jblendz Coffee",
+    briefIntro:
+      "A Coffee shop website that displays the shop's product,location and services to customers online",
+    imageLink:
+      "https://res.cloudinary.com/jerry299/image/upload/c_scale,h_653,r_9,w_1131/v1613100346/jblends_ndhh8y.png",
+    githubLink: "https://github.com/Jerry299/Coffee-store",
+    liveAppLink: "https://blendz.netlify.app/",
+    tags: ["React Js", "HTML", "CSS", "Bootstrap"],
+  },
 ];

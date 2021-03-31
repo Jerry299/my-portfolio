@@ -97,7 +97,7 @@ const Footer = () => {
             <span>
               <FontAwesomeIcon icon={faMap} className="mapper" size="2x" />
             </span>
-            24 School Road,Harbour Layout,Ogbaru L.G.A,Anambra state,Nigeria.
+            Nigeria
           </p>
         </div>
       </div>
