@@ -279,17 +279,21 @@ small {
   }
 
   .contact-form {
-    height: 40vh;
+    /* height: 40vh; */
     display: flex;
     justify-content: space-around;
-    align-items: flex-end;
-    flex-direction: column;
-    font-family: "Roboto Condensed", sans-serif;
-    width: 80vw;
+    align-items: center;
+    /* width: 80vw; */
     margin-bottom: 4rem;
+    padding: 1.5rem;
+    position: relative;
+  }
+  .showFlashMesg {
+    width: 40%;
   }
   .form-wrapper {
-    width: 40%;
+    width: 35%;
+    font-family: "Roboto Condensed", sans-serif;
   }
   .form-group {
     position: relative;

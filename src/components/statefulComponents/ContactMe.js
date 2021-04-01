@@ -3,6 +3,7 @@ import contactSVG from "../../images/contactSVG.svg";
 import "./ContactMe.css";
 import Footer from "../statelessComponents/Footer";
 import FlashMessage from "../statelessComponents/FlashMessage";
+import Loading from "../statelessComponents/Loading";
 import { useIntersection } from "react-use";
 
 // Import animations
@@ -10,12 +11,6 @@ import { fadeIn, fadeOut, svgAnimate } from "../animations/ContactmeAnimations";
 
 const ContactMe = () => {
   // state for input
-
-  // const [state, setState] = useState({
-  //   name: "",
-  //   email: "",
-  //   contactmessage: "",
-  // });
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -32,17 +27,17 @@ const ContactMe = () => {
 
   useEffect(() => {
     document.title = "Contact Jerry";
-    // svgAnimate(svgRef, contactMessage, getInTouch);
+    svgAnimate(svgRef, contactMessage, getInTouch);
   }, [svgRef]);
 
   // contact form animation starts
   const intersection = useIntersection(formRef, {
     root: null,
     rootMargin: "0px",
-    threshold: 0.8,
+    threshold: 0.4,
   });
 
-  intersection && intersection.intersectionRatio < 0.8
+  intersection && intersection.intersectionRatio < 0.4
     ? fadeOut(".contact-form")
     : fadeIn(".contact-form");
 
@@ -102,6 +97,7 @@ const ContactMe = () => {
   // send message to backend
 
   const sendMessage = () => {
+    setServerMessage(null);
     fetch("https://secret-fjord-57935.herokuapp.com/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -117,7 +113,7 @@ const ContactMe = () => {
         setShowFlashMsg(true);
         setTimeout(() => {
           setShowFlashMsg(false);
-        }, 5000);
+        }, 7000);
       })
       .catch((error) => console.log(error));
   };
@@ -158,57 +154,64 @@ const ContactMe = () => {
       </div>
       <div className="form-container" ref={formRef}>
         <form className="contact-form">
-          {showFlashMesg ? <FlashMessage message={serverMessage} /> : null}
-          <div className="form-wrapper">
-            <div className="form-group">
-              <input
-                type="text"
-                name="name"
-                required
-                onChange={handleNameChange}
-                value={name}
-              />
-              <label className="label-name">
-                {" "}
-                <span className="content-name">Full Name</span>
-              </label>
-            </div>
-            {errors.nameError ? <small>{errors.nameError}</small> : null}
-            <div className="form-group">
-              <input
-                type="email"
-                name="email"
-                required
-                onChange={handleEmailChange}
-                value={email}
-              />
-              <label className="label-name">
-                {" "}
-                <span className="content-name">Email</span>
-              </label>
-            </div>
-            {errors.emailError ? <small>{errors.emailError}</small> : null}
-            <div className="form-group">
-              <input
-                type="text"
-                name="contactmessage"
-                required
-                onChange={handleContactMessageChange}
-                value={contactmessage}
-              />
-              <label className="label-name">
-                {" "}
-                <span className="content-name">Message</span>
-              </label>
-            </div>
-            {errors.contactMessageError ? (
-              <small>{errors.contactMessageError}</small>
-            ) : null}
-            <div type="submit" className="submit" onClick={handleSubmit}>
-              Send it
-              <div className="line"></div>
-            </div>
+          <div className="showFlashMesg">
+            {showFlashMesg ? <FlashMessage message={serverMessage} /> : null}
           </div>
+
+          {serverMessage === null ? (
+            <Loading />
+          ) : (
+            <div className="form-wrapper">
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  onChange={handleNameChange}
+                  value={name}
+                />
+                <label className="label-name">
+                  {" "}
+                  <span className="content-name">Full Name</span>
+                </label>
+              </div>
+              {errors.nameError ? <small>{errors.nameError}</small> : null}
+              <div className="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  onChange={handleEmailChange}
+                  value={email}
+                />
+                <label className="label-name">
+                  {" "}
+                  <span className="content-name">Email</span>
+                </label>
+              </div>
+              {errors.emailError ? <small>{errors.emailError}</small> : null}
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="contactmessage"
+                  required
+                  onChange={handleContactMessageChange}
+                  value={contactmessage}
+                />
+                <label className="label-name">
+                  {" "}
+                  <span className="content-name">Message</span>
+                </label>
+              </div>
+              {errors.contactMessageError ? (
+                <small>{errors.contactMessageError}</small>
+              ) : null}
+              <div type="submit" className="submit" onClick={handleSubmit}>
+                Send it
+                <div className="line"></div>
+              </div>
+            </div>
+          )}
         </form>
       </div>
 

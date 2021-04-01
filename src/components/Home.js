@@ -72,6 +72,8 @@ const Home = () => {
         </div>
 
         <div className="slider" ref={(el) => (homeBg = el)}></div>
+        <div className="circle1"></div>
+        <div className="circle2"></div>
       </div>
     </section>
   );
