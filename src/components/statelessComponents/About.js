@@ -73,7 +73,7 @@ const About = () => {
         <div className="about-body" ref={(el) => (aboutBody = el)}>
           <div className="about-photo">
             <div>
-              <div className="overlay"></div>
+              <div className="about-overlay"></div>
               <img
                 src="https://res.cloudinary.com/jerry299/image/upload/c_scale,r_7,w_354/v1566591871/IMG_20190707_123854_5_edlopp.png"
                 alt=""

@@ -72,6 +72,9 @@ font-family: 'Cuprum', sans-serif;
 
 /* media query for smaller devices */
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
+  .about-body {
+    display: none;
+  }
   .about-container {
     width: 100%;
     font-family: "Poppins", sans-serif;
@@ -345,7 +348,7 @@ font-family: 'Cuprum', sans-serif;
     border-radius: 7px;
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
-  .overlay {
+  .about-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -356,7 +359,7 @@ font-family: 'Cuprum', sans-serif;
     border-radius: 7px;
   }
 
-  .about-body .about-photo div:hover .overlay {
+  .about-body .about-photo div:hover .about-overlay {
     background-color: rgba(14, 233, 167, 0);
   }
   .about-body .about-photo div:hover::after {

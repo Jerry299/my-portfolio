@@ -21,73 +21,165 @@ img {
 
 // media query for mobile.
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
-  .works-wrapper {
-    margin-bottom: 5rem;
-    .project-header {
-      margin-top: 5rem;
-      text-align: center;
-      font-size: 3rem;
-      padding: 0.3rem;
+  .projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .projects-wrapper {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
     }
   }
-  //container for each project card
+
+  .project-header {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 1.23px;
+    padding: 4rem 4rem;
+    // position: relative;
+  }
+  .project-header::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -20px;
+    left: 120px;
+    width: 150px;
+    height: 3px;
+    margin-left: 20px;
+    background-color: #2b3a53;
+  }
+
   .work-container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.3rem;
-    margin-top: 5rem;
-    background-color: #f4f9f9;
+    margin: 1.23rem 0;
+    padding: 1.23rem;
+    margin-bottom: 4rem;
 
     .work-wrapper {
-      .card-info {
+      // background-color: burlywood;
+
+      // syling project content
+      .project-content {
+        margin-bottom: 4rem;
         div {
-          display: flex;
-          flex-direction: column;
-          text-align: center;
-          #name {
-            font-weight: 660;
-            font-size: 2.5rem;
-            background: -webkit-linear-gradient(#50d8b1, #64dfdf);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          }
-          h2 {
-            font-weight: 660;
-          }
-          .intro {
-            text-transform: capitalize;
-            margin: 1.3rem 0;
-          }
-          .tags {
+          font-family: "Cabin", sans-serif;
+          // position: relative;
+          // grid-area: 1 / 1 / -1 / 7;
+          // background-color: red;
+          .project-overline {
+            color: #64ffda;
+            font-size: 16px;
             font-weight: 500;
-            font-family: "Cabin", sans-serif;
-            .solid_tag {
-              color: #153e90;
-            }
-            .tag_items {
-              color: #54e346;
+            font-family: "Ubuntu Mono", monospace;
+            margin: 10px 0px;
+          }
+          .project-title {
+            color: #ccd6f6;
+            font-size: clamp(24px, 5vw, 28px);
+            margin: 0px 0px 20px;
+          }
+          .project-description {
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+            transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #112240;
+            color: #a8b2d1;
+            font-size: 15px;
+            font-weight: 300;
+            font-family: "Roboto", sans-serif;
+          }
+
+          .project-tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            // position: relative;
+            z-index: 2;
+            margin: 25px 0px 10px;
+            padding: 0px;
+            list-style: none;
+          }
+
+          .project-tech-list li {
+            margin: 0px 20px 5px 0px;
+            color: #a8b2d1;
+            font-family: "Poppins", sans-serif;
+            font-size: 13.5px;
+            white-space: nowrap;
+          }
+
+          .projects-links a {
+            font-size: 1.23rem;
+            color: #cdd0cb;
+            padding: 10px;
+            :hover,
+            :active,
+            :focus {
+              color: #64ffda;
+              transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
             }
           }
         }
       }
-      .cards {
-        margin-top: 1.2rem;
-        .body_post {
-          margin-top: 1.5rem;
+    }
+    //this style is used to make odd children of the work card look different
+    .odd {
+      display: grid;
+      gap: 5px;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      // -webkit-box-align: center;
+      // align-items: center;
+      position: relative;
 
-          .butn-cover {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            .butn,
-            .butn2 {
-              color: #252525;
-              box-shadow: #64dfdf 0 0px 0px 2px inset;
-              display: block;
-              padding: 0.8rem 1.3rem;
-              border-radius: 15px;
-            }
+      .project-content {
+        grid-column: 7/ -1;
+        text-align: right;
+        z-index: 2;
+        margin-top: 2.5rem;
+        div {
+          .project-tech-list {
+            justify-content: flex-end;
+          }
+        }
+      }
+      .project-image {
+        grid-column: 1/ 9;
+        position: absolute;
+        .overlay {
+          &:hover {
+            background-color: rgba(14, 233, 167, 0);
+          }
+        }
+      }
+    }
+    //this style is used to make even children of the work card look different
+    .even {
+      position: relative;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(12, 1fr);
+      -webkit-box-align: center;
+      align-items: center;
+
+      .project-content {
+        grid-column: 1/ 7;
+        text-align: left;
+
+        margin-top: 2.5rem;
+      }
+      .project-image {
+        grid-column: 6/-1;
+        position: absolute;
+
+        .overlay {
+          &:hover {
+            background-color: rgba(14, 233, 167, 0);
           }
         }
       }
@@ -98,107 +190,6 @@ img {
 // media query for tablet
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .works-wrapper {
-    .project-header {
-      margin-top: 5rem;
-      text-align: center;
-      font-weight: 600;
-      font-size: 40px;
-      background: -webkit-linear-gradient(#16c79a, #120078);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  }
-  .work-container {
-    padding-left: 5rem;
-    padding-right: 2rem;
-    margin-top: 5rem;
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-    border-radius: 0px 50px 0px 0px;
-    background-color: #1e212d;
-    // background: bottom, linear-gradient(90deg, #ba81ff 0%, #ff6a95 99%);
-    color: #f6f6f6;
-    .work-wrapper {
-      .card-info {
-        div {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          #name {
-            font-weight: 660;
-            font-size: 3rem;
-            background: -webkit-linear-gradient(#50d8b1, #64dfdf);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          }
-          .intro {
-            text-transform: capitalize;
-            margin: 1.3rem 0;
-            font-size: 1.5rem;
-          }
-          .tags {
-            font-weight: 500;
-            font-family: "Cabin", sans-serif;
-            background-color: #f6f6f6;
-
-            width: 40%;
-            padding: 1.2rem;
-            .solid_tag {
-              color: #153e90;
-            }
-            .tag_items {
-              color: #54e346;
-            }
-          }
-        }
-      }
-      .cards {
-        margin-top: 1.2rem;
-        .body_post {
-          margin-top: 1.5rem;
-
-          .butn-cover {
-            display: flex;
-            a {
-              -webkit-transition: all 500ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
-              -moz-transition: all 500ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
-              -ms-transition: all 500ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
-              -o-transition: all 500ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
-              transition: all 500ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
-              display: block;
-              margin: 5px auto;
-              max-width: 180px;
-              text-decoration: none;
-              border-radius: 5px;
-              padding: 10px 20px;
-              text-align: center;
-              font-weight: 500;
-            }
-            a.butn {
-              color: rgba(238, 248, 240, 0.6);
-              box-shadow: rgba(236, 243, 236, 0.6) 0 0px 0px 4px inset;
-              &:hover {
-                color: rgba(255, 255, 255, 0.85);
-                box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
-              }
-            }
-            a.butn2 {
-              color: rgba(238, 248, 240, 0.6);
-              box-shadow: rgba(236, 243, 236, 0.6) 0 0px 0px 4px inset;
-              &:hover {
-                color: rgba(255, 255, 255, 0.85);
-                box-shadow: rgba(30, 22, 54, 0.7) 0 80px 0px 2px inset;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
   //end of media query
 }
 
