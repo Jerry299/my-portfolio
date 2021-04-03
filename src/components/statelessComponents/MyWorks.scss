@@ -26,7 +26,7 @@ img {
     justify-content: center;
     align-items: center;
     .projects-wrapper {
-      width: 80%;
+      width: 91%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -55,20 +55,18 @@ img {
 
   .work-container {
     margin: 1.23rem 0;
-    padding: 1.23rem;
-    margin-bottom: 4rem;
+    margin-bottom: 8rem;
+    height: 100%;
 
     .work-wrapper {
       // background-color: burlywood;
 
       // syling project content
       .project-content {
-        margin-bottom: 4rem;
+        padding: 25px 25px 55px;
         div {
           font-family: "Cabin", sans-serif;
-          // position: relative;
-          // grid-area: 1 / 1 / -1 / 7;
-          // background-color: red;
+
           .project-overline {
             color: #64ffda;
             font-size: 16px;
@@ -82,17 +80,15 @@ img {
             margin: 0px 0px 20px;
           }
           .project-description {
-            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+            box-shadow: none;
             transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
             position: relative;
-            z-index: 2;
-            padding: 20px;
-            border-radius: 5px;
-            background-color: #112240;
+            padding: 10px 0;
+            background-color: transparent;
             color: #a8b2d1;
-            font-size: 15px;
-            font-weight: 300;
-            font-family: "Roboto", sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            font-family: "Josefin Sans", sans-serif;
           }
 
           .project-tech-list {
@@ -100,7 +96,7 @@ img {
             flex-wrap: wrap;
             // position: relative;
             z-index: 2;
-            margin: 25px 0px 10px;
+            margin: 10px 0px;
             padding: 0px;
             list-style: none;
           }
@@ -108,9 +104,10 @@ img {
           .project-tech-list li {
             margin: 0px 20px 5px 0px;
             color: #a8b2d1;
-            font-family: "Poppins", sans-serif;
+            font-family: "Titillium Web", sans-serif;
             font-size: 13.5px;
             white-space: nowrap;
+            font-weight: 600;
           }
 
           .projects-links a {
@@ -126,60 +123,41 @@ img {
           }
         }
       }
-    }
-    //this style is used to make odd children of the work card look different
-    .odd {
+
+      // work wrapper
       display: grid;
       gap: 5px;
       grid-template-columns: repeat(12, 1fr);
       grid-template-rows: repeat(1, 1fr);
-      // -webkit-box-align: center;
-      // align-items: center;
       position: relative;
 
       .project-content {
-        grid-column: 7/ -1;
-        text-align: right;
+        grid-column: 1/ -1;
+        text-align: left;
         z-index: 2;
         margin-top: 2.5rem;
         div {
           .project-tech-list {
-            justify-content: flex-end;
+            justify-content: flex-start;
           }
         }
       }
       .project-image {
-        grid-column: 1/ 9;
+        grid-column: 1/ -1;
         position: absolute;
-        .overlay {
-          &:hover {
-            background-color: rgba(14, 233, 167, 0);
-          }
-        }
-      }
-    }
-    //this style is used to make even children of the work card look different
-    .even {
-      position: relative;
-      display: grid;
-      gap: 10px;
-      grid-template-columns: repeat(12, 1fr);
-      -webkit-box-align: center;
-      align-items: center;
+        height: 100%;
+        opacity: 0.25;
+        top: 0;
+        bottom: 0;
+        .header-image {
+          .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background-color: rgba(14, 233, 167, 0.23);
 
-      .project-content {
-        grid-column: 1/ 7;
-        text-align: left;
-
-        margin-top: 2.5rem;
-      }
-      .project-image {
-        grid-column: 6/-1;
-        position: absolute;
-
-        .overlay {
-          &:hover {
-            background-color: rgba(14, 233, 167, 0);
+            border-radius: 7px;
           }
         }
       }
