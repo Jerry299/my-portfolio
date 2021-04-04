@@ -1,12 +1,14 @@
-// TODO : move it to stateful components folder for uniformity
+// TODO : later on move it to stateful components folder for uniformity
 import React, { useEffect, useRef, useState } from "react";
 import "./MyWorks.scss";
+
+import useWindowSize from "../../utils/useWindowSize";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 // import animations
-import { ApplyWorkAnimation } from "../animations/WorkAnimation";
 
 const Work = (props) => {
   //state for displaying image
@@ -17,15 +19,16 @@ const Work = (props) => {
     setImgState(true);
   };
 
-  //target DOM nodes
+  //target DOM nodes using refs
   let name = useRef(null);
   let intro = useRef(null);
 
   let container = useRef(null);
 
-  useEffect(() => {
-    // ApplyWorkAnimation(name, intro,  tagItem, container);
-  });
+  //get device width size
+  const { width } = useWindowSize();
+
+  useEffect(() => {});
 
   return (
     <div className="work-container">

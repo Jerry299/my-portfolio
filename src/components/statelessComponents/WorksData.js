@@ -14,7 +14,7 @@ export const workData = [
     id: 2,
     projectName: "Kountries",
     briefIntro:
-      "The Project consumes a restful services and display 250 countries around the world,it includes a general and detailed page about each country,it includes dark mode feature",
+      "The Project consumes a restful services and display 250 countries around the world,it includes a general and detailed page about each country,it includes dark mode feature, built as a solution to a frontend mentor challenge.",
     imageLink:
       "https://res.cloudinary.com/jerry299/image/upload/c_scale,h_863,r_9,w_1331/v1614315393/desktop1_gggbrf.png",
     githubLink: "https://github.com/Jerry299/restful-countries",
@@ -30,7 +30,7 @@ export const workData = [
       "https://res.cloudinary.com/jerry299/image/upload/c_scale,h_653,r_9,w_1131/v1613100346/jblends_ndhh8y.png",
     githubLink: "https://github.com/Jerry299/Coffee-store",
     liveAppLink: "https://blendz.netlify.app/",
-    tags: ["React Js", "HTML", "CSS", "Bootstrap"],
+    tags: ["React Js", "CSS", "Bootstrap"],
   },
 ];
 

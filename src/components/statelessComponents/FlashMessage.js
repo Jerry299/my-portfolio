@@ -10,7 +10,7 @@ import {
 const FlashMessage = ({ message }) => {
   if (message.message) {
     return (
-      <main>
+      <main className="flash-message-container">
         <section id="snackbar-container">
           <div className="icon-container">
             <FontAwesomeIcon icon={faCheckCircle} />
@@ -26,7 +26,7 @@ const FlashMessage = ({ message }) => {
 
   if (message.error) {
     return (
-      <main>
+      <main className="flash-message-container">
         <section id="snackbar-container">
           <div className="icon-container-error">
             <FontAwesomeIcon icon={faTimesCircle} />

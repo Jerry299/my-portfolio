@@ -1,20 +1,42 @@
 /* css for phone responsiveness */
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
-  #snackbar-container {
-    position: fixed;
-    top: 40%;
-    left: 15%;
-    background-color: #00af91;
-    z-index: 99;
-    color: #fff;
-    height: 100px;
+  .flash-message-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.4rem;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-      rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    border-radius: 5px;
+    position: relative;
+  }
+  #snackbar-container {
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 80%;
+  }
+  #snackbar-container .icon-container {
+    background-color: #c7ffd8;
+    height: 100%;
+
+    font-size: 2.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+    color: #21bf73;
+  }
+  #snackbar-container .icon-container-error {
+    background-color: #f8b0bc;
+    height: 100%;
+    font-size: 2.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+    color: #f13040;
+  }
+  #snackbar-container .message-container {
+    background-color: transparent;
+    font-family: "Poppins", sans- !important;
+    font-size: 0.9rem;
+    padding: 1.2rem;
   }
 }
 
@@ -81,10 +103,10 @@
     align-items: center;
     color: #f13040;
   }
-  #snackbar .message-container {
+  /* #snackbar-container .message-container {
     background-color: #eeebdd;
     font-weight: 600;
     font-family: "Poppins", sans- !important;
     font-size: 1.4rem;
-  }
+  } */
 }

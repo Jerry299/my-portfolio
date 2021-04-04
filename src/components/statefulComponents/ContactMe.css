@@ -234,10 +234,6 @@ small {
     transform: translateX(0%);
     border-bottom: 3px solid #28df99;
   }
-  .form-group input:invalid + .label-name::after {
-    transform: translateX(0%);
-    border-bottom: 3px solid #91091e;
-  }
 }
 /* css for latptops and large screens */
 @media screen and (min-device-width: 1200px) and (max-device-width: 2900px) {
