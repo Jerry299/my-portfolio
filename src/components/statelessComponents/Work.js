@@ -9,6 +9,11 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 // import animations
+import {
+  ApplyWorkAnimationOnMobile,
+  ApplyWorkAnimationOnTablet,
+  ApplyWorkAnimationOnDesktop,
+} from "../animations/WorkAnimation";
 
 const Work = (props) => {
   //state for displaying image
@@ -20,34 +25,54 @@ const Work = (props) => {
   };
 
   //target DOM nodes using refs
-  let name = useRef(null);
-  let intro = useRef(null);
-
-  let container = useRef(null);
+  let featuredProject = useRef(null);
+  let projectTitle = useRef(null);
+  let projectDescription = useRef(null);
+  let projectDescriptionIntro = useRef(null);
 
   //get device width size
   const { width } = useWindowSize();
 
-  useEffect(() => {});
+  useEffect(() => {
+    if (width >= 300 && width < 767) {
+      ApplyWorkAnimationOnMobile();
+    }
+    if (width >= 768 && width < 1199) {
+      ApplyWorkAnimationOnTablet();
+    }
+    if (width >= 1200 && width < 2900) {
+      ApplyWorkAnimationOnDesktop(
+        featuredProject,
+        projectTitle,
+        projectDescription,
+        projectDescriptionIntro
+      );
+    }
+  });
 
   return (
     <div className="work-container">
       {/* project start */}
       {/* this div immediately below just reverses the layout of the card if it is odd  */}
-      <div
-        ref={(el) => (container = el)}
-        className={`work-wrapper ${props.id % 2 === 0 ? "even" : "odd"}`}
-      >
+      <div className={`work-wrapper ${props.id % 2 === 0 ? "even" : "odd"}`}>
         <div className="project-content">
           <div>
-            <p className="project-overline">Featured Project</p>
-            <h3 className="project-title" ref={(el) => (name = el)}>
+            <p
+              className="project-overline"
+              ref={(el) => (featuredProject = el)}
+            >
+              Featured Project
+            </p>
+            <h3 className="project-title" ref={(el) => (projectTitle = el)}>
               {" "}
               {props.name}.
             </h3>
 
-            <div className="project-description">
-              <p className="intro" ref={(el) => (intro = el)}>
+            <div
+              className="project-description"
+              ref={(el) => (projectDescription = el)}
+            >
+              <p className="intro" ref={(el) => (projectDescriptionIntro = el)}>
                 {" "}
                 {props.description}.{" "}
               </p>
