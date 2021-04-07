@@ -29,6 +29,9 @@ const Work = (props) => {
   let projectTitle = useRef(null);
   let projectDescription = useRef(null);
   let projectDescriptionIntro = useRef(null);
+  let projectTechList = useRef([]);
+  let projectLinks = useRef([]);
+  let projectImage = useRef(null);
 
   //get device width size
   const { width } = useWindowSize();
@@ -45,16 +48,19 @@ const Work = (props) => {
         featuredProject,
         projectTitle,
         projectDescription,
-        projectDescriptionIntro
+        projectDescriptionIntro,
+        projectTechList.current,
+        projectLinks.current,
+        projectImage
       );
     }
-  });
+  }, [width]);
 
   return (
     <div className="work-container">
       {/* project start */}
       {/* this div immediately below just reverses the layout of the card if it is odd  */}
-      <div className={`work-wrapper ${props.id % 2 === 0 ? "even" : "odd"}`}>
+      <div className="work-wrapper even">
         <div className="project-content">
           <div>
             <p
@@ -79,7 +85,11 @@ const Work = (props) => {
             </div>
             <ul className="project-tech-list">
               {props.tag.map((item, i) => {
-                return <li key={i}>{item}</li>;
+                return (
+                  <li key={i} ref={(el) => (projectTechList.current[i] = el)}>
+                    {item}
+                  </li>
+                );
               })}
             </ul>
             <div className="projects-links">
@@ -87,6 +97,7 @@ const Work = (props) => {
                 href={props.githubUrl}
                 target="_blank"
                 rel="nofollow noopener noreferrer"
+                ref={(el) => (projectLinks.current[0] = el)}
               >
                 <FontAwesomeIcon icon={faGithub} />
               </a>
@@ -95,6 +106,7 @@ const Work = (props) => {
                 href={props.appLink}
                 target="_blank"
                 rel="nofollow noopener noreferrer"
+                ref={(el) => (projectLinks.current[1] = el)}
               >
                 <FontAwesomeIcon icon={faExternalLinkAlt} />
               </a>
@@ -116,6 +128,7 @@ const Work = (props) => {
               onLoad={showImageAfterItLoads}
               style={imgState ? {} : { display: "none" }}
               alt=""
+              ref={(el) => (projectImage = el)}
             />
           </div>
         </div>
