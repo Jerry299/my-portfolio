@@ -14,6 +14,7 @@ import {
   ApplyWorkAnimationOnTablet,
   ApplyWorkAnimationOnDesktop,
 } from "../animations/WorkAnimation";
+import userEvent from "@testing-library/user-event";
 
 const Work = (props) => {
   //state for displaying image
@@ -25,18 +26,19 @@ const Work = (props) => {
   };
 
   //target DOM nodes using refs
-  let featuredProject = useRef(null);
-  let projectTitle = useRef(null);
-  let projectDescription = useRef(null);
-  let projectDescriptionIntro = useRef(null);
-  let projectTechList = useRef([]);
-  let projectLinks = useRef([]);
-  let projectImage = useRef(null);
+  // let featuredProject = useRef(null);
+  // let projectTitle = useRef(null);
+  // let projectDescription = useRef(null);
+  // let projectDescriptionIntro = useRef(null);
+  // let projectTechList = useRef([]);
+  // let projectLinks = useRef([]);
+  // let projectImage = useRef(null);
 
   //get device width size
   const { width } = useWindowSize();
 
   useEffect(() => {
+    console.log("rendering this");
     if (width >= 300 && width < 767) {
       ApplyWorkAnimationOnMobile();
     }
@@ -44,18 +46,13 @@ const Work = (props) => {
       ApplyWorkAnimationOnTablet();
     }
     if (width >= 1200 && width < 2900) {
-      ApplyWorkAnimationOnDesktop(
-        featuredProject,
-        projectTitle,
-        projectDescription,
-        projectDescriptionIntro,
-        projectTechList.current,
-        projectLinks.current,
-        projectImage
-      );
+      ApplyWorkAnimationOnDesktop();
     }
-  }, [width]);
-
+    return () => {
+      console.log("clean up");
+    };
+  }, [imgState]);
+  console.log(width, imgState);
   return (
     <div className="work-container">
       {/* project start */}
@@ -63,33 +60,15 @@ const Work = (props) => {
       <div className="work-wrapper even">
         <div className="project-content">
           <div>
-            <p
-              className="project-overline"
-              ref={(el) => (featuredProject = el)}
-            >
-              Featured Project
-            </p>
-            <h3 className="project-title" ref={(el) => (projectTitle = el)}>
-              {" "}
-              {props.name}.
-            </h3>
+            <p className="project-overline">Featured Project</p>
+            <h3 className="project-title"> {props.name}.</h3>
 
-            <div
-              className="project-description"
-              ref={(el) => (projectDescription = el)}
-            >
-              <p className="intro" ref={(el) => (projectDescriptionIntro = el)}>
-                {" "}
-                {props.description}.{" "}
-              </p>
+            <div className="project-description">
+              <p className="intro"> {props.description}. </p>
             </div>
             <ul className="project-tech-list">
               {props.tag.map((item, i) => {
-                return (
-                  <li key={i} ref={(el) => (projectTechList.current[i] = el)}>
-                    {item}
-                  </li>
-                );
+                return <li key={i}>{item}</li>;
               })}
             </ul>
             <div className="projects-links">
@@ -97,7 +76,6 @@ const Work = (props) => {
                 href={props.githubUrl}
                 target="_blank"
                 rel="nofollow noopener noreferrer"
-                ref={(el) => (projectLinks.current[0] = el)}
               >
                 <FontAwesomeIcon icon={faGithub} />
               </a>
@@ -106,7 +84,6 @@ const Work = (props) => {
                 href={props.appLink}
                 target="_blank"
                 rel="nofollow noopener noreferrer"
-                ref={(el) => (projectLinks.current[1] = el)}
               >
                 <FontAwesomeIcon icon={faExternalLinkAlt} />
               </a>
@@ -128,7 +105,6 @@ const Work = (props) => {
               onLoad={showImageAfterItLoads}
               style={imgState ? {} : { display: "none" }}
               alt=""
-              ref={(el) => (projectImage = el)}
             />
           </div>
         </div>

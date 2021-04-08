@@ -17,104 +17,116 @@ export const ApplyWorkAnimationOnDesktop = (
 ) => {
   let masterTimeline = gsap.timeline();
 
-  let projectContenTl = gsap.timeline();
+  let projectContainerTl = gsap.timeline();
+  let projectContentTl = gsap.timeline();
 
-  // scale the image down before the animation begins
-  // projectContenTl.set(projectImage, { opacity: 0 });
+  // animation for scrollTrigger
 
-  projectContenTl.fromTo(
-    [featuredProject, projectTitle],
-    { opacity: 0, y: 30 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1.3,
-      ease: "power4.out",
-      stagger: {
-        amount: 1.5,
-      },
-    }
+  // let allProjectContainer = gsap.utils.toArray(projectContainer);
+  let allProjectContainer = gsap.utils.toArray(
+    document.querySelectorAll(".work-container")
   );
-
-  projectContenTl
-    .fromTo(
-      projectDescription,
-      {
-        opacity: 0,
-        backgroundColor: "transparent",
-        y: 30,
-      },
-      {
-        opacity: 1,
-        duration: 1.2,
-        ease: "power3.inOut",
-        backgroundColor: "#112240",
-        y: 0,
-      }
-    )
-    .fromTo(
-      projectDescriptionIntro,
-      {
-        opacity: 0,
-        xPercent: 30,
-      },
-      {
-        opacity: 1,
-        xPercent: 0,
-        duration: 1.3,
-        ease: "power3.out",
-      }
-    );
-
-  projectContenTl.fromTo(
-    projectImage,
-    {
+  console.log(allProjectContainer);
+  allProjectContainer.forEach((aContainer) => {
+    projectContainerTl.from(aContainer, {
       opacity: 0,
-    },
-    {
+      yPercent: -20,
+      duration: 1.3,
+      ease: "power4.inOut",
+    });
+
+    projectContainerTl.to(aContainer, {
       opacity: 1,
+      yPercent: 0,
+      ease: "power4.inOut",
+      duration: 1.3,
+      scrollTrigger: {
+        trigger: aContainer,
 
-      ease: "power4.in",
-    }
-  );
-
-  // animate technology list
-  let lists = gsap.utils.toArray(projectTechList);
-
-  lists.forEach((listItem) => {
-    projectContenTl.fromTo(
-      listItem,
-      { opacity: 0, xPercent: -30 },
-      {
-        opacity: 1,
-        xPercent: 0,
-        ease: "expo.in",
-        stagger: {
-          amount: 1.3,
-        },
-      }
-    );
+        start: "top center",
+        end: "bottom bottom",
+        scrub: 1,
+      },
+    });
   });
 
-  // animate project linsk to github and live site
-  let links = gsap.utils.toArray(projectLinks);
+  // projectContenTl
+  //   .fromTo(
+  //     projectDescription,
+  //     {
+  //       opacity: 0,
+  //       backgroundColor: "transparent",
+  //       y: 30,
+  //     },
+  //     {
+  //       opacity: 1,
+  //       duration: 1.2,
+  //       ease: "power3.inOut",
+  //       backgroundColor: "#112240",
+  //       y: 0,
+  //     }
+  //   )
+  //   .fromTo(
+  //     projectDescriptionIntro,
+  //     {
+  //       opacity: 0,
+  //       xPercent: 30,
+  //     },
+  //     {
+  //       opacity: 1,
+  //       xPercent: 0,
+  //       duration: 1.3,
+  //       ease: "power3.out",
+  //     }
+  //   );
 
-  links.forEach((link) => {
-    projectContenTl.fromTo(
-      link,
-      { opacity: 0, yPercent: -30 },
-      {
-        opacity: 1,
-        yPercent: 0,
-        ease: "expo.in",
-        stagger: {
-          amount: 1.3,
-        },
-      }
-    );
-  });
+  // projectContenTl.fromTo(
+  //   projectImage,
+  //   {
+  //     opacity: 0,
+  //   },
+  //   {
+  //     opacity: 1,
 
-  return masterTimeline.add(projectContenTl);
+  //     ease: "power4.in",
+  //   }
+  // );
+
+  // // animate technology list
+  // let lists = gsap.utils.toArray(projectTechList);
+
+  // lists.forEach((listItem) => {
+  //   projectContenTl.fromTo(
+  //     listItem,
+  //     { opacity: 0, xPercent: -30 },
+  //     {
+  //       opacity: 1,
+  //       xPercent: 0,
+  //       ease: "expo.in",
+  //       stagger: {
+  //         amount: 1.3,
+  //       },
+  //     }
+  //   );
+  // });
+
+  // // animate project linsk to github and live site
+  // let links = gsap.utils.toArray(projectLinks);
+
+  // links.forEach((link) => {
+  //   projectContenTl.fromTo(
+  //     link,
+  //     { opacity: 0, yPercent: -30 },
+  //     {
+  //       opacity: 1,
+  //       yPercent: 0,
+  //       ease: "expo.in",
+  //       stagger: {
+  //         amount: 1.3,
+  //       },
+  //     }
+  //   );
+  // });
+
+  return masterTimeline.add(projectContainerTl).add(projectContentTl, "+=8");
 };
-
-// #root > div > div.wrapper > div > section > div.works-wrapper > div > div > div > div:nth-child(1) > div > div.project-content > div > ul > li:nth-child(1)
