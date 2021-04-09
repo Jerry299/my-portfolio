@@ -1,5 +1,5 @@
 // TODO : later on move it to stateful components folder for uniformity
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./MyWorks.scss";
 
 import useWindowSize from "../../utils/useWindowSize";
