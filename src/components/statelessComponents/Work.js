@@ -9,12 +9,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 // import animations
-import {
-  ApplyWorkAnimationOnMobile,
-  ApplyWorkAnimationOnTablet,
-  ApplyWorkAnimationOnDesktop,
-} from "../animations/WorkAnimation";
-import userEvent from "@testing-library/user-event";
+import { ApplyWorkAnimation } from "../animations/WorkAnimation";
 
 const Work = (props) => {
   //state for displaying image
@@ -25,34 +20,13 @@ const Work = (props) => {
     setImgState(true);
   };
 
-  //target DOM nodes using refs
-  // let featuredProject = useRef(null);
-  // let projectTitle = useRef(null);
-  // let projectDescription = useRef(null);
-  // let projectDescriptionIntro = useRef(null);
-  // let projectTechList = useRef([]);
-  // let projectLinks = useRef([]);
-  // let projectImage = useRef(null);
-
   //get device width size
   const { width } = useWindowSize();
 
   useEffect(() => {
-    console.log("rendering this");
-    if (width >= 300 && width < 767) {
-      ApplyWorkAnimationOnMobile();
-    }
-    if (width >= 768 && width < 1199) {
-      ApplyWorkAnimationOnTablet();
-    }
-    if (width >= 1200 && width < 2900) {
-      ApplyWorkAnimationOnDesktop();
-    }
-    return () => {
-      console.log("clean up");
-    };
-  }, [imgState]);
-  console.log(width, imgState);
+    ApplyWorkAnimation();
+  }, [imgState, width]);
+
   return (
     <div className="work-container">
       {/* project start */}
