@@ -1,6 +1,8 @@
 .app-container {
   background-color: #fff;
   scroll-behavior: smooth;
+  padding: 0;
+  
 }
 a,
 a:active,
