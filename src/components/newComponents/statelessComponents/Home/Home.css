@@ -1,3 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
 .home-container{
     background-color: red;
+}
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 767px) {
+    .container {
+      max-width: 540px;
+    }
+  }
+  
+/* css for tablet responsiveness */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+@media screen and (device-width: 601px) and (device-height: 906px) and (-webkit-min-device-pixel-ratio: 1.331) and (-webkit-max-device-pixel-ratio: 1.332) {
+}
+
+
+/* css for laptops and large screens */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
+    .home-container{
+        /* background-color: red; */
+        height: 100vh;
+        
+    }
+    .home-container .home-header{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        background-color: green;
+        padding: 2rem 3rem;
+    }
+    .home-container .home-header .home-logo{
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 800;
+        letter-spacing: 3px;
+        color: #5800FF;
+        font-size: 1.5rem;
+    }
 }

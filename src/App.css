@@ -2,6 +2,7 @@
   background-color: #fff;
   scroll-behavior: smooth;
   padding: 0;
+  box-sizing: border-box;
   
 }
 a,
@@ -76,4 +77,9 @@ list item =
     --nav-height: 100px;
     --nav-scroll-height: 70px;
     --tab-height: 42px;
+
+
+
+  new color #5800FF 
+  background black #000000
 */
