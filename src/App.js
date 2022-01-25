@@ -42,4 +42,3 @@ export default App;
 // import ContactMe from "./components/statefulComponents/ContactMe";
 // import Header from "./components/statelessComponents/Header";
 // import Cursor from "./components/statelessComponents/Cursor";
-// <iframe src="https://giphy.com/embed/g04lCCTUHSw03W7pqD" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/loop-neon-background-g04lCCTUHSw03W7pqD">via GIPHY</a></p>
